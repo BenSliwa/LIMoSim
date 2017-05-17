@@ -1,0 +1,16 @@
+<osm version="0.6">
+	<node id="0" x="0" y="50"/>
+	<node id="1" x="2000" y="50"/>
+
+	<way id="0">
+		<nd ref="0"/>
+		<nd ref="1"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="W3"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="oneway" v="no"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+</osm>

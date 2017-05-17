@@ -1,0 +1,41 @@
+<ui>
+    <Figure>
+        <LineWidth>2</LineWidth>
+        <Style>-</Style>
+        <Grid>1</Grid>
+        <Box>1</Box>
+        <Label font="Arial" size="14" color="black"/>
+        <Tick font="Arial" size="12" color="black"/>
+        <LegendHeader font="Arial" size="12" color="black" h="left"/>
+        <LegendItem font="Arial" size="12" color="black" h="left"/>
+    </Figure>
+    <Map>
+        <Segment draw="1" color="black"/>
+        <Intersection draw="1" color="gray"/>
+    </Map>
+
+    <MapExport>
+        <Ways>1</Ways>
+        <Nodes>0</Nodes>
+        <Lanes>0</Lanes>
+        <Intersections>1</Intersections>
+        <Segments>0</Segments>
+        <Cars>1</Cars>
+    </MapExport>
+	<Node>
+        <Intersection>red</Intersection>
+        <NoSelection>green</NoSelection>
+        <SoftSelection>orange</SoftSelection>
+        <HardSelection>yellow</HardSelection>
+	</Node>
+	<Segment>
+        <NoSelection>blue</NoSelection>
+        <SoftSelection>orange</SoftSelection>
+        <HardSelection>purple</HardSelection>
+	</Segment>
+    <Way>
+        <Forward>darkgray</Forward>
+        <Backward>green</Backward>
+        <Bidirectional>blue</Bidirectional>
+    </Way>    
+</ui>

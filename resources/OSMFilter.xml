@@ -1,0 +1,10 @@
+<OSMFilter>
+	<Document>
+	</Document>
+	<Way>
+		<require k="highway" v="primary,residential"/>
+		<ignore k="highway" v="path,service,steps,pedestrian"/>
+	</Way>
+	<Node>
+	</Node>
+</OSMFilter>

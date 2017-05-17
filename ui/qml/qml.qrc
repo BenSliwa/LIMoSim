@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ToolItem.qml</file>
+        <file>WayInfo.qml</file>
+        <file>JS.js</file>
+        <file>LabelledTextField.qml</file>
+        <file>UiSettings.xml</file>
+        <file>EpsHeader.txt</file>
+        <file>EpsFooter.txt</file>
+    </qresource>
+</RCC>

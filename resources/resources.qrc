@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>TU.osm</file>
+        <file>Dortmund.osm</file>
+    </qresource>
+</RCC>

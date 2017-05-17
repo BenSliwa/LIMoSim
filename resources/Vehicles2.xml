@@ -1,0 +1,17 @@
+<Vehicles>
+	<Prototype>
+		<tag k="followerModel" v="IDM"/>
+		<tag k="behaviorModel" v="SWIM"/>
+        <tag k="speed" v="50"/>
+	    <tag k="maxSpeed" v="50"/>
+	</Prototype>
+	<Car id="0" way="1" segment="1" lane="0" offset="20">
+		<tag k="speed" v="0"/>
+		<tag k="maxSpeed" v="0"/>
+		<Path>
+			<nd ref="2"/>
+		</Path>
+	</Car>
+
+
+</Vehicles>

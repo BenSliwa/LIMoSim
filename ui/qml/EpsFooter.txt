@@ -1,0 +1,4 @@
+showpage
+%%Trailer
+end restore
+%%EOF
