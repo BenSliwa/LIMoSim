@@ -1,7 +1,7 @@
 #include "legend.h"
 #include "plot.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Legend::Legend(QQuickItem *_parent) :

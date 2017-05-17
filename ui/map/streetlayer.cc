@@ -1,6 +1,6 @@
 #include "streetlayer.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 StreetLayer::StreetLayer()

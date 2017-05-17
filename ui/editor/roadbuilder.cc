@@ -11,7 +11,7 @@
 #include "ui/qteventscheduler.h"
 #include "ui/map/mapui.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RoadBuilder *roadBuilderInstance = 0;

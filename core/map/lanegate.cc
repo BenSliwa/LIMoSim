@@ -1,7 +1,7 @@
 #include "lanegate.h"
 #include "lane.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 LaneGate::LaneGate() :

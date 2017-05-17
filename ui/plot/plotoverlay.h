@@ -3,7 +3,7 @@
 
 #include "uielement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class PlotOverlay : public UiElement

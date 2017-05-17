@@ -6,7 +6,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Lane::Lane(const LaneEndpoint &_start, const LaneEndpoint &_end, Segment *_segment) :

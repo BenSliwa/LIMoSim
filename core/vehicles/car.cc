@@ -8,7 +8,7 @@
 #include <algorithm>
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Car::Car(const std::string &_id, const std::string &_name) :

@@ -9,7 +9,7 @@
 #include "core/location/orientation.h"
 #include "core/sim/statistics/statisticsmanager.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Vehicle : public EventHandler

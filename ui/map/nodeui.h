@@ -5,7 +5,7 @@
 #include "core/map/node.h"
 #include <QList>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class NodeUi : public MapElementUi

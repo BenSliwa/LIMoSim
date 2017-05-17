@@ -2,7 +2,7 @@
 #include "core/location/math_.h"
 #include <math.h>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 TrafficSignal::TrafficSignal(Node *_node) :

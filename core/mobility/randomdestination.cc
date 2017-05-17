@@ -2,7 +2,7 @@
 #include "core/sim/rng.h"
 #include "core/mobility/routing/dijkstra.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RandomDestination::RandomDestination(Car *_car) :

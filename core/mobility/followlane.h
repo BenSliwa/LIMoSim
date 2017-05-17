@@ -4,7 +4,7 @@
 #include "followpath.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class FollowLane : public FollowPath

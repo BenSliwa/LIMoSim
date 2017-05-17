@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 IntersectionHandling::IntersectionHandling(Car *_car) :

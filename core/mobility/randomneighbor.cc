@@ -1,6 +1,6 @@
 #include "randomneighbor.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RandomNeighbor::RandomNeighbor(Car *_car) :

@@ -1,6 +1,6 @@
 #include "domelement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 DOMElement::DOMElement(const std::string &_tagName) : DOMNode("element", NODE_TYPES::ELEMENT_NODE),

@@ -1,7 +1,7 @@
 #ifndef LIMOSIM_SIMULATIONDEFINITIONS_H
 #define LIMOSIM_SIMULATIONDEFINITIONS_H
 
-namespace LIMOSIM
+namespace LIMoSim
 {
     namespace SIM_STATE
     {

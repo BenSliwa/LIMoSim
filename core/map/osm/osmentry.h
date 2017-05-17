@@ -7,7 +7,7 @@
 #include "core/settings/domelement.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class OSMDocument;
 

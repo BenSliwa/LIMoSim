@@ -2,7 +2,7 @@
 #include "core/sim/simulation.h"
 #include "ui/qteventscheduler.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 GraphPlot::GraphPlot(QQuickItem *_parent) :

@@ -6,7 +6,7 @@
 
 #include "core/location/position.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Map;

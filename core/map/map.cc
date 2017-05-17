@@ -8,7 +8,7 @@
 #include "core/sim/rng.h"
 #include "core/location/wgs84.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Map *mapInstance = 0;

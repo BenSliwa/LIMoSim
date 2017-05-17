@@ -6,7 +6,7 @@
 #include "simulationdefinitions.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class EventScheduler

@@ -3,7 +3,7 @@
 
 #include "osmentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class OSMRelationEntry : public OSMEntry

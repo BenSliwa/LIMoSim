@@ -1,7 +1,7 @@
 #include "variant.h"
 #include <sstream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Variant::Variant()

@@ -9,7 +9,7 @@
 #include "core/sim/rng.h"
 #include "core/sim/simulation.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class MobilityModel

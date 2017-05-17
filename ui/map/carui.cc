@@ -2,7 +2,7 @@
 #include "ui/map/pathlayer.h"
 #include "core/map/osm/vehicleentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 CarUi::CarUi(QQuickItem *_parent) :

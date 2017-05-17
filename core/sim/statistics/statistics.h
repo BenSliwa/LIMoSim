@@ -5,7 +5,7 @@
 #include "core/settings/filehandler.h"
 #include "statisticsentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Statistics : public EventHandler

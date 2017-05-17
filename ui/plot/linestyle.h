@@ -4,7 +4,7 @@
 #include <QString>
 #include <QPen>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class LineStyle

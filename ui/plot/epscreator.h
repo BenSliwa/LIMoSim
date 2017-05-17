@@ -12,7 +12,7 @@
 
 #include "textstyle.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class EpsCreator : public QObject

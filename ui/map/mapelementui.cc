@@ -1,7 +1,7 @@
 #include "mapelementui.h"
 #include "ui/uimanager.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 MapElementUi::MapElementUi(QQuickItem *_parent) :

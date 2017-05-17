@@ -1,6 +1,6 @@
 #include "osmfilter.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMFilter::OSMFilter()

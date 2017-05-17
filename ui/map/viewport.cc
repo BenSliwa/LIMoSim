@@ -1,7 +1,7 @@
 #include "viewport.h"
 #include "distanceindicator.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 ViewPort *viewPortInstance = 0;

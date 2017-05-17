@@ -1,7 +1,7 @@
 #include "nodegrid.h"
 #include "map.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 NodeGrid::NodeGrid()

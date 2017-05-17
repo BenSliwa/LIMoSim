@@ -2,7 +2,7 @@
 #include "math_.h"
 #include <algorithm>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Math::Math()

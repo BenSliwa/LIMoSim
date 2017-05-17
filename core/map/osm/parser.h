@@ -8,7 +8,7 @@
 #include "core/settings/filehandler.h"
 #include "core/settings/domelement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Parser

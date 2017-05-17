@@ -1,7 +1,7 @@
 #include "eventhandler.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 EventHandler::EventHandler() :

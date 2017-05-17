@@ -1,7 +1,7 @@
 #include "xmlparser.h"
 #include "core/settings/domdefinitions.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 XMLParser::XMLParser() : Parser()

@@ -3,7 +3,7 @@
 
 #include "vector3d.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Orientation : public Vector3d

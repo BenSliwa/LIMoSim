@@ -1,6 +1,6 @@
 #include "osmentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMEntry::OSMEntry(OSMDocument *_parent) :

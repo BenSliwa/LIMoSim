@@ -1,6 +1,6 @@
 #include "infobox.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 InfoBox::InfoBox(QQuickItem *_parent) :

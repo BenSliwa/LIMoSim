@@ -5,7 +5,7 @@
 #include "core/map/node.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class OSMNodeEntry : public OSMEntry

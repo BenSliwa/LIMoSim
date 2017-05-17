@@ -7,7 +7,7 @@
 #include "segment.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Way : public MapObject

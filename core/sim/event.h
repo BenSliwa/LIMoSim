@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class EventHandler;
 

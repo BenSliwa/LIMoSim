@@ -10,7 +10,7 @@
 
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 

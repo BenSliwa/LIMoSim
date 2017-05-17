@@ -1,6 +1,6 @@
 #include "rng.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RNG::RNG()

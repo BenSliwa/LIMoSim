@@ -1,6 +1,6 @@
 #include "osmrelationentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMRelationEntry::OSMRelationEntry(OSMDocument *_parent) :

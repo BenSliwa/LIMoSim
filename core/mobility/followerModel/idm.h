@@ -3,7 +3,7 @@
 
 #include "followermodel.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class IDM : public FollowerModel

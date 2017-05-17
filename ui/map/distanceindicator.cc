@@ -1,6 +1,6 @@
 #include "distanceindicator.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 DistanceIndicator::DistanceIndicator(QQuickItem *_parent) :

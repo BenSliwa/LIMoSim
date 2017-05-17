@@ -6,7 +6,7 @@
 #include <iostream>
 #include <algorithm>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Segment::Segment(Node *_start, Node *_end, Way *_way) :

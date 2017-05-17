@@ -1,6 +1,6 @@
 #include "statistics.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Statistics::Statistics(const std::string &_id) :

@@ -62,7 +62,7 @@ void LIMoSimCar::setInitialPosition()
     if(useXML)
     {
         std::string dir =  "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
-        std::string file = dir + "Cars.xml";
+        std::string file = dir + "Trip.xml";
 
         LIMoSim::XMLParser xml;
         LIMoSim::VehicleEntry *entry = static_cast<LIMoSim::VehicleEntry*>(xml.parse(file));

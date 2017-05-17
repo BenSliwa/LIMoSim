@@ -3,7 +3,7 @@
 
 #include "ui/plot/uielement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class InfoBox : public UiElement

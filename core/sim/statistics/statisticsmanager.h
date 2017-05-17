@@ -4,7 +4,7 @@
 #include "statistics.h"
 #include <map>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class StatisticsManager

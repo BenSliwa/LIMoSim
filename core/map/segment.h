@@ -9,7 +9,7 @@
 
 #include "mapdefinitions.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class Lane;
 class LaneGate;

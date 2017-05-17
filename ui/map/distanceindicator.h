@@ -3,7 +3,7 @@
 
 #include "mapelementui.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class DistanceIndicator : public MapElementUi

@@ -4,7 +4,7 @@
 #include <map>
 #include <vector>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class Lane;
 

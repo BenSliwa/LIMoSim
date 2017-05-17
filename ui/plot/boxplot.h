@@ -4,7 +4,7 @@
 #include "plot.h"
 #include "box.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class BoxPlot : public Plot

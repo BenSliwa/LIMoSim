@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class RNG

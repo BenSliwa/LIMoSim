@@ -3,7 +3,7 @@
 
 #include "position.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Math

@@ -4,7 +4,7 @@
 #include "mapelementui.h"
 #include "core/map/segment.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class SegmentMarker : public MapElementUi

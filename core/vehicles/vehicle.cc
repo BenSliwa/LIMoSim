@@ -1,6 +1,6 @@
 #include "vehicle.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Vehicle::Vehicle(const std::string &_id, const std::string &_name) : EventHandler(),

@@ -1,6 +1,6 @@
 #include "followpath.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 FollowPath::FollowPath(Car *_car) :

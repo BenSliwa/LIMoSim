@@ -5,7 +5,7 @@
 #include <sstream>
 #include "routingnode.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class RoutingPath

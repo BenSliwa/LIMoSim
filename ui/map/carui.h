@@ -5,7 +5,7 @@
 #include "mapelementui.h"
 #include "core/vehicles/car.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 

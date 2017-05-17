@@ -5,7 +5,7 @@
 #include "way.h"
 #include <map>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class NodeGrid

@@ -1,6 +1,6 @@
 #include "followermodel.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 FollowerModel::FollowerModel(Car *_car, const std::string &_type) :

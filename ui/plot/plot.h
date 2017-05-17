@@ -12,7 +12,7 @@
  *
  */
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Figure;

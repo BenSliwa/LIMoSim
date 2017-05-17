@@ -1,6 +1,6 @@
 #include "boxplot.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 BoxPlot::BoxPlot(QQuickItem *_parent) :

@@ -11,7 +11,7 @@
 #include "ui/map/viewport.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 SelectionHandler *selectionHandlerInstance = 0;

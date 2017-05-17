@@ -3,7 +3,7 @@
 #include "pathlayer.h"
 #include "core/map/way.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 SegmentMarker::SegmentMarker(QQuickItem *_parent) :

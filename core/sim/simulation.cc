@@ -13,7 +13,7 @@
 
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Simulation *simulationInstance = 0;
@@ -35,7 +35,7 @@ Simulation::Simulation(EventScheduler *_scheduler)
 
     std::string dir = "D:/QtProjects/LIMoSim/resources/";
     //dir = "C:/Users/Benjamin/Desktop/LIMoSim/resources/";
-    //dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
+    dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
 
 
     int type = 0;
@@ -192,11 +192,7 @@ Simulation::Simulation(EventScheduler *_scheduler)
 
             if(j==num-1)
                 delete entry;
-
-
         }
-
-
     }
 
 

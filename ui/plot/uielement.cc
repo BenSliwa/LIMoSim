@@ -7,7 +7,7 @@
 
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 UiElement::UiElement(QQuickItem *_parent) :

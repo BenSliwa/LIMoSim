@@ -1,6 +1,6 @@
 #include "parser.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Parser::Parser()

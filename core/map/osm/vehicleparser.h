@@ -4,7 +4,7 @@
 #include "parser.h"
 #include "core/map/map.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class VehicleParser : public Parser

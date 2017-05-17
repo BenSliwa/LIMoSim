@@ -4,7 +4,7 @@
 #include "ui/plot/uielement.h"
 #include "core/location/position.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class PathLayer;

@@ -2,7 +2,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RoutingGraph::RoutingGraph()

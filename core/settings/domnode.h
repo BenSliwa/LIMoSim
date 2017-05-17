@@ -11,7 +11,7 @@
 
 // https://www.w3schools.com/xml/dom_node.asp
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class DOMElement;
 

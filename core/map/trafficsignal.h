@@ -4,7 +4,7 @@
 #include "node.h"
 #include "core/sim/eventhandler.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 namespace TRAFFIC_SIGNAL

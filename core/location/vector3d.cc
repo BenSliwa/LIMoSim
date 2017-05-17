@@ -4,7 +4,7 @@
 #include <sstream>
 #include <math.h>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Vector3d::Vector3d(double _x, double _y, double _z) :

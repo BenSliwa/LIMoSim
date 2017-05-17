@@ -3,7 +3,7 @@
 #include "core/mobility/followerModel/followermodels.h"
 #include "core/mobility/laneChange/lanechangemodels.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 VehicleEntry::VehicleEntry() :

@@ -1,6 +1,6 @@
 #include "position.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Position::Position(double _x, double _y, double _z) : Vector3d(_x, _y, _z)

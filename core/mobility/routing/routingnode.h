@@ -6,7 +6,7 @@
 #include <vector>
 #include "core/map/node.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class RoutingNode

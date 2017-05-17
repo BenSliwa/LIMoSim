@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 namespace Stats

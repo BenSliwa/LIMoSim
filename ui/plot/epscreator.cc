@@ -1,7 +1,7 @@
 #include "epscreator.h"
 #include <QTextStream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 EpsCreator::EpsCreator(QObject *_parent) : QObject(_parent)

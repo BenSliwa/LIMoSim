@@ -5,7 +5,7 @@
 #include "core/mobility/roadperception.h"
 #include "core/mobility/followerModel/idm.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class MOBIL : public LaneChangeModel

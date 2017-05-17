@@ -1,6 +1,6 @@
 #include "followlane.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 FollowLane::FollowLane(Car *_car) :

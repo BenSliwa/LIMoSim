@@ -1,6 +1,6 @@
 #include "statisticsmanager.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 StatisticsManager *statisticsMangerInstance = 0;

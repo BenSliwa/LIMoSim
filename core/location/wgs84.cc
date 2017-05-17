@@ -2,7 +2,7 @@
 #include <math.h>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 WGS84::WGS84()

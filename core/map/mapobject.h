@@ -6,7 +6,7 @@
 #include "mapdefinitions.h"
 #include "map.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class MapObject

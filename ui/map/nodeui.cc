@@ -3,7 +3,7 @@
 #include "ui/uimanager.h"
 #include "core/map/trafficsignal.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 NodeUi::NodeUi(QQuickItem *_parent) :

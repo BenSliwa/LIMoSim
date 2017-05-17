@@ -11,7 +11,7 @@
 
 #include <QGuiApplication>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 UiEventManager *uiEventManagerInstance = 0;

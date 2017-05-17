@@ -1,7 +1,7 @@
 #include "plot.h"
 #include "figure.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Plot::Plot(QQuickItem *_parent) :

@@ -1,7 +1,7 @@
 #include "vehicleparser.h"
 #include "core/vehicles/car.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 VehicleParser::VehicleParser() :

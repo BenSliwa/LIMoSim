@@ -1,6 +1,6 @@
 #include "lanechangemodel.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 LaneChangeModel::LaneChangeModel(Car *_car, const std::string &_type) :

@@ -6,7 +6,7 @@
 
 #include <map>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class Segment;
 class TrafficSignal;

@@ -1,6 +1,6 @@
 #include "osmdocument.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMDocument::OSMDocument() :

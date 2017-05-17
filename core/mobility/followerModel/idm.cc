@@ -3,7 +3,7 @@
 #include <limits>
 #include "core/map/trafficsignal.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 IDM::IDM(Car *_car) :

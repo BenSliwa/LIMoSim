@@ -1,6 +1,6 @@
 #include "statisticsentry.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 

@@ -1,7 +1,7 @@
 #ifndef STREETLAYER_H
 #define STREETLAYER_H
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 

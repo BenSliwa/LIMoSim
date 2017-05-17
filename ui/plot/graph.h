@@ -5,7 +5,7 @@
 #include <QPen>
 #include "linestyle.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 struct Point

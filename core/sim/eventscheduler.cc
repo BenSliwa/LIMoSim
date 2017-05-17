@@ -1,7 +1,7 @@
 #include "eventscheduler.h"
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 EventScheduler::EventScheduler()

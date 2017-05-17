@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class CarUi;
 class Node;

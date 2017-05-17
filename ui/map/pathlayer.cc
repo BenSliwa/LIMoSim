@@ -13,7 +13,7 @@
 
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 PathLayer::PathLayer(QQuickItem *_parent) :

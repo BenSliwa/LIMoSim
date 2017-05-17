@@ -2,7 +2,7 @@
 #include <iostream>
 #include <limits>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Dijkstra::Dijkstra() :

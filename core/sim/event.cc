@@ -2,7 +2,7 @@
 #include "eventhandler.h"
 #include <typeinfo>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Event::Event(double _timestamp_s, EventHandler *_handler, const std::string &_info) :

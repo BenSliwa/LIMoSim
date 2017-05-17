@@ -2,7 +2,7 @@
 #include "core/map/mapdefinitions.h"
 #include "core/map/trafficsignal.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMNodeEntry::OSMNodeEntry(OSMDocument *_parent) :

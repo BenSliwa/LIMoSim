@@ -2,7 +2,7 @@
 #include "graphplot.h"
 #include "boxplot.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Figure::Figure(QQuickItem *_parent) :

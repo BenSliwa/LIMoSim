@@ -2,7 +2,7 @@
 #include "core/sim/eventhandler.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 QtEventScheduler::QtEventScheduler() :

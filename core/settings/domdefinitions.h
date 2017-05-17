@@ -1,7 +1,7 @@
 #ifndef LIMOSIM_DOMDEFINITIONS_H
 #define LIMOSIM_DOMDEFINITIONS_H
 
-namespace LIMOSIM
+namespace LIMoSim
 {
     namespace DOM
     {
@@ -14,7 +14,7 @@ namespace LIMOSIM
     }
 }
 
-namespace LIMOSIM
+namespace LIMoSim
 {
     namespace NODE_TYPES
     {

@@ -12,7 +12,7 @@
 
 #include "ui/plot/epscreator.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class UiManager;
 

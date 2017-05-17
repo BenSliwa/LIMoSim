@@ -12,7 +12,7 @@
 
 #include "core/location/wgs84.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 struct Bounds

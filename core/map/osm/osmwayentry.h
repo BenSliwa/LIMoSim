@@ -6,7 +6,7 @@
 #include "core/map/way.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class OSMWayEntry : public OSMEntry

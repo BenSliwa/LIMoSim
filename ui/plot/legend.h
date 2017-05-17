@@ -5,7 +5,7 @@
 #include "graph.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Plot;

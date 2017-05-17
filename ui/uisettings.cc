@@ -4,7 +4,7 @@
 #include "core/map/mapdefinitions.h"
 #include "ui/map/mapui.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 UiSettings *uiSettingsInstance = 0;

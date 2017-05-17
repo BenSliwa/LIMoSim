@@ -6,7 +6,7 @@
 #include <vector>
 #include "routingnode.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class RoutingGraph

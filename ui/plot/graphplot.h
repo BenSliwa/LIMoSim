@@ -3,7 +3,7 @@
 
 #include "plot.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class GraphPlot : public Plot

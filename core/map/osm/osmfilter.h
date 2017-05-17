@@ -2,7 +2,7 @@
 #define LIMOSIM_OSMFILTER_H
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class OSMFilter

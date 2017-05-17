@@ -5,7 +5,7 @@
 #include "core/map/osm/parser.h"
 #include "core/settings/domelement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class XMLParser : public Parser

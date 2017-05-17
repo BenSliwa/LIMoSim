@@ -6,7 +6,7 @@
 #include "plotoverlay.h"
 #include "ui/sim/imagebutton.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Figure : public UiElement

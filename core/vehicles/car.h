@@ -12,7 +12,7 @@
 #include "core/mobility/alignmentcontrol.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class FollowerModel;

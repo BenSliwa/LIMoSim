@@ -2,7 +2,7 @@
 #include <limits>
 #include <QDebug>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Graph::Graph()

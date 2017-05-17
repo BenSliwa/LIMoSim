@@ -4,7 +4,7 @@
 #include "event.h"
 #include "simulation.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class EventHandler

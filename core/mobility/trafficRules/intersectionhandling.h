@@ -4,7 +4,7 @@
 #include <vector>
 #include "core/mobility/roadperception.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class Car;
 class Lane;

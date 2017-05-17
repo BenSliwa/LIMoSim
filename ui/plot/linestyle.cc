@@ -1,7 +1,7 @@
 #include "linestyle.h"
 #include <QDebug>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 LineStyle::LineStyle(const QString &_color, double _width, bool _close, bool _fill, int _style) :

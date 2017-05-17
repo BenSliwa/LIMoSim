@@ -1,6 +1,6 @@
 #include "trip.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Trip::Trip(Car *_car) :

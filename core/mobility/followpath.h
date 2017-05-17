@@ -3,7 +3,7 @@
 
 #include "mobilitymodel.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 struct MobilityUpdate

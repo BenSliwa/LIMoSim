@@ -30,7 +30,7 @@
 
 #include "ui/qteventscheduler.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 UiManager *uiManagerInstance = 0;

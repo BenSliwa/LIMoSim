@@ -1,7 +1,7 @@
 #ifndef LIMOSIM_MAPDEFINITIONS_H
 #define LIMOSIM_MAPDEFINITIONS_H
 
-namespace LIMOSIM
+namespace LIMoSim
 {
     namespace WAY_TYPE
     {

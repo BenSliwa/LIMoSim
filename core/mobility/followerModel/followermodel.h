@@ -3,7 +3,7 @@
 
 #include "core/vehicles/car.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class FollowerModel

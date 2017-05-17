@@ -4,7 +4,7 @@
 #include "followpath.h"
 #include "core/mobility/routing/dijkstra.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class RandomDestination : public FollowPath

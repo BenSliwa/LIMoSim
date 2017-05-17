@@ -7,7 +7,7 @@
 #include <limits>
 #include <algorithm>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Node::Node(const Position &_position, const std::string &_id, int _type, const std::string &_name) :

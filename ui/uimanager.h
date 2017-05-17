@@ -14,7 +14,7 @@
 #include "core/sim/eventhandler.h"
 #include "ui/editor/roadbuilder.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class UiManager : public QObject, EventHandler

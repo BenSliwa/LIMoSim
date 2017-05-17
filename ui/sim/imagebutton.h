@@ -4,7 +4,7 @@
 #include "ui/plot/uielement.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 namespace BUTTON_STATE

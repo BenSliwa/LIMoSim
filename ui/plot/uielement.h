@@ -14,7 +14,7 @@
 
 #include "ui/map/viewport.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 struct Margin

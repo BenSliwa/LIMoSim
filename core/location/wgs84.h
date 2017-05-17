@@ -4,7 +4,7 @@
 #include "position.h"
 #include "math_.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class WGS84

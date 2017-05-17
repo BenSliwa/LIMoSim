@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 FileHandler::FileHandler()

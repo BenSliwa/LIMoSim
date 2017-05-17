@@ -3,7 +3,7 @@
 
 #include <QString>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class TextStyle

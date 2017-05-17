@@ -3,7 +3,7 @@
 #include "distanceindicator.h"
 #include <algorithm>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 MapUi *mapUiInstance = 0;

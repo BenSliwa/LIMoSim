@@ -1,7 +1,7 @@
 #include "mobil.h"
 #include <algorithm>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 MOBIL::MOBIL(Car *_car) :

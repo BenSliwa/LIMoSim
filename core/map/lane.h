@@ -7,7 +7,7 @@
 #include <vector>
 #include "lanegate.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Car;

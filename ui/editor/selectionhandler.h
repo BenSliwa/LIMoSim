@@ -9,7 +9,7 @@
 #include "core/sim/eventhandler.h"
 #include "ui/plot/figure.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class CarUi;

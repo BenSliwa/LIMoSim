@@ -1,7 +1,7 @@
 #include "osmwayentry.h"
 #include "osmdocument.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 OSMWayEntry::OSMWayEntry(OSMDocument *_parent) :

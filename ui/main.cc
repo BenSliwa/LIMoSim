@@ -7,7 +7,7 @@
 #include <QDebug>
 #include <QDebug>
 
-using namespace LIMOSIM;
+using namespace LIMoSim;
 
 #include "core/settings/filehandler.h"
 #include "core/settings/xmlparser.h"

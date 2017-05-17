@@ -1,6 +1,6 @@
 #include "plotoverlay.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 PlotOverlay::PlotOverlay(QQuickItem *_parent) :

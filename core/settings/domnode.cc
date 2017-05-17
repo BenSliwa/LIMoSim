@@ -1,7 +1,7 @@
 #include "domnode.h"
 #include "domelement.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 DOMNode::DOMNode(const std::string _nodeName, int _nodeType, DOMNode *_parent) :

@@ -4,7 +4,7 @@
 #include "mapelementui.h"
 #include "core/map/map.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class PathLayer : public MapElementUi

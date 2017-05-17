@@ -1,6 +1,6 @@
 #include "mobilitymodel.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 MobilityModel::MobilityModel(Car *_car) :

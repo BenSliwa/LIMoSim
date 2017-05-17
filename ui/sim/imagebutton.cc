@@ -1,6 +1,6 @@
 #include "imagebutton.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 ImageButton::ImageButton(QQuickItem *_parent) :

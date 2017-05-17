@@ -8,7 +8,7 @@
 #include "ui/plot/textstyle.h"
 #include "ui/plot/linestyle.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 namespace ZOOM_LEVEL

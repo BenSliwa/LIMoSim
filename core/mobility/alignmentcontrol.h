@@ -13,7 +13,7 @@
  */
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Car;

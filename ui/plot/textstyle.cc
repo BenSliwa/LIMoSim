@@ -1,6 +1,6 @@
 #include "textstyle.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 TextStyle::TextStyle(const QString &_font, int _fontSize, const QString &_color, int _rotation, int _horizontalAlignment, int _verticalAlignment) :

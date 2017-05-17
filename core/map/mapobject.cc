@@ -1,7 +1,7 @@
 #include "mapobject.h"
 
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 MapObject::MapObject(const std::string &_id, int _type, const std::string &_name) :

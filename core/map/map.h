@@ -14,7 +14,7 @@
  *
  */
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 class Car;
 class Lane;

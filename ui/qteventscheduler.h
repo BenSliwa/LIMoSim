@@ -5,7 +5,7 @@
 #include <QTimer>
 #include "core/sim/eventscheduler.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class QtEventScheduler : public QObject, public EventScheduler

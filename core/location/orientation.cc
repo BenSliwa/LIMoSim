@@ -1,6 +1,6 @@
 #include "orientation.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 Orientation::Orientation(double _pitch, double _roll, double _yaw) :

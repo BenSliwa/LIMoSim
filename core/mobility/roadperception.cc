@@ -2,7 +2,7 @@
 #include "core/vehicles/car.h"
 #include "core/map/mapdefinitions.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RoadPerception::RoadPerception(Car *_car) :

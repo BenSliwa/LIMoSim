@@ -1,7 +1,7 @@
 #include "routingpath.h"
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RoutingPath::RoutingPath()

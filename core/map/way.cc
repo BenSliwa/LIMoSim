@@ -1,6 +1,6 @@
 #include "way.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 

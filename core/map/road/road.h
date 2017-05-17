@@ -3,7 +3,7 @@
 
 #include "core/map/way.h"
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 class Road : public Way

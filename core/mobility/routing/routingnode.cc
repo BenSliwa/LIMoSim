@@ -2,7 +2,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace LIMOSIM
+namespace LIMoSim
 {
 
 RoutingNode::RoutingNode(Node *_node) :
