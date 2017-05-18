@@ -29,10 +29,11 @@ module LIMoSimCar extends MovingMobilityBase
     	string strategicModelType = default("Trip");
     	string followerModelType = default("IDM");
     
+    	string configurationFile = default("");
     	string way = default("-1");
     	int segment = default(-1);
     	int lane = default(-1);
-    	
+    	double offset @unit(m) = default(0m);
     
     submodules:
         strategicModel: <strategicModelType> like IStrategicModel if strategicModelType != "" {}

@@ -14,7 +14,8 @@
 // 
 
 #include "Trip.h"
-
+#include "core/map/map.h"
+#include "core/map/osm/parser.h"
 
 namespace inet {
 
@@ -22,7 +23,19 @@ Define_Module(Trip);
 
 LIMoSim::MobilityModel* Trip::createStrategicModel(LIMoSim::Car *_car)
 {
-    LIMoSim::MobilityModel *model = new LIMoSim::Trip(_car);
+    LIMoSim::Trip *model = new LIMoSim::Trip(_car);
+
+    //std::cout << "Trip::createStrategicModel\t" << strategicModel_omnet->par("trip").stringValue() << std::endl;
+
+    std::cout << "Trip::createStrategicModel" << std::endl;
+
+    LIMoSim::Map *map = LIMoSim::Map::getInstance();
+    std::vector<std::string> nodeIds = LIMoSim::Parser::split(par("trip").stringValue(), ",");
+    for(unsigned int i=0; i<nodeIds.size(); i++)
+    {
+        LIMoSim::Node *node = map->getNode(nodeIds.at(i));
+        model->addTripEntry(node);
+    }
 
     return model;
 }

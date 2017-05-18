@@ -57,38 +57,56 @@ void LIMoSimCar::setInitialPosition()
 
     LIMoSim::Map *map = LIMoSim::Map::getInstance();
 
-    bool useXML = true;
+    StrategicModel *strategicModel_omnet = dynamic_cast<StrategicModel*>(getSubmodule("strategicModel"));
+    FollowerModel *followerModel_omnet = dynamic_cast<FollowerModel*>(getSubmodule("followerModel"));
 
-    if(useXML)
+
+
+    std::string configurationFile = par("configurationFile").stringValue();
+    if(configurationFile!="")
     {
-        std::string dir =  "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
-        std::string file = dir + "Trip.xml";
+        std::cout << "LIMoSimCar::setInitialPosition from XML" << std::endl;
 
         LIMoSim::XMLParser xml;
-        LIMoSim::VehicleEntry *entry = static_cast<LIMoSim::VehicleEntry*>(xml.parse(file));
+        LIMoSim::VehicleEntry *entry = static_cast<LIMoSim::VehicleEntry*>(xml.parse(configurationFile));
 
         p_car = entry->toCar();
     }
     else
     {
+        std::cout << "LIMoSimCar::setInitialPosition from NED" << std::endl;
+
         p_car = map->createCar();
 
+        LIMoSim::PositionInfo info;
+
+        std::string wayId = par("way").stringValue();
+        int segmentIndex = par("segment");
+        int laneIndex = par("lane");
+
+
+        LIMoSim::Way *way = map->getWay(wayId);
+        LIMoSim::Segment *segment = way->getSegment(segmentIndex);
+        info.lane = segment->getLanes().at(laneIndex);
+        info.laneOffset_m = par("offset").doubleValue();
 
         //
-        StrategicModel *strategicModel_omnet = dynamic_cast<StrategicModel*>(getSubmodule("strategicModel"));
         LIMoSim::MobilityModel *strategicModel = strategicModel_omnet->createStrategicModel(p_car);
         p_car->setMobilityModel(strategicModel);
 
 
         //
-        FollowerModel *model = dynamic_cast<FollowerModel*>(getSubmodule("followerModel"));
-        LIMoSim::FollowerModel *followerModel = model->createFollowerModel(p_car);
+        LIMoSim::FollowerModel *followerModel = followerModel_omnet->createFollowerModel(p_car);
+
+
         p_car->setFollowerModel(followerModel);
+        p_car->setPositionInfo(info);
+        p_car->setPosition(p_car->computeLanePosition(info.laneOffset_m, info.alignment_m, true));
         p_car->start();
 
 
 
-        map->setRandomPosition(p_car);
+        //map->setRandomPosition(p_car);
     }
 
 

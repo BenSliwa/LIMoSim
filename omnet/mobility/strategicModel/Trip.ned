@@ -18,4 +18,5 @@ package inet.LIMoSim.omnet.mobility.strategicModel;
 
 simple Trip like IStrategicModel
 {
+    string trip = default("");
 }

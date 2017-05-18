@@ -119,6 +119,17 @@ void Car::handleEvent(Event *_event)
 
 double Car::move(double _timeDelta_s)
 {
+    if(!m_positionInfo.currentNode)
+    {
+        Lane *lane = m_positionInfo.lane;
+
+        if(lane->getDirectionType()==WAY_DIRECTION::BACKWARD)
+            m_positionInfo.currentNode = lane->getEndEndpoint()->node;
+        else
+            m_positionInfo.currentNode = lane->getStartEndpoint()->node;
+    }
+
+
     double distance_m = m_speed_mps * _timeDelta_s;
 
    // if(m_maxSpeed_mps>0)
