@@ -37,6 +37,17 @@ int main(int argc, char *argv[])
 
     QtEventScheduler scheduler;
     Simulation *sim = Simulation::getInstance(&scheduler);
+
+
+
+    std::string dir = "D:/QtProjects/LIMoSim/resources/";
+    //dir = "C:/Users/Benjamin/Desktop/LIMoSim/resources/";
+    dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
+
+    sim->load(dir + "TUDO.osm", dir + "Cars.xml");
+
+
+
     UiManager *ui = UiManager::getInstance();
 
 

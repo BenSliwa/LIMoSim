@@ -68,6 +68,7 @@ void Car::start()
 
 void Car::handleEvent(Event *_event)
 {
+
     if(_event==m_movementTimer)
     {
         double delta_s = _event->getTimestamp() - m_lastUpdate_s;
@@ -91,9 +92,6 @@ void Car::handleEvent(Event *_event)
     }
     else if(_event==m_laneChangeTimer)
     {
-
-
-
         if(getId()=="0")
         {
             if(m_alignmentControl.getState()==ALIGN::IDLE)

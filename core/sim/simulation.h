@@ -18,6 +18,9 @@ public:
     static Simulation* getInstance(EventScheduler *_scheduler = 0);
     static bool hasInstance();
 
+
+    void load(const std::string &_map, const std::string &_vehicles);
+
     void createCars(int _number);
 
     // property accessors

@@ -26,6 +26,8 @@
 #include "core/settings/xmlparser.h"
 #include "core/map/osm/vehicleentry.h"
 
+#include "core/mobility/laneChange/mobil.h"
+
 namespace inet {
 
 Define_Module(LIMoSimCar);
@@ -49,10 +51,13 @@ void LIMoSimCar::initialize(int _stage)
 
 void LIMoSimCar::setInitialPosition()
 {
+    std::string mapFile = par("map").stringValue();
+
     if(!LIMoSim::Simulation::hasInstance())
     {
         EventScheduler* scheduler = EventScheduler::getInstance();
         LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(scheduler);
+        sim->load(mapFile, "");
     }
 
     LIMoSim::Map *map = LIMoSim::Map::getInstance();
@@ -62,13 +67,14 @@ void LIMoSimCar::setInitialPosition()
 
 
 
-    std::string configurationFile = par("configurationFile").stringValue();
-    if(configurationFile!="")
+
+    std::string configuration = par("configuration").stringValue();
+    if(configuration!="")
     {
         std::cout << "LIMoSimCar::setInitialPosition from XML" << std::endl;
 
         LIMoSim::XMLParser xml;
-        LIMoSim::VehicleEntry *entry = static_cast<LIMoSim::VehicleEntry*>(xml.parse(configurationFile));
+        LIMoSim::VehicleEntry *entry = static_cast<LIMoSim::VehicleEntry*>(xml.parse(configuration));
 
         p_car = entry->toCar();
     }
@@ -84,6 +90,8 @@ void LIMoSimCar::setInitialPosition()
         int segmentIndex = par("segment");
         int laneIndex = par("lane");
 
+        std::cout << wayId << "\t" << segmentIndex << "\t" << laneIndex << std::endl;
+
 
         LIMoSim::Way *way = map->getWay(wayId);
         LIMoSim::Segment *segment = way->getSegment(segmentIndex);
@@ -98,8 +106,13 @@ void LIMoSimCar::setInitialPosition()
         //
         LIMoSim::FollowerModel *followerModel = followerModel_omnet->createFollowerModel(p_car);
 
+        LIMoSim::LaneChangeModel *laneChangeModel = new LIMoSim::MOBIL(p_car);
+
 
         p_car->setFollowerModel(followerModel);
+        p_car->setLaneChangeModel(laneChangeModel);
+
+
         p_car->setPositionInfo(info);
         p_car->setPosition(p_car->computeLanePosition(info.laneOffset_m, info.alignment_m, true));
         p_car->start();
