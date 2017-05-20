@@ -9,7 +9,7 @@
 #define INET_STRATEGICMODEL_H_
 
 #include <omnetpp.h>
-#include "core/mobility/mobilitymodels.h"
+#include "LIMoSim/mobility/mobilitymodels.h"
 
 using namespace omnetpp;
 

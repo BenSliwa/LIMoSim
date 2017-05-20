@@ -1,6 +1,6 @@
 #include "carui.h"
 #include "ui/map/pathlayer.h"
-#include "core/map/osm/vehicleentry.h"
+#include "LIMoSim/map/osm/vehicleentry.h"
 
 namespace LIMoSim
 {

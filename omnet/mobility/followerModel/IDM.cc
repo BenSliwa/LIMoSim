@@ -14,7 +14,7 @@
 // 
 
 #include "IDM.h"
-#include "core/mobility/followerModel/idm.h"
+#include "LIMoSim/mobility/followerModel/idm.h"
 
 namespace inet {
 

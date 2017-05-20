@@ -1,7 +1,7 @@
 #include "uisettings.h"
 #include <QFile>
 #include "ui/map/mapelementui.h"
-#include "core/map/mapdefinitions.h"
+#include "LIMoSim/map/mapdefinitions.h"
 #include "ui/map/mapui.h"
 
 namespace LIMoSim

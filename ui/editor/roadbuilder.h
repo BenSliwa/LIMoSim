@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDebug>
 
-#include "core/location/position.h"
+#include "LIMoSim/location/position.h"
 
 namespace LIMoSim
 {

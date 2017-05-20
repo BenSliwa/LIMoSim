@@ -20,7 +20,7 @@
 #include "inet/mobility/base/MovingMobilityBase.h"
 
 
-#include "core/vehicles/car.h"
+#include "LIMoSim/vehicles/car.h"
 
 namespace inet {
 

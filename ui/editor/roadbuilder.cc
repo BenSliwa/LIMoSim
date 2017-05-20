@@ -5,7 +5,7 @@
 #include "ui/map/nodeui.h"
 #include <QGuiApplication>
 
-#include "core/sim/simulation.h"
+#include "LIMoSim/sim/simulation.h"
 #include "ui/editor/selectionhandler.h"
 
 #include "ui/qteventscheduler.h"

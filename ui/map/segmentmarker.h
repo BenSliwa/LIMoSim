@@ -2,7 +2,7 @@
 #define SEGMENTMARKER_H
 
 #include "mapelementui.h"
-#include "core/map/segment.h"
+#include "LIMoSim/map/segment.h"
 
 namespace LIMoSim
 {

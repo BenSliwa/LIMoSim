@@ -1,7 +1,7 @@
 #include "segmentmarker.h"
 #include "uimanager.h"
 #include "pathlayer.h"
-#include "core/map/way.h"
+#include "LIMoSim/map/way.h"
 
 namespace LIMoSim
 {

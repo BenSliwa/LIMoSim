@@ -1,9 +1,9 @@
 #include "uimanager.h"
 #include <QQmlContext>
 
-#include "core/map/map.h"
-#include "core/map/node.h"
-#include "core/map/way.h"
+#include "LIMoSim/map/map.h"
+#include "LIMoSim/map/node.h"
+#include "LIMoSim/map/way.h"
 
 #include "ui/map/pathlayer.h"
 #include "ui/map/carui.h"
@@ -11,16 +11,16 @@
 #include "ui/uisettings.h"
 
 
-#include "core/settings/filehandler.h"
-#include "core/settings/domelement.h"
+#include "LIMoSim/settings/filehandler.h"
+#include "LIMoSim/settings/domelement.h"
 
-#include "core/sim/rng.h"
-#include "core/map/nodegrid.h"
+#include "LIMoSim/sim/rng.h"
+#include "LIMoSim/map/nodegrid.h"
 
-#include "core/map/osm/osmdocument.h"
-#include "core/settings/xmlparser.h"
+#include "LIMoSim/map/osm/osmdocument.h"
+#include "LIMoSim/settings/xmlparser.h"
 
-#include "core/map/trafficsignal.h"
+#include "LIMoSim/map/trafficsignal.h"
 
 
 #include "ui/plot/figure.h"

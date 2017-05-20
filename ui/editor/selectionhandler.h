@@ -6,7 +6,7 @@
 #include <QList>
 #include <QTimer>
 
-#include "core/sim/eventhandler.h"
+#include "LIMoSim/sim/eventhandler.h"
 #include "ui/plot/figure.h"
 
 namespace LIMoSim

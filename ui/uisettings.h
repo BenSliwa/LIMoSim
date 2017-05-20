@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QDebug>
-#include "core/settings/xmlparser.h"
+#include "LIMoSim/settings/xmlparser.h"
 
 #include "ui/plot/textstyle.h"
 #include "ui/plot/linestyle.h"

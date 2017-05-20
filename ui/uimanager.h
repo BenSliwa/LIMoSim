@@ -11,7 +11,7 @@
 #include "ui/uieventmanager.h"
 #include "ui/map/uielements.h"
 
-#include "core/sim/eventhandler.h"
+#include "LIMoSim/sim/eventhandler.h"
 #include "ui/editor/roadbuilder.h"
 
 namespace LIMoSim

@@ -2,7 +2,7 @@
 #define LIMOSIM_NODEUI_H
 
 #include "mapelementui.h"
-#include "core/map/node.h"
+#include "LIMoSim/map/node.h"
 #include <QList>
 
 namespace LIMoSim

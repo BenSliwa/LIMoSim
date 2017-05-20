@@ -14,8 +14,8 @@
 // 
 
 #include "Trip.h"
-#include "core/map/map.h"
-#include "core/map/osm/parser.h"
+#include "LIMoSim/map/map.h"
+#include "LIMoSim/map/osm/parser.h"
 
 namespace inet {
 

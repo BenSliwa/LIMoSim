@@ -1,7 +1,7 @@
 #include "nodeui.h"
 #include "pathlayer.h"
 #include "ui/uimanager.h"
-#include "core/map/trafficsignal.h"
+#include "LIMoSim/map/trafficsignal.h"
 
 namespace LIMoSim
 {

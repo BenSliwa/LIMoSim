@@ -2,7 +2,7 @@
 #define MAPUI_H
 
 #include "ui/plot/uielement.h"
-#include "core/location/position.h"
+#include "LIMoSim/location/position.h"
 
 namespace LIMoSim
 {

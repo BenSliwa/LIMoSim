@@ -2,7 +2,7 @@
 #define LIMOSIM_PATHLAYER_H
 
 #include "mapelementui.h"
-#include "core/map/map.h"
+#include "LIMoSim/map/map.h"
 
 namespace LIMoSim
 {

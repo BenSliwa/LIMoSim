@@ -1,5 +1,5 @@
 #include "graphplot.h"
-#include "core/sim/simulation.h"
+#include "LIMoSim/sim/simulation.h"
 #include "ui/qteventscheduler.h"
 
 namespace LIMoSim

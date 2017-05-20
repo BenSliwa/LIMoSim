@@ -1,5 +1,5 @@
 #include "qteventscheduler.h"
-#include "core/sim/eventhandler.h"
+#include "LIMoSim/sim/eventhandler.h"
 
 
 namespace LIMoSim

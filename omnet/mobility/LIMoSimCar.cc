@@ -15,18 +15,18 @@
 
 #include "LIMoSimCar.h"
 
-#include "core/map/map.h"
-#include "core/map/nodegrid.h"
+#include "LIMoSim/map/map.h"
+#include "LIMoSim/map/nodegrid.h"
 #include "followerModel/FollowerModel.h"
 #include "strategicModel/StrategicModel.h"
 
-#include "core/sim/simulation.h"
+#include "LIMoSim/sim/simulation.h"
 #include "omnet/sim/EventScheduler.h"
 
-#include "core/settings/xmlparser.h"
-#include "core/map/osm/vehicleentry.h"
+#include "LIMoSim/settings/xmlparser.h"
+#include "LIMoSim/map/osm/vehicleentry.h"
 
-#include "core/mobility/laneChange/mobil.h"
+#include "LIMoSim/mobility/laneChange/mobil.h"
 
 namespace inet {
 

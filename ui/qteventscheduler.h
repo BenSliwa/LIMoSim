@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QTimer>
-#include "core/sim/eventscheduler.h"
+#include "LIMoSim/sim/eventscheduler.h"
 
 namespace LIMoSim
 {

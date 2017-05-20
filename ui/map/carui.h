@@ -3,7 +3,7 @@
 
 
 #include "mapelementui.h"
-#include "core/vehicles/car.h"
+#include "LIMoSim/vehicles/car.h"
 
 namespace LIMoSim
 {

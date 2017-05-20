@@ -1,7 +1,7 @@
 #include <QGuiApplication>
-#include "core/sim/simulation.h"
+#include "LIMoSim/sim/simulation.h"
 #include "ui/uimanager.h"
-#include "core/location/position.h"
+#include "LIMoSim/location/position.h"
 
 #include <QFile>
 #include <QDebug>
@@ -9,11 +9,11 @@
 
 using namespace LIMoSim;
 
-#include "core/settings/filehandler.h"
-#include "core/settings/xmlparser.h"
+#include "LIMoSim/settings/filehandler.h"
+#include "LIMoSim/settings/xmlparser.h"
 
 
-#include "core/sim/rng.h"
+#include "LIMoSim/sim/rng.h"
 
 #include "ui/plot/box.h"
 #include "ui/qteventscheduler.h"
@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
 
 
     std::string dir = "D:/QtProjects/LIMoSim/resources/";
-    //dir = "C:/Users/Benjamin/Desktop/LIMoSim/resources/";
-    dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
+    dir = "C:/Users/Benjamin/Desktop/LIMoSim_dev/resources/";
+    //dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
 
     sim->load(dir + "TUDO.osm", dir + "Cars.xml");
 

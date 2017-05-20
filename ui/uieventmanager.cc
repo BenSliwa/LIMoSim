@@ -1,9 +1,9 @@
 #include "uieventmanager.h"
 #include "ui/map/nodeui.h"
 #include "uimanager.h"
-#include "core/map/node.h"
-#include "core/map/map.h"
-#include "core/mobility/routing/dijkstra.h"
+#include "LIMoSim/map/node.h"
+#include "LIMoSim/map/map.h"
+#include "LIMoSim/mobility/routing/dijkstra.h"
 
 #include "ui/map/mapui.h"
 #include "ui/map/pathlayer.h"

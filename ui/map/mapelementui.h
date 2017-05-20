@@ -4,7 +4,7 @@
 #include "ui/plot/uielement.h"
 #include "mapui.h"
 
-#include "core/location/position.h"
+#include "LIMoSim/location/position.h"
 #include "ui/uieventmanager.h"
 #include "ui/uisettings.h"
 #include "ui/editor/roadbuilder.h"
