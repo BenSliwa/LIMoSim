@@ -65,6 +65,14 @@ void MapUi::centerAt(const QPointF &_position)
     setOffset(p_viewPort->getCenter() - _position);
 }
 
+void MapUi::centerAtPosition(const Position &_position)
+{
+    QPointF position = getUiPosition(_position);
+    position = getVirtualCanvasPosition(position);
+
+    centerAt(position);
+}
+
 void MapUi::zoomIn()
 {
     p_settings->handleScale(p_settings->getScaleFactor() + 0.1, 0, 0);
@@ -131,6 +139,20 @@ bool MapUi::isVisible(const Position &_position)
     if(x>=m_bottomLeft.x && x<=m_topRight.x && y>=m_bottomLeft.y && y<=m_topRight.y)
         return true;
     return false;
+}
+
+double MapUi::getUiDistance(double _distance_m)
+{
+    return _distance_m * p_settings->getScaleFactor();
+}
+
+QPointF MapUi::getUiPosition(const Position &_position)
+{
+    QPointF offset = getOffset();
+    double x = getUiDistance(_position.x) + offset.x();
+    double y = getMapHeight() + offset.y() - getUiDistance(_position.y);
+
+    return QPointF(x,y);
 }
 
 double MapUi::getMapDistance(double _pixels)

@@ -20,6 +20,7 @@ public:
     void handleScale(double _factor, double _inc, double _x, double _y);
     void centerInViewPort();
     void centerAt(const QPointF &_position);
+    void centerAtPosition(const Position &_position);
 
     void zoomIn();
     void zoomOut();
@@ -29,7 +30,8 @@ public:
     void updateVisibleArea();
     bool isVisible(const Position &_position);
 
-
+    double getUiDistance(double _distance_m);
+    QPointF getUiPosition(const Position &_position);
     double getMapDistance(double _pixels);
     Position getMapPosition(const QPointF &_point);
 

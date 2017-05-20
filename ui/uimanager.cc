@@ -110,9 +110,8 @@ void UiManager::loadQml()
     settings->handleScale(scaleFactor, 0, 0);
 
     // set the offset the center the map in the viewport
-    p_map->setOffset(QPointF(95, -545));
-
-
+    p_map->centerInViewPort();
+    p_map->centerAtPosition(bounds.center);
 }
 
 bool UiManager::handleDrop(const QString &_path)
