@@ -4,6 +4,7 @@ namespace LIMoSim
 {
 
 Statistics::Statistics(const std::string &_id) :
+    EventHandler(),
     m_updateInterval(1),
     m_id(_id)
 {
@@ -23,6 +24,17 @@ Statistics::~Statistics()
 /*************************************
  *            PUBLIC METHODS         *
  ************************************/
+
+void Statistics::initialize()
+{
+    std::cout << "Statistics::initialize" << std::endl;
+}
+
+void Statistics::finish()
+{
+    std::cout << "Statistics::finish" << std::endl;
+}
+
 
 void Statistics::handleEvent(Event *_event)
 {

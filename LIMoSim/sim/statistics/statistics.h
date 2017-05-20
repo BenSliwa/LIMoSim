@@ -14,6 +14,9 @@ public:
     Statistics(const std::string &_id);
     ~Statistics();
 
+    virtual void initialize();
+    virtual void finish();
+
     void handleEvent(Event *_event);
 
     void addKey(const std::string &_key);

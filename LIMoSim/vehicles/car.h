@@ -46,7 +46,10 @@ public:
     Car(const std::string &_id, const std::string &_name="");
     virtual ~Car();
 
-    void start();
+    virtual void initialize() override;
+    virtual void finish();
+
+
 
     void handleEvent(Event *_event);
     double move(double _timeDelta_s);

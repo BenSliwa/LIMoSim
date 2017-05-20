@@ -6,6 +6,7 @@ namespace LIMoSim
 {
 
 TrafficSignal::TrafficSignal(Node *_node) :
+    EventHandler(),
     p_node(_node),
     m_state(TRAFFIC_SIGNAL::RED),
     m_green_s(10),
@@ -27,6 +28,18 @@ TrafficSignal::~TrafficSignal()
 /*************************************
  *            PUBLIC METHODS         *
  ************************************/
+
+
+void TrafficSignal::initialize()
+{
+
+}
+
+void TrafficSignal::finish()
+{
+
+}
+
 
 void TrafficSignal::setStateWithAngle(double _reference)
 {

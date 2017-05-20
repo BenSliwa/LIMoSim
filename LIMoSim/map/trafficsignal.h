@@ -24,6 +24,9 @@ public:
     TrafficSignal(Node *_node);
     ~TrafficSignal();
 
+    virtual void initialize();
+    virtual void finish();
+
     void setStateWithAngle(double _reference);
     double getStateDuration(int _state);
     int getNextState(int _state);

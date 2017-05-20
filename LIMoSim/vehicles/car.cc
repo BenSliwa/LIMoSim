@@ -55,8 +55,10 @@ Car::~Car()
  *            PUBLIC METHODS         *
  ************************************/
 
-void Car::start()
+void Car::initialize()
 {
+    std::cout << "Car::initialize" << std::endl;
+
     m_updateInterval_s = 25.0/1000.0;
     m_movementTimer = new Event(m_updateInterval_s, this, "Car::updateTimer");
     scheduleEvent(m_movementTimer);
@@ -65,6 +67,10 @@ void Car::start()
     scheduleEvent(m_laneChangeTimer);
 }
 
+void Car::finish()
+{
+    std::cout << "Car::finish" << std::endl;
+}
 
 void Car::handleEvent(Event *_event)
 {

@@ -46,6 +46,7 @@ SelectionHandler* SelectionHandler::getInstance()
  *            PUBLIC METHODS         *
  ************************************/
 
+
 void SelectionHandler::selectCar(CarUi *_car)
 {
     bool ctrlPressed = (QGuiApplication::keyboardModifiers()==Qt::ControlModifier);

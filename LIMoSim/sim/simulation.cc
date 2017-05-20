@@ -48,6 +48,24 @@ bool Simulation::hasInstance()
     return (simulationInstance!=0);
 }
 
+void Simulation::registerEventHandler(EventHandler *_eventHandler)
+{
+    m_eventHandler.push_back(_eventHandler);
+}
+
+void Simulation::deregisterEventHandler(EventHandler *_eventHandler)
+{
+    for(unsigned int i=0; i<m_eventHandler.size(); i++)
+    {
+        EventHandler *handler = m_eventHandler.at(i);
+        if(handler==_eventHandler)
+        {
+            m_eventHandler.erase(m_eventHandler.begin() + i);
+            break;
+        }
+    }
+}
+
 void Simulation::load(const std::string &_map, const std::string &_vehicles)
 {
     std::cout << "Simulation::load " << _map << "\t" << _vehicles << std::endl;
@@ -120,6 +138,14 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles)
     Car *c0 = map->getCar("1");
     c0->setMaxSpeed(10/3.6);
     c0->setSpeed(0);*/
+
+
+    // TODO: do this at the right point
+    for(unsigned int i=0; i<m_eventHandler.size(); i++)
+    {
+        EventHandler *handler = m_eventHandler.at(i);
+        handler->initialize();
+    }
 }
 
 
@@ -138,8 +164,6 @@ void Simulation::createCars(int _number)
         car->setSpeedBehaviorFactor(factor);
 
         map->setRandomPosition(car);
-
-        car->start();
     }
 }
 

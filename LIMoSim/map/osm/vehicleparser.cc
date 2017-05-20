@@ -79,11 +79,7 @@ void VehicleParser::parseCar(DOMElement *_dom)
     }
 
 
-
-
-
     car->setPositionInfo(info);
-    car->start();
 }
 
 void VehicleParser::parseCarTag(const std::string &_key, const Variant &_value, Car *_car)

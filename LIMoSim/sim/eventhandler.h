@@ -11,6 +11,10 @@ class EventHandler
 {
 public:
     EventHandler();
+    ~EventHandler();
+
+    virtual void initialize();
+    virtual void finish();
 
     void scheduleEvent(Event *_event, double _timeIncrement_s = 0);
 
@@ -25,6 +29,5 @@ protected:
 };
 
 }
-
 
 #endif // LIMOSIM_EVENTHANDLER_H

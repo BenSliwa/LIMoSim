@@ -15,9 +15,12 @@ class Simulation
 public:
     Simulation(EventScheduler *_scheduler = 0);
 
+
     static Simulation* getInstance(EventScheduler *_scheduler = 0);
     static bool hasInstance();
 
+    void registerEventHandler(EventHandler *_eventHandler);
+    void deregisterEventHandler(EventHandler *_eventHandler);
 
     void load(const std::string &_map, const std::string &_vehicles);
 
@@ -32,6 +35,7 @@ public:
 private:
     EventScheduler *m_eventScheduler;
 
+    std::vector<EventHandler*> m_eventHandler;
 
 
 

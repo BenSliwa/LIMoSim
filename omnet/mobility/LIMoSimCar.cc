@@ -115,14 +115,9 @@ void LIMoSimCar::setInitialPosition()
 
         p_car->setPositionInfo(info);
         p_car->setPosition(p_car->computeLanePosition(info.laneOffset_m, info.alignment_m, true));
-        p_car->start();
-
-
-
-        //map->setRandomPosition(p_car);
     }
 
-
+    p_car->initialize();
 
     updatePosition();
 

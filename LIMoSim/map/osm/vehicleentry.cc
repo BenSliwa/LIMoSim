@@ -182,9 +182,6 @@ Car* VehicleEntry::toCar()
         car->setPosition(car->computeLanePosition(info.laneOffset_m, info.alignment_m, true));
     }
 
-    car->start();
-
-
     return car;
 }
 
