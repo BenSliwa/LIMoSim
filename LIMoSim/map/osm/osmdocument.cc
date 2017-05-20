@@ -102,6 +102,7 @@ void OSMDocument::adjustNodePositions()
     }
 
 
+
 /*
     std::map<std::string, OSMNodeEntry>::iterator n;
     for(n=m_nodes.begin(); n!=m_nodes.end(); n++)

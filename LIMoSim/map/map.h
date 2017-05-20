@@ -16,6 +16,7 @@
 
 namespace LIMoSim
 {
+
 class Car;
 class Lane;
 class Node;
@@ -25,7 +26,13 @@ class Segment;
 class TrafficSignal;
 class Way;
 
-
+struct MapBounds
+{
+    Position origin;
+    Position center;
+    double width = 0;
+    double height = 0;
+};
 
 class Map
 {
@@ -36,6 +43,8 @@ public:
     static Map* getInstance();
 
     void clear();
+
+    MapBounds computeBounds();
 
     Node* createNode(const Position &_position, const std::string &_id="");
     void removeNode(Node *_node);

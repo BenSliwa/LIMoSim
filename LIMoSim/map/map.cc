@@ -59,6 +59,40 @@ void Map::clear()
     m_cars.clear();
 }
 
+MapBounds Map::computeBounds()
+{
+    MapBounds bounds;
+
+    double minX = std::numeric_limits<double>::max();
+    double maxX = std::numeric_limits<double>::min();
+    double minY = std::numeric_limits<double>::max();
+    double maxY = std::numeric_limits<double>::min();
+
+    std::map<std::string, Node*>::iterator it;
+    for(it=m_nodes.begin(); it!=m_nodes.end(); it++)
+    {
+        Position position = it->second->getPosition();
+        double x = position.x;
+        double y = position.y;
+
+        if(x<minX)
+            minX = x;
+        if(x>maxX)
+            maxX = x;
+        if(y<minY)
+            minY = y;
+        if(y>maxY)
+            maxY = y;
+    }
+
+    bounds.origin = Position(minX, minY);
+    bounds.width = maxX - minX;
+    bounds.height = maxY - minY;
+    bounds.center = bounds.origin + Position(bounds.width/2, bounds.height/2);
+
+    return bounds;
+}
+
 Node* Map::createNode(const Position &_position, const std::string &_id)
 {
     //

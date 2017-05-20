@@ -99,24 +99,18 @@ void UiManager::loadQml()
     QObject *object = m_qml.rootObjects().first();
     p_map = object->findChild<MapUi*>("map");
 
-    // apply settings
-    settings->handleScale(0.50, 0, 0);
-
-   // p_map->setOffset(QPointF(-27, 104));
-    p_map->centerInViewPort();
-
-
-    settings->handleScale(0.8, 0, 0);
-    p_map->setOffset(QPointF(-8, -581));
-
-    // scenario 3: crossing
-    //settings->handleScale(3.2, 0, 0);
-    //p_map->setOffset(QPointF(215, -5157));
-
-    //settings->handleScale(2.6, 0, 0);
-
     p_viewPort = ViewPort::getInstance();
 
+
+    Map *map = Map::getInstance();
+    MapBounds bounds = map->computeBounds();
+
+    // set the scale factor for showing the whole map in the viewport
+    double scaleFactor = std::min(p_viewPort->width() / bounds.width, p_viewPort->height() / bounds.height);
+    settings->handleScale(scaleFactor, 0, 0);
+
+    // set the offset the center the map in the viewport
+    p_map->setOffset(QPointF(95, -545));
 
 
 }
@@ -160,6 +154,7 @@ bool UiManager::loadScenario(const QString &_path)
 
     generateUiElements();
     p_map->getPathLayer()->update();
+
 
 
     return true;
