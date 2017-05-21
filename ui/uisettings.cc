@@ -135,6 +135,10 @@ LineStyle UiSettings::getLineStyle(DOMElement *_dom)
 
 void UiSettings::handleScale(double _factor, double _x, double _y)
 {
+    MapUi *map = MapUi::getInstance();
+    QPointF mouse(_x, _y);
+    Position position = map->getMapPosition(mouse);
+
     if(_factor>=0.1)
     {
         double inc = _factor - m_scaleFactor;
@@ -152,10 +156,14 @@ void UiSettings::handleScale(double _factor, double _x, double _y)
         }
 
 
-        MapUi::getInstance()->handleScale(_factor, inc, _x, _y);
+        map->handleScale(_factor, inc, _x, _y);
 
         emit repaint();
     }
+
+    // zoom at the mouse position
+    QPointF ui = map->getUiPosition(position);
+    map->setOffset(map->getOffset() - (ui - mouse));
 
 }
 
