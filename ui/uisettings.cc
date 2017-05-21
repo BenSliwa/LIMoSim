@@ -161,9 +161,12 @@ void UiSettings::handleScale(double _factor, double _x, double _y)
         emit repaint();
     }
 
-    // zoom at the mouse position
-    QPointF ui = map->getUiPosition(position);
-    map->setOffset(map->getOffset() - (ui - mouse));
+    if(_x>0 && _y>0)
+    {
+        // zoom at the mouse position
+        QPointF ui = map->getUiPosition(position);
+        map->setOffset(map->getOffset() - (ui - mouse));
+    }
 
 }
 
