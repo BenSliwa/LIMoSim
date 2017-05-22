@@ -40,11 +40,12 @@ void TrafficSignal::finish()
 
 }
 
-
 void TrafficSignal::setStateWithAngle(double _reference)
 {
     double delta = Math::getMinimumAngleDifference(m_wayAngle, _reference);
-    if(fabs(delta)>45)
+    int index = fabs(delta)/45;
+
+    if(index%2!=0)
         setState(TRAFFIC_SIGNAL::RED);
     else
         setState(TRAFFIC_SIGNAL::GREEN);

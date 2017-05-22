@@ -1,5 +1,6 @@
 # LIMoSim: Lighweight ICT-centric Mobility Simulation
 
+<span style="color:red">Preview Version</span>
 
 ### Editor
 - **Right Click on segment marker** : transform the marker to a node

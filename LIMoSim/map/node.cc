@@ -469,14 +469,14 @@ void Node::updateTrafficSignals()
     }
 
     // set the first signal depending on the road direction
-
-
-
-    // set all other signals depending on the first one
-    for(unsigned int i=1; i<trafficSignals.size(); i++)
+    if(trafficSignals.size()>1)
     {
-        TrafficSignal *signal = trafficSignals.at(i);
-        signal->setStateWithAngle(trafficSignals.at(0)->getWayAngle());
+        // set all other signals depending on the first one
+        for(unsigned int i=0; i<trafficSignals.size(); i++)
+        {
+            TrafficSignal *signal = trafficSignals.at(i);
+            signal->setStateWithAngle(trafficSignals.at(0)->getWayAngle());
+        }
     }
 
 
