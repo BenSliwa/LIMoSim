@@ -5,7 +5,6 @@
 
 #include <QFile>
 #include <QDebug>
-#include <QDebug>
 
 using namespace LIMoSim;
 
@@ -29,8 +28,6 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
 
 int main(int argc, char *argv[])
 {
-    qDebug() << argc;
-
     qInstallMessageHandler(myMessageOutput);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
@@ -41,7 +38,7 @@ int main(int argc, char *argv[])
 
 
     std::string dir = "D:/QtProjects/LIMoSim/resources/";
-    dir = "C:/Users/Benjamin/Desktop/LIMoSim_dev/resources/";
+    //dir = "C:/Users/Benjamin/Desktop/LIMoSim_dev/resources/";
     //dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
 
     sim->load(dir + "TUDO.osm", dir + "Cars.xml");

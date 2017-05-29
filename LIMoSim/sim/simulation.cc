@@ -130,16 +130,6 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles)
         }
     }
 
-
-   // createCars(100);
-
-    /*
-    createCars(2);
-    Car *c0 = map->getCar("1");
-    c0->setMaxSpeed(10/3.6);
-    c0->setSpeed(0);*/
-
-
     // TODO: do this at the right point
     for(unsigned int i=0; i<m_eventHandler.size(); i++)
     {
@@ -156,7 +146,7 @@ void Simulation::createCars(int _number)
     {
         Car *car = map->createCar();
 
-        car->setMobilityModel(new FollowLane(car));        
+        car->setMobilityModel(new RandomDirection(car));        
         car->setFollowerModel(new IDM(car));
         car->setLaneChangeModel(new MOBIL(car));
 

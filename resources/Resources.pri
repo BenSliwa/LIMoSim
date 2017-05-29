@@ -1,3 +1,0 @@
-RESOURCES += \
-    $$PWD/resources.qrc
-

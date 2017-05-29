@@ -15,7 +15,3 @@ include(../LIMoSim/LIMoSim.pri)
 include(Ui.pri)
 include(../resources/Resources.pri)
 
-RESOURCES +=
-
-DISTFILES +=
-

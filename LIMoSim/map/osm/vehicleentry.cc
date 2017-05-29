@@ -151,7 +151,7 @@ Car* VehicleEntry::toCar()
             }
             else if(type=="FollowLane")
             {
-                FollowLane *followLane = new FollowLane(car);
+                RandomDirection *followLane = new RandomDirection(car);
                 car->setMobilityModel(followLane);
             }
         }
