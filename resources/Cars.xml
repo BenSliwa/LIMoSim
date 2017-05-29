@@ -14,7 +14,7 @@
 		<followerModel type="IDM"/>
 		<laneChangeModel type="MOBIL"/>
 	</car>
-	<car num="10">
+	<car num="0">
 		<tag k="speed" v="50"/>
 		<tag k="maxSpeed" v="50"/>
 		<mobilityModel type="FollowLane"/>

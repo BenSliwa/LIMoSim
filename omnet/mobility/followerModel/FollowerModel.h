@@ -17,7 +17,8 @@
 #define __INET_FOLLOWERMODEL_H_
 
 #include <omnetpp.h>
-#include "core/mobility/followerModel/followermodel.h"
+#include "LIMoSim/mobility/followerModel/followermodel.h"
+
 
 using namespace omnetpp;
 

@@ -149,7 +149,7 @@ Car* VehicleEntry::toCar()
 
                 car->setMobilityModel(trip);
             }
-            else if(type=="FollowLane")
+            else if(type=="RandomDirection")
             {
                 RandomDirection *followLane = new RandomDirection(car);
                 car->setMobilityModel(followLane);

@@ -1,9 +1,0 @@
-<osm generator="SCSIM">
-	<node id="0" x="-10" y="-10"/>
-	<node id="1" x="10" y="10"/>
-	<way id="0">
-		<tag k="highway" v="primary"/>
-		<nd ref="0"/>
-		<nd ref="1"/>
-	</way>
-</osm>
