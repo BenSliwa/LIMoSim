@@ -32,14 +32,15 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
+
     QtEventScheduler scheduler;
     Simulation *sim = Simulation::getInstance(&scheduler);
 
 
-
+    /*************************************************
+     *                   ADJUST THIS !
+    **************************************************/
     std::string dir = "D:/QtProjects/LIMoSim/resources/";
-    //dir = "C:/Users/Benjamin/Desktop/LIMoSim_dev/resources/";
-    dir = "/home/sliwa/inet/inet/src/inet/LIMoSim/resources/";
 
     sim->load(dir + "TUDO.osm", dir + "Cars.xml");
 

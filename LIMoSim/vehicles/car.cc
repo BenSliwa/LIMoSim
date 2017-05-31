@@ -57,8 +57,6 @@ Car::~Car()
 
 void Car::initialize()
 {
-    std::cout << "Car::initialize" << std::endl;
-
     m_updateInterval_s = 25.0/1000.0;
     m_movementTimer = new Event(m_updateInterval_s, this, "Car::updateTimer");
     scheduleEvent(m_movementTimer);
@@ -98,23 +96,18 @@ void Car::handleEvent(Event *_event)
     }
     else if(_event==m_laneChangeTimer)
     {
-        if(getId()=="0")
+
+        if(m_alignmentControl.getState()==ALIGN::IDLE)
         {
-            if(m_alignmentControl.getState()==ALIGN::IDLE)
-            {
-                double leftIncentive = m_laneChangeModel->computeLeftLaneIncentive();
-                double rightIncentive = m_laneChangeModel->computeRightLaneIncentive();
+            double leftIncentive = m_laneChangeModel->computeLeftLaneIncentive();
+            double rightIncentive = m_laneChangeModel->computeRightLaneIncentive();
 
-                //std::cout << leftIncentive << "\t" << rightIncentive << std::endl;
+            //std::cout << leftIncentive << "\t" << rightIncentive << std::endl;
 
-                if(leftIncentive>0.1)
-                    switchToLeftLane();
-                else if(rightIncentive>0.1)
-                    switchToRightLane();
-            }
-
-
-
+            if(leftIncentive>0.1)
+                switchToLeftLane();
+            else if(rightIncentive>0.1)
+                switchToRightLane();
         }
 
         scheduleEvent(m_laneChangeTimer, 1);

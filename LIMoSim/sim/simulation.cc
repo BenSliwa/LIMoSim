@@ -79,7 +79,7 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles)
     {
         OSMDocument document = OSMDocument::fromXML(xml.parse(optPath));
     }
-    else
+    else if(FileHandler::exists(_map))
     {
         OSMDocument document = OSMDocument::fromXML(xml.parse(_map));
         FileHandler::write(document.toXML()->toString(), optPath);
