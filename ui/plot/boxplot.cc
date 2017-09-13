@@ -1,4 +1,5 @@
 #include "boxplot.h"
+#include <cmath>
 
 namespace LIMoSim
 {
