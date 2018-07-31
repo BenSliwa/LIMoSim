@@ -22,7 +22,7 @@
 
 using namespace omnetpp;
 
-class LIMoSim::Car;
+namespace LIMoSim { class Car; }
 
 namespace inet {
 
