@@ -93,9 +93,9 @@ void LIMoSimCar::setInitialPosition()
         std::cout << wayId << "\t" << segmentIndex << "\t" << laneIndex << std::endl;
 
 
-        LIMoSim::Way *way = map->getWay(wayId);
-        LIMoSim::Segment *segment = way->getSegment(segmentIndex);
-        info.lane = segment->getLanes().at(laneIndex);
+        LIMoSim::Way *way = (wayId == "-1") ? map->getRandomWay() : map->getWay(wayId);
+        LIMoSim::Segment *segment = (segmentIndex == -1) ? map->getRandomSegment(way) : way->getSegment(segmentIndex);
+        info.lane = (laneIndex == -1) ? map->getRandomLane(segment) : segment->getLane(laneIndex);
         info.laneOffset_m = par("offset").doubleValue();
 
         //
