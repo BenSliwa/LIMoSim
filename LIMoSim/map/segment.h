@@ -135,6 +135,7 @@ public:
     std::string toString();
 
     // lanes
+    int getNumLanes() const { return m_lanes.size(); }
     int getLaneIndex(Lane *_lane);
     Lane* getLane(int _index);
     std::vector<Lane*> getBackwardLanes();
