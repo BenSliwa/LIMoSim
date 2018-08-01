@@ -113,11 +113,11 @@ void LIMoSimCar::setInitialPosition()
 
         //
         LIMoSim::FollowerModel *followerModel = followerModel_omnet->createFollowerModel(p_car);
+        p_car->setFollowerModel(followerModel);
+
+
 
         LIMoSim::LaneChangeModel *laneChangeModel = new LIMoSim::MOBIL(p_car);
-
-
-        p_car->setFollowerModel(followerModel);
         p_car->setLaneChangeModel(laneChangeModel);
 
 
