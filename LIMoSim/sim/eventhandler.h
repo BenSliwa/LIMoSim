@@ -11,7 +11,7 @@ class EventHandler
 {
 public:
     EventHandler();
-    ~EventHandler();
+    virtual ~EventHandler();
 
     virtual void initialize();
     virtual void finish();
