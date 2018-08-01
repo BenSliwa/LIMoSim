@@ -36,8 +36,10 @@ protected:
     virtual void initialize(int _stage) override;
     virtual void setInitialPosition() override;
     virtual void move() override;
+    virtual void orient() override;
 
     void updatePosition();
+    void updateOrientation();
 
 private:
     LIMoSim::Car *p_car = 0;

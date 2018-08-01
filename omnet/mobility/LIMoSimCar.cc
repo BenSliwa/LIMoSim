@@ -138,14 +138,31 @@ void LIMoSimCar::move()
         updatePosition();
 }
 
+void LIMoSimCar::orient()
+{
+    // we are not moving here, just updating the ui
+    if(p_car)
+        updateOrientation();
+}
+
 void LIMoSimCar::updatePosition()
 {
     if(p_car)
     {
         LIMoSim::Position position = p_car->getPosition();
         Coord coord(position.x, position.y, position.z);
-
         lastPosition = coord;
+    }
+}
+
+void LIMoSimCar::updateOrientation()
+{
+    if(p_car)
+    {
+        LIMoSim::Orientation orientation = p_car->getOrientation();
+        lastOrientation.alpha = deg(orientation.getYaw());
+        lastOrientation.beta = deg(orientation.getPitch());
+        lastOrientation.gamma = deg(orientation.getRoll());
     }
 }
 
