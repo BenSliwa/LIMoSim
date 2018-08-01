@@ -133,7 +133,6 @@ void OSMDocument::adjustNodePositions()
         {
             Vector3d offset = m_wgs.getOffset(Position(_entry.lon, _entry.lat), m_bounds.getOrigin());
             _entry.position = offset;
-            _entry.position = _entry.position + Vector3d(100, 10);
         }
         else
             _entry.position = Position(_entry.x, _entry.y);
