@@ -65,6 +65,10 @@ void OSMDocument::createOSMEntries(DOMElement *_entry)
         {
            // parseController(element);
         }
+        else if(name=="bounds")
+        {
+            m_boundsentry = OSMBoundsEntry::fromXML(element, this);
+        }
     }
 }
 
@@ -222,6 +226,8 @@ DOMElement* OSMDocument::toXML()
     DOMElement *xml = new DOMElement("osm");
     xml->setAttribute("generator", Variant("LIMoSim"));
 
+    // bounds
+    xml->appendChild(m_boundsentry.toXML());
     // nodes
     std::map<std::string,Node*> nodes = p_map->getNodes();
     std::map<std::string,Node*>::iterator n;

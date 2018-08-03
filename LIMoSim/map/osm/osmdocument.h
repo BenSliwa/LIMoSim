@@ -1,6 +1,7 @@
 #ifndef LIMOSIM_OSMDOCUMENT_H
 #define LIMOSIM_OSMDOCUMENT_H
 
+#include "osmboundsentry.h"
 #include "osmnodeentry.h"
 #include "osmwayentry.h"
 #include "osmrelationentry.h"
@@ -51,6 +52,7 @@ private:
     WGS84 m_wgs;
     Bounds m_bounds;
 
+    OSMBoundsEntry m_boundsentry;
     std::map<std::string, OSMNodeEntry> m_nodes;
     std::map<std::string, OSMWayEntry> m_ways;
     std::vector<OSMRelationEntry> m_relations;
