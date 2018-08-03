@@ -19,6 +19,7 @@ OSMDocument OSMDocument::fromXML(DOMElement *_entry)
         document.useWgs = false;
 
     document.createOSMEntries(_entry);
+
     document.adjustNodePositions();
 
     if(document.useWgs)
@@ -68,6 +69,10 @@ void OSMDocument::createOSMEntries(DOMElement *_entry)
         else if(name=="bounds")
         {
             m_boundsentry = OSMBoundsEntry::fromXML(element, this);
+            m_bounds.minLat = m_boundsentry.minlat;
+            m_bounds.minLon = m_boundsentry.minlon;
+            m_bounds.maxLat = m_boundsentry.maxlat;
+            m_bounds.maxLon = m_boundsentry.maxlon;
         }
     }
 }
@@ -149,14 +154,6 @@ void OSMDocument::adjustNodePositions()
 
 void OSMDocument::adjustBounds(const OSMNodeEntry &_node)
 {
-    if(_node.lat<m_bounds.minLat)
-        m_bounds.minLat = _node.lat;
-    if(_node.lat>m_bounds.maxLat)
-        m_bounds.maxLat = _node.lat;
-    if(_node.lon<m_bounds.minLon)
-        m_bounds.minLon = _node.lon;
-    if(_node.lon>m_bounds.maxLon)
-        m_bounds.maxLon = _node.lon;
 }
 
 void OSMDocument::createRelations()
