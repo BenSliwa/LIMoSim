@@ -4,8 +4,8 @@ namespace LIMoSim
 {
 
 OSMDocument::OSMDocument() :
-    p_map(Map::getInstance()),
-    useWgs(true)
+    useWgs(true),
+    p_map(Map::getInstance())
 {
 
 }
