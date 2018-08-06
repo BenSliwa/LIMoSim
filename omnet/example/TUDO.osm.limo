@@ -1,0 +1,895 @@
+<osm generator="LIMoSim">
+	<bounds maxlat="51.4949" maxlon="7.41916" minlat="51.4886" minlon="7.40232"/>
+	<node id="102976495" x="212.299" y="54.3415"/>
+	<node id="102976497" x="206.737" y="5.3698"/>
+	<node id="1120120820" x="720.32" y="611.547"/>
+	<node id="1124823705" x="657.676" y="176.016">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="125348776" x="307.564" y="524.121"/>
+	<node id="130117508" x="92.8819" y="299.655"/>
+	<node id="130117546" x="92.6401" y="262.31"/>
+	<node id="1432513821" x="957.703" y="422.328"/>
+	<node id="1448929542" x="809.216" y="207.747"/>
+	<node id="1473417250" x="427.271" y="126.634"/>
+	<node id="1483476908" x="1121.01" y="197.262"/>
+	<node id="1491580816" x="1062.38" y="10.7618"/>
+	<node id="1491580835" x="1061.92" y="32.1522"/>
+	<node id="1491580853" x="1011.36" y="212.285">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="traffic_signals:direction" v="forward"/>
+	</node>
+	<node id="1491580857" x="1024.24" y="226.541">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="traffic_signals:direction" v="backward"/>
+	</node>
+	<node id="1496519940" x="830.922" y="211.685"/>
+	<node id="153541711" x="956.432" y="221.759"/>
+	<node id="153541731" x="981.764" y="217.199"/>
+	<node id="160373" x="5.79605" y="85.362"/>
+	<node id="160374" x="215.504" y="84.541"/>
+	<node id="160375" x="540.567" y="150.898"/>
+	<node id="160385" x="42.1544" y="85.6394"/>
+	<node id="160388" x="912.889" y="223.901"/>
+	<node id="164317" x="242.536" y="510.264"/>
+	<node id="164513" x="1126.31" y="274.248"/>
+	<node id="164516" x="237.866" y="446.137"/>
+	<node id="164522" x="955.485" y="431.88"/>
+	<node id="1647851191" x="867.1" y="642.701"/>
+	<node id="1647851192" x="985.218" y="216.545"/>
+	<node id="1837854880" x="228.954" y="240.276"/>
+	<node id="2023126442" x="685.033" y="604.113"/>
+	<node id="2023126444" x="762.385" y="620.5">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="21453893" x="235.13" y="380.723"/>
+	<node id="21453894" x="228.326" y="231.068"/>
+	<node id="21453895" x="221.804" y="154.715"/>
+	<node id="2147773678" x="256.691" y="663.747"/>
+	<node id="2147803005" x="448.002" y="553.899"/>
+	<node id="243090861" x="558.21" y="154.67"/>
+	<node id="243090862" x="514.308" y="145.284"/>
+	<node id="243091055" x="560.227" y="577.697"/>
+	<node id="243092689" x="922.919" y="224.123"/>
+	<node id="243882202" x="232.45" y="293.841"/>
+	<node id="246584324" x="671.997" y="178.956"/>
+	<node id="246619760" x="576.082" y="23.2876"/>
+	<node id="247655796" x="229.915" y="254.366"/>
+	<node id="247655824" x="235.676" y="394.015"/>
+	<node id="2482077605" x="935.189" y="528.803"/>
+	<node id="249396642" x="993.101" y="355.849"/>
+	<node id="249398800" x="818.473" y="209.278"/>
+	<node id="249398913" x="678.166" y="180.31"/>
+	<node id="249457378" x="934.567" y="223.745"/>
+	<node id="249459236" x="554.929" y="153.971"/>
+	<node id="249462447" x="1042.99" y="680.2"/>
+	<node id="249462448" x="1069.64" y="685.87"/>
+	<node id="249538986" x="921.614" y="591.543"/>
+	<node id="249539593" x="984.97" y="370.161"/>
+	<node id="249539594" x="961.696" y="412.875"/>
+	<node id="249539595" x="1000.22" y="337.443"/>
+	<node id="249539596" x="1005.77" y="319.581"/>
+	<node id="254461745" x="788.408" y="626.014"/>
+	<node id="255159153" x="966.158" y="403.068"/>
+	<node id="255161605" x="1092.65" y="248.375"/>
+	<node id="267842725" x="315.847" y="525.774"/>
+	<node id="267842727" x="346.167" y="532.298"/>
+	<node id="268456660" x="646.788" y="596.037"/>
+	<node id="268556148" x="942.94" y="490.249"/>
+	<node id="268558637" x="930.373" y="552.768"/>
+	<node id="268563612" x="924.633" y="578.895"/>
+	<node id="268566714" x="893.165" y="223.69"/>
+	<node id="269614115" x="487.027" y="562.209"/>
+	<node id="269696747" x="351.804" y="533.507"/>
+	<node id="269697937" x="321.781" y="527.117"/>
+	<node id="269698493" x="410.007" y="545.8"/>
+	<node id="271159786" x="93.8767" y="340.427"/>
+	<node id="273109929" x="1027.26" y="212.573"/>
+	<node id="273109944" x="971.989" y="219.385"/>
+	<node id="275672211" x="1130.15" y="256.219"/>
+	<node id="275672221" x="997.605" y="214.182"/>
+	<node id="276044225" x="1218.76" y="137.374"/>
+	<node id="276830611" x="89.2067" y="1.68638"/>
+	<node id="282657371" x="452.956" y="131.971"/>
+	<node id="286338878" x="219.359" y="127.167"/>
+	<node id="286531881" x="812.732" y="631.218"/>
+	<node id="286567531" x="806.729" y="629.897"/>
+	<node id="2881724656" x="947.465" y="468.803"/>
+	<node id="290386771" x="725.833" y="612.778"/>
+	<node id="302799818" x="571.882" y="157.599"/>
+	<node id="311584339" x="1009.51" y="302.517"/>
+	<node id="313473120" x="283.364" y="97.3221"/>
+	<node id="3138393854" x="574.5" y="30.1552"/>
+	<node id="3236937406" x="30.1616" y="85.7836">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="3236937455" x="22.901" y="481.928">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="32558269" x="738.441" y="193.224"/>
+	<node id="32558270" x="1019.09" y="252.325"/>
+	<node id="32675941" x="297.416" y="100.362"/>
+	<node id="3441521491" x="177.557" y="495.564"/>
+	<node id="3441538569" x="437.716" y="551.714"/>
+	<node id="3441540650" x="523.137" y="569.864"/>
+	<node id="3441540731" x="601.235" y="585.985"/>
+	<node id="3441544701" x="828.718" y="634.757"/>
+	<node id="3441554239" x="898.45" y="693.259"/>
+	<node id="3441558815" x="1075.06" y="686.946"/>
+	<node id="3441560683" x="1115.91" y="695.733"/>
+	<node id="3451322093" x="953.088" y="442.798"/>
+	<node id="3460209387" x="1040.31" y="679.635"/>
+	<node id="3569208993" x="916.73" y="611.624"/>
+	<node id="3570202327" x="375.051" y="116.139"/>
+	<node id="3570202330" x="257.133" y="92.0299"/>
+	<node id="3570202331" x="914.077" y="652.852"/>
+	<node id="3570202332" x="942.131" y="658.81"/>
+	<node id="360645773" x="1107.82" y="243.915"/>
+	<node id="360732103" x="1132.02" y="232.854"/>
+	<node id="361358711" x="494.053" y="140.624"/>
+	<node id="362654646" x="617.242" y="167.529"/>
+	<node id="370082627" x="252.049" y="717.889"/>
+	<node id="371758931" x="2.46626" y="85.2955"/>
+	<node id="3751855287" x="1041.4" y="144.574"/>
+	<node id="3751855825" x="1031.61" y="191.56">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="traffic_signals:direction" v="backward"/>
+	</node>
+	<node id="3751855835" x="1018.94" y="211.941"/>
+	<node id="3751855856" x="959.685" y="221.26"/>
+	<node id="3751855907" x="1021.54" y="239.688"/>
+	<node id="3783376390" x="356.509" y="112.366"/>
+	<node id="4109929800" x="564.849" y="69.8518"/>
+	<node id="4163950055" x="95.9285" y="482.217"/>
+	<node id="4163950062" x="242.246" y="507.424"/>
+	<node id="4172700327" x="1059.72" y="48.4613"/>
+	<node id="4172700486" x="1060.37" y="48.8164"/>
+	<node id="4172705000" x="1115.86" y="189.94"/>
+	<node id="4172705001" x="1109.17" y="182.207"/>
+	<node id="4172705007" x="1096.22" y="169.814"/>
+	<node id="4172705009" x="1090.76" y="164.811"/>
+	<node id="4172705013" x="1075.16" y="144.641"/>
+	<node id="4199822107" x="1100.39" y="173.797"/>
+	<node id="430054740" x="249.817" y="729.183"/>
+	<node id="4346024044" x="164.618" y="82.655"/>
+	<node id="449633217" x="1061.47" y="15.9763"/>
+	<node id="449633219" x="1059.57" y="75.6099"/>
+	<node id="449633221" x="1069.86" y="133.624"/>
+	<node id="449633222" x="1110.18" y="183.172"/>
+	<node id="449633224" x="1126.18" y="208.69"/>
+	<node id="449633226" x="1130.85" y="236.582"/>
+	<node id="461153104" x="721.287" y="189.762"/>
+	<node id="461153115" x="948.494" y="463.766"/>
+	<node id="4625438212" x="956.535" y="427.398"/>
+	<node id="4690495585" x="654.381" y="597.634"/>
+	<node id="477805" x="907.065" y="651.365">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="477807" x="111.811" y="482.594"/>
+	<node id="477808" x="36.835" y="482.161"/>
+	<node id="50835065" x="97.6348" y="604.402"/>
+	<node id="50835073" x="90.913" y="608.44"/>
+	<node id="52919181" x="95.8939" y="479.898"/>
+	<node id="52919182" x="3.5854" y="609.117"/>
+	<node id="52919183" x="89.7732" y="84.2415"/>
+	<node id="52919184" x="254.626" y="704.875"/>
+	<node id="566633489" x="227.4" y="215.868"/>
+	<node id="571819671" x="1061.68" y="101.25"/>
+	<node id="59058561" x="578.244" y="13.2359"/>
+	<node id="59058566" x="582.458" y="6.31284"/>
+	<node id="620856102" x="238.232" y="88.2245"/>
+	<node id="627846556" x="45.8227" y="480.819"/>
+	<node id="667992811" x="89.6212" y="37.866"/>
+	<node id="670097774" x="222.288" y="159.463"/>
+	<node id="677230736" x="89.2827" y="5.39199"/>
+	<node id="677230778" x="31.488" y="84.541"/>
+	<node id="677230844" x="89.6419" y="21.3461"/>
+	<node id="677230875" x="129.973" y="83.3983"/>
+	<node id="677230881" x="90.9752" y="130.484"/>
+	<node id="677230898" x="91.2861" y="160.317"/>
+	<node id="677231270" x="91.4657" y="177.714"/>
+	<node id="677231273" x="91.7628" y="192.813"/>
+	<node id="677231274" x="91.7766" y="196.098"/>
+	<node id="677231290" x="91.894" y="210.132"/>
+	<node id="677231291" x="92.2394" y="224.356"/>
+	<node id="677231297" x="92.0253" y="241.974"/>
+	<node id="677231298" x="92.3223" y="227.684"/>
+	<node id="677231366" x="93.0132" y="307.809"/>
+	<node id="677231367" x="93.3793" y="316.807"/>
+	<node id="677231498" x="93.5796" y="326.315"/>
+	<node id="677231503" x="93.7731" y="335.524"/>
+	<node id="677231548" x="94.7126" y="403.323"/>
+	<node id="677231549" x="94.7057" y="399.229"/>
+	<node id="677231620" x="31.3913" y="481.052"/>
+	<node id="677231621" x="60.1159" y="480.564"/>
+	<node id="677231627" x="34.1062" y="481.007"/>
+	<node id="677231700" x="96.039" y="490.094"/>
+	<node id="677231709" x="96.5917" y="529.513"/>
+	<node id="677231793" x="207.166" y="8.53177"/>
+	<node id="677231807" x="211.159" y="38.2321"/>
+	<node id="677231808" x="173.509" y="82.4663"/>
+	<node id="677231810" x="194.62" y="82.7881"/>
+	<node id="677231865" x="223.255" y="170.613"/>
+	<node id="677231868" x="225.224" y="193.39"/>
+	<node id="677231902" x="230.785" y="260.258"/>
+	<node id="677231904" x="232.561" y="296.67"/>
+	<node id="677231906" x="232.809" y="304.714"/>
+	<node id="677231968" x="233.776" y="336.367"/>
+	<node id="677231969" x="233.645" y="332.151"/>
+	<node id="677231971" x="235.78" y="396.256"/>
+	<node id="677232053" x="239.317" y="478.356"/>
+	<node id="677232118" x="256.905" y="666.099"/>
+	<node id="69329032" x="1026.31" y="253.091"/>
+	<node id="69329037" x="1071.49" y="250.428"/>
+	<node id="69329042" x="1123.69" y="237.614"/>
+	<node id="69329045" x="1137.25" y="227.972"/>
+	<node id="69329048" x="1160.91" y="203.398"/>
+	<node id="69329051" x="1203.37" y="155.369"/>
+	<node id="69329052" x="1208.49" y="149.655"/>
+	<node id="768590778" x="47.2181" y="84.4634"/>
+	<node id="768590779" x="51.7016" y="84.2859"/>
+	<node id="846451200" x="399.789" y="121.164"/>
+	<node id="88300981" x="463.85" y="134.422"/>
+	<node id="88300983" x="572.483" y="38.9089"/>
+	<node id="944495413" x="1056.8" y="74.9664"/>
+	<node id="944495415" x="1084.39" y="157.588"/>
+	<node id="944495418" x="1048.78" y="111.213"/>
+	<node id="944495420" x="1065.35" y="121.187"/>
+	<way id="122585630">
+		<nd ref="273109929"/>
+		<nd ref="1491580857"/>
+		<nd ref="3751855907"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="15460790">
+		<nd ref="243092689"/>
+		<nd ref="249457378"/>
+		<nd ref="153541711"/>
+		<nd ref="3751855856"/>
+		<nd ref="273109944"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="221176822">
+		<nd ref="249396642"/>
+		<nd ref="249539593"/>
+		<nd ref="255159153"/>
+		<nd ref="249539594"/>
+		<nd ref="1432513821"/>
+		<nd ref="4625438212"/>
+		<nd ref="164522"/>
+		<nd ref="3451322093"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="25091238">
+		<nd ref="160374"/>
+		<nd ref="102976495"/>
+		<nd ref="677231807"/>
+		<nd ref="677231793"/>
+		<nd ref="102976497"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="28719995">
+		<nd ref="69329037"/>
+		<nd ref="255161605"/>
+		<nd ref="360645773"/>
+		<nd ref="69329042"/>
+		<nd ref="360732103"/>
+		<nd ref="69329045"/>
+		<nd ref="69329048"/>
+		<nd ref="69329051"/>
+		<nd ref="69329052"/>
+		<nd ref="276044225"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="30836171">
+		<nd ref="32558270"/>
+		<nd ref="311584339"/>
+		<nd ref="249539596"/>
+		<nd ref="249539595"/>
+		<nd ref="249396642"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="30977199">
+		<nd ref="160374"/>
+		<nd ref="620856102"/>
+		<nd ref="3570202330"/>
+		<nd ref="313473120"/>
+		<nd ref="32675941"/>
+		<nd ref="3783376390"/>
+		<nd ref="3570202327"/>
+		<nd ref="846451200"/>
+		<nd ref="1473417250"/>
+		<nd ref="282657371"/>
+		<nd ref="88300981"/>
+		<nd ref="361358711"/>
+		<nd ref="243090862"/>
+		<nd ref="160375"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="30977200">
+		<nd ref="160385"/>
+		<nd ref="3236937406"/>
+		<nd ref="160373"/>
+		<nd ref="371758931"/>
+		<nd ref="677230778"/>
+		<nd ref="768590778"/>
+		<nd ref="768590779"/>
+		<nd ref="52919183"/>
+		<nd ref="677230875"/>
+		<nd ref="4346024044"/>
+		<nd ref="677231808"/>
+		<nd ref="677231810"/>
+		<nd ref="160374"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="31105077">
+		<nd ref="477805"/>
+		<nd ref="3570202331"/>
+		<nd ref="3570202332"/>
+		<nd ref="3460209387"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="32997531">
+		<nd ref="276830611"/>
+		<nd ref="677230736"/>
+		<nd ref="677230844"/>
+		<nd ref="667992811"/>
+		<nd ref="52919183"/>
+		<nd ref="677230881"/>
+		<nd ref="677230898"/>
+		<nd ref="677231270"/>
+		<nd ref="677231273"/>
+		<nd ref="677231274"/>
+		<nd ref="677231290"/>
+		<nd ref="677231291"/>
+		<nd ref="677231298"/>
+		<nd ref="677231297"/>
+		<nd ref="130117546"/>
+		<nd ref="130117508"/>
+		<nd ref="677231366"/>
+		<nd ref="677231367"/>
+		<nd ref="677231498"/>
+		<nd ref="677231503"/>
+		<nd ref="271159786"/>
+		<nd ref="677231549"/>
+		<nd ref="677231548"/>
+		<nd ref="52919181"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Martin-Schmeißer-Weg"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337055293">
+		<nd ref="677231620"/>
+		<nd ref="677231627"/>
+		<nd ref="627846556"/>
+		<nd ref="677231621"/>
+		<nd ref="52919181"/>
+		<nd ref="477807"/>
+		<nd ref="3441521491"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337055448">
+		<nd ref="3441521491"/>
+		<nd ref="164317"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056061">
+		<nd ref="125348776"/>
+		<nd ref="267842725"/>
+		<nd ref="269697937"/>
+		<nd ref="267842727"/>
+		<nd ref="269696747"/>
+		<nd ref="269698493"/>
+		<nd ref="3441538569"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056165">
+		<nd ref="269614115"/>
+		<nd ref="3441540650"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056166">
+		<nd ref="3441538569"/>
+		<nd ref="2147803005"/>
+		<nd ref="269614115"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056456">
+		<nd ref="3441540650"/>
+		<nd ref="243091055"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056531">
+		<nd ref="3441540731"/>
+		<nd ref="268456660"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056532">
+		<nd ref="243091055"/>
+		<nd ref="3441540731"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056865">
+		<nd ref="268456660"/>
+		<nd ref="4690495585"/>
+		<nd ref="2023126442"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056868">
+		<nd ref="290386771"/>
+		<nd ref="2023126444"/>
+		<nd ref="254461745"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056870">
+		<nd ref="2023126442"/>
+		<nd ref="1120120820"/>
+		<nd ref="290386771"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337056872">
+		<nd ref="3441544701"/>
+		<nd ref="1647851191"/>
+		<nd ref="477805"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337058086">
+		<nd ref="249538986"/>
+		<nd ref="268563612"/>
+		<nd ref="268558637"/>
+		<nd ref="2482077605"/>
+		<nd ref="268556148"/>
+		<nd ref="2881724656"/>
+		<nd ref="461153115"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="337058751">
+		<nd ref="3441558815"/>
+		<nd ref="3441560683"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="338070561">
+		<nd ref="3451322093"/>
+		<nd ref="461153115"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="338865713">
+		<nd ref="3460209387"/>
+		<nd ref="249462447"/>
+		<nd ref="249462448"/>
+		<nd ref="3441558815"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="371621205">
+		<nd ref="1491580816"/>
+		<nd ref="449633217"/>
+		<nd ref="4172700327"/>
+		<nd ref="449633219"/>
+		<nd ref="571819671"/>
+		<nd ref="944495420"/>
+		<nd ref="449633221"/>
+		<nd ref="4172705013"/>
+		<nd ref="944495415"/>
+		<nd ref="4172705009"/>
+		<nd ref="4172705007"/>
+		<nd ref="4199822107"/>
+		<nd ref="4172705001"/>
+		<nd ref="449633222"/>
+		<nd ref="4172705000"/>
+		<nd ref="1483476908"/>
+		<nd ref="449633224"/>
+		<nd ref="449633226"/>
+		<nd ref="275672211"/>
+		<nd ref="164513"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Marie-Curie-Allee"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="371621206">
+		<nd ref="3751855287"/>
+		<nd ref="944495418"/>
+		<nd ref="944495413"/>
+		<nd ref="4172700486"/>
+		<nd ref="1491580835"/>
+		<nd ref="1491580816"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Marie-Curie-Allee"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="371621207">
+		<nd ref="3751855907"/>
+		<nd ref="32558270"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="371621208">
+		<nd ref="273109944"/>
+		<nd ref="153541731"/>
+		<nd ref="1647851192"/>
+		<nd ref="275672221"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="371624414">
+		<nd ref="275672221"/>
+		<nd ref="1491580853"/>
+		<nd ref="3751855835"/>
+		<nd ref="273109929"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="38077509">
+		<nd ref="160375"/>
+		<nd ref="249459236"/>
+		<nd ref="243090861"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="38077511">
+		<nd ref="243090861"/>
+		<nd ref="302799818"/>
+		<nd ref="362654646"/>
+		<nd ref="1124823705"/>
+		<nd ref="246584324"/>
+		<nd ref="249398913"/>
+		<nd ref="461153104"/>
+		<nd ref="32558269"/>
+		<nd ref="1448929542"/>
+		<nd ref="249398800"/>
+		<nd ref="1496519940"/>
+		<nd ref="268566714"/>
+		<nd ref="160388"/>
+		<nd ref="243092689"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Otto-Hahn-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="38182250">
+		<nd ref="273109929"/>
+		<nd ref="3751855825"/>
+		<nd ref="3751855287"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Marie-Curie-Allee"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="4071114">
+		<nd ref="59058561"/>
+		<nd ref="59058566"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Meitnerweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="42159970">
+		<nd ref="32558270"/>
+		<nd ref="69329032"/>
+		<nd ref="69329037"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="4236558">
+		<nd ref="164317"/>
+		<nd ref="2147773678"/>
+		<nd ref="677232118"/>
+		<nd ref="52919184"/>
+		<nd ref="370082627"/>
+		<nd ref="430054740"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="4261210">
+		<nd ref="164317"/>
+		<nd ref="125348776"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="48452126">
+		<nd ref="164516"/>
+		<nd ref="677231971"/>
+		<nd ref="247655824"/>
+		<nd ref="21453893"/>
+		<nd ref="677231968"/>
+		<nd ref="677231969"/>
+		<nd ref="677231906"/>
+		<nd ref="677231904"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="49429902">
+		<nd ref="50835065"/>
+		<nd ref="677231709"/>
+		<nd ref="677231700"/>
+		<nd ref="4163950055"/>
+		<nd ref="52919181"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Heinrich-Hertz-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="71683567">
+		<nd ref="477805"/>
+		<nd ref="3441554239"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="72493067">
+		<nd ref="677231904"/>
+		<nd ref="243882202"/>
+		<nd ref="677231902"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="75923125">
+		<nd ref="677231902"/>
+		<nd ref="247655796"/>
+		<nd ref="1837854880"/>
+		<nd ref="21453894"/>
+		<nd ref="566633489"/>
+		<nd ref="677231868"/>
+		<nd ref="677231865"/>
+		<nd ref="670097774"/>
+		<nd ref="21453895"/>
+		<nd ref="286338878"/>
+		<nd ref="160374"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="75923128">
+		<nd ref="254461745"/>
+		<nd ref="286567531"/>
+		<nd ref="286531881"/>
+		<nd ref="3441544701"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="7936985">
+		<nd ref="160375"/>
+		<nd ref="4109929800"/>
+		<nd ref="88300983"/>
+		<nd ref="3138393854"/>
+		<nd ref="246619760"/>
+		<nd ref="59058561"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Meitnerweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="8136200">
+		<nd ref="477808"/>
+		<nd ref="3236937455"/>
+		<nd ref="677231620"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Emil-Figge-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="8136201">
+		<nd ref="164317"/>
+		<nd ref="4163950062"/>
+		<nd ref="677232053"/>
+		<nd ref="164516"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Joseph-von-Fraunhofer-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="8165587">
+		<nd ref="50835073"/>
+		<nd ref="52919182"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Heinrich-Hertz-Straße"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+	<way id="9253790">
+		<nd ref="477805"/>
+		<nd ref="3569208993"/>
+		<nd ref="249538986"/>
+		<tag k="highway" v="primary"/>
+		<tag k="name" v="Vogelpothsweg"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="lanes:backward" v="1"/>
+	</way>
+</osm>
