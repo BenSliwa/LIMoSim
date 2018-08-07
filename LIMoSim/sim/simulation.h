@@ -4,8 +4,11 @@
 #include "LIMoSim/map/map.h"
 #include "LIMoSim/map/node.h"
 #include "LIMoSim/map/way.h"
+#include "LIMoSim/location/IGeoCoordConverter.h"
 
 #include "eventscheduler.h"
+
+
 
 namespace LIMoSim
 {
@@ -22,7 +25,7 @@ public:
     void registerEventHandler(EventHandler *_eventHandler);
     void deregisterEventHandler(EventHandler *_eventHandler);
 
-    void load(const std::string &_map, const std::string &_vehicles);
+    void load(const std::string &_map, const std::string &_vehicles, IGeoCoordConverter &geoCoordConverter);
 
     void createCars(int _number);
 

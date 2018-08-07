@@ -14,7 +14,10 @@
 // 
 
 #include "LIMoSimController.h"
+
+#include "LIMoSim/location/wgs84.h"
 #include "LIMoSim/sim/simulation.h"
+
 
 namespace inet {
 
@@ -40,7 +43,8 @@ void LIMoSimController::initialize()
 {
     std::string mapFile = par("map").stringValue();
     LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(this);
-    sim->load(mapFile, "");
+    LIMoSim::WGS84 wgs84;
+    sim->load(mapFile, "", wgs84);
 
     cMessage *timer = new cMessage();
     scheduleAt(simTime(), timer);

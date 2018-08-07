@@ -32,7 +32,7 @@ class OSMDocument
 public:
     OSMDocument();
 
-    static OSMDocument fromXML(DOMElement *_entry);
+    static OSMDocument fromXML(DOMElement *_entry, IGeoCoordConverter &geoCoordConverter);
     void createOSMEntries(DOMElement *_entry);
     void adjustNodePositions(IGeoCoordConverter &geoCoordConverter);
     void adjustBounds(const OSMNodeEntry &_node);

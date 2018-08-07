@@ -10,7 +10,7 @@ OSMDocument::OSMDocument() :
 
 }
 
-OSMDocument OSMDocument::fromXML(DOMElement *_entry)
+OSMDocument OSMDocument::fromXML(DOMElement *_entry, IGeoCoordConverter &geoCoordConverter)
 {
     OSMDocument document;
 
@@ -20,8 +20,7 @@ OSMDocument OSMDocument::fromXML(DOMElement *_entry)
 
     document.createOSMEntries(_entry);
 
-    WGS84 wgs84;
-    document.adjustNodePositions(wgs84);
+    document.adjustNodePositions(geoCoordConverter);
 
     if(document.useWgs)
     {
