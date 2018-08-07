@@ -22,4 +22,5 @@ simple LIMoSimController
 {
     parameters:
         string map;
+        string geographicCoordinateSystemModule;
 }

@@ -15,6 +15,9 @@
 
 #include "LIMoSimController.h"
 
+#include "inet/common/ModuleAccess.h"
+#include "inet/common/geometry/common/GeographicCoordinateSystem.h"
+
 #include "LIMoSim/location/wgs84.h"
 #include "LIMoSim/sim/simulation.h"
 
@@ -42,6 +45,7 @@ LIMoSimController::~LIMoSimController()
 void LIMoSimController::initialize()
 {
     std::string mapFile = par("map").stringValue();
+    m_geographicCoordinateSystemModule = getModuleFromPar<IGeographicCoordinateSystem>(par("geographicCoordinateSystemModule"), this);
     LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(this);
     LIMoSim::WGS84 wgs84;
     sim->load(mapFile, "", wgs84);
@@ -106,6 +110,20 @@ void LIMoSimController::handleMessage(cMessage *_message)
             delete _message;
         }
     }
+}
+
+void LIMoSimController::setOrigin(const LIMoSim::Position &_origin)
+{
+    auto inetOrigin = m_geographicCoordinateSystemModule->getPlaygroundPosition();
+    if ((inetOrigin.longitude != deg(_origin.x)) || (inetOrigin.latitude != deg(_origin.y)))
+        throw cRuntimeError("LIMoSIM origin (%g,%g) and INET origin (%g,%g) are differ", _origin.y, _origin.x, inetOrigin.latitude.get(), inetOrigin.longitude.get());
+}
+
+LIMoSim::Vector3d LIMoSimController::getOffset(const LIMoSim::Position &_node) const
+{
+    GeoCoord gc(deg(_node.y), deg(_node.x), m(0));
+    auto offs = m_geographicCoordinateSystemModule->computePlaygroundCoordinate(gc);
+    return LIMoSim::Vector3d(offs.x, offs.y, offs.z);
 }
 
 } //namespace
