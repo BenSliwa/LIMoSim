@@ -1,5 +1,5 @@
 <osm generator="LIMoSim">
-	<bounds maxlat="51.4949" maxlon="7.41916" minlat="51.4886" minlon="7.40232"/>
+	<bounds maxlat="51.4949" maxlon="7.41916" minlat="51.48865" minlon="7.40232"/>
 	<node id="102976495" x="213.448" y="54.4985"/>
 	<node id="102976497" x="207.859" y="5.38912"/>
 	<node id="1120120820" x="724.142" y="613.315"/>
