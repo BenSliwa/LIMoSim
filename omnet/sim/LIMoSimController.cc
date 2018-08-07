@@ -18,7 +18,6 @@
 #include "inet/common/ModuleAccess.h"
 #include "inet/common/geometry/common/GeographicCoordinateSystem.h"
 
-#include "LIMoSim/location/wgs84.h"
 #include "LIMoSim/sim/simulation.h"
 
 
@@ -47,8 +46,7 @@ void LIMoSimController::initialize()
     std::string mapFile = par("map").stringValue();
     m_geographicCoordinateSystemModule = getModuleFromPar<IGeographicCoordinateSystem>(par("geographicCoordinateSystemModule"), this);
     LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(this);
-    LIMoSim::WGS84 wgs84;
-    sim->load(mapFile, "", wgs84);
+    sim->load(mapFile, "", *this);
 
     cMessage *timer = new cMessage();
     scheduleAt(simTime(), timer);
