@@ -20,4 +20,6 @@ package inet.LIMoSim.omnet.sim;
 //
 simple LIMoSimController
 {
+    parameters:
+        string map;
 }

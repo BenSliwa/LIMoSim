@@ -20,7 +20,6 @@
 #include "followerModel/FollowerModel.h"
 #include "strategicModel/StrategicModel.h"
 
-#include "LIMoSim/sim/simulation.h"
 #include "omnet/sim/LIMoSimController.h"
 
 #include "LIMoSim/settings/xmlparser.h"
@@ -51,15 +50,6 @@ void LIMoSimCar::initialize(int _stage)
 
 void LIMoSimCar::setInitialPosition()
 {
-    std::string mapFile = par("map").stringValue();
-
-    if(!LIMoSim::Simulation::hasInstance())
-    {
-        LIMoSimController* scheduler = LIMoSimController::getInstance();
-        LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(scheduler);
-        sim->load(mapFile, "");
-    }
-
     LIMoSim::Map *map = LIMoSim::Map::getInstance();
 
     StrategicModel *strategicModel_omnet = dynamic_cast<StrategicModel*>(getSubmodule("strategicModel"));

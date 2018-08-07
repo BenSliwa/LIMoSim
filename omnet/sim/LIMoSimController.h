@@ -31,8 +31,7 @@ public:
     LIMoSimController();
     ~LIMoSimController();
 
-    static LIMoSimController* getInstance();
-    void handleStart();
+    virtual void initialize() override;
 
     void scheduleEvent(LIMoSim::Event *_event);
     void cancelEvent(LIMoSim::Event *_event);

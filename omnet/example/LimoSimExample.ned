@@ -18,6 +18,7 @@
 
 package inet.LIMoSim.omnet.example;
 
+import inet.LIMoSim.omnet.sim.LIMoSimController;
 import inet.common.geometry.common.OsgGeographicCoordinateSystem;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.AdhocHost;
@@ -39,6 +40,10 @@ network LimoSimExample
         coordinateSystem: OsgGeographicCoordinateSystem {
             parameters:
                 @display("p=100,150");
+        }
+        limoSimController: LIMoSimController {
+            parameters:
+                @display("p=100,40;is=s");
         }
         configurator: Ipv4NetworkConfigurator {
             parameters:

@@ -14,6 +14,7 @@
 // 
 
 #include "LIMoSimController.h"
+#include "LIMoSim/sim/simulation.h"
 
 namespace inet {
 
@@ -35,28 +36,11 @@ LIMoSimController::~LIMoSimController()
     }
 }
 
-LIMoSimController* LIMoSimController::getInstance()
+void LIMoSimController::initialize()
 {
-    if(!eventSchedulerInstance)
-    {
-        cModule *network = cSimulation::getActiveSimulation()->getSystemModule();
-        cModuleType* nodeType = cModuleType::get("inet.LIMoSim.omnet.sim.LIMoSimController");
-
-        cModule *module = nodeType->create("LIMoSimController", network, 0, 0);
-        module->finalizeParameters();
-        //mod->getDisplayString().parse(displayString.c_str());
-        module->buildInside();
-
-        eventSchedulerInstance = dynamic_cast<LIMoSimController*>(module);
-        eventSchedulerInstance->handleStart();
-    }
-
-    return eventSchedulerInstance;
-}
-
-void LIMoSimController::handleStart()
-{
-    Enter_Method("handleStart");
+    std::string mapFile = par("map").stringValue();
+    LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(this);
+    sim->load(mapFile, "");
 
     cMessage *timer = new cMessage();
     scheduleAt(simTime(), timer);
