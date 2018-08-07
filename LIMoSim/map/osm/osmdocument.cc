@@ -20,7 +20,8 @@ OSMDocument OSMDocument::fromXML(DOMElement *_entry)
 
     document.createOSMEntries(_entry);
 
-    document.adjustNodePositions();
+    WGS84 wgs84;
+    document.adjustNodePositions(wgs84);
 
     if(document.useWgs)
     {
@@ -77,7 +78,7 @@ void OSMDocument::createOSMEntries(DOMElement *_entry)
     }
 }
 
-void OSMDocument::adjustNodePositions()
+void OSMDocument::adjustNodePositions(IGeoCoordConverter &geoCoordConverter)
 {
     std::cout << "OSMDocument::adjustNodePositions " << useWgs << "\tn: " << m_nodes.size() << std::endl;
 
@@ -126,8 +127,8 @@ void OSMDocument::adjustNodePositions()
 
     Position bottomLeft(m_bounds.minLon, m_bounds.minLat);
     Position topRight(m_bounds.maxLon, m_bounds.maxLat);
-    m_wgs.setOrigin(m_bounds.getOrigin());
-    Vector3d offset = m_wgs.getOffset(topRight);
+    geoCoordConverter.setOrigin(m_bounds.getOrigin());
+    Vector3d offset = geoCoordConverter.getOffset(topRight);
     Vector3d s = (topRight-bottomLeft);
 
     std::cout << "wgs: " << offset.toString() << "\tcartesian: " << s.toString() << std::endl;
@@ -141,7 +142,7 @@ void OSMDocument::adjustNodePositions()
         OSMNodeEntry &_entry = it->second;
         if(useWgs)
         {
-            Vector3d offset = m_wgs.getOffset(Position(_entry.lon, _entry.lat));
+            Vector3d offset = geoCoordConverter.getOffset(Position(_entry.lon, _entry.lat));
             _entry.position = offset;
         }
         else

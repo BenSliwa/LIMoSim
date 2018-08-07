@@ -34,7 +34,7 @@ public:
 
     static OSMDocument fromXML(DOMElement *_entry);
     void createOSMEntries(DOMElement *_entry);
-    void adjustNodePositions();
+    void adjustNodePositions(IGeoCoordConverter &geoCoordConverter);
     void adjustBounds(const OSMNodeEntry &_node);
     void createRelations();
     void createWays();
@@ -49,7 +49,6 @@ public:
 
 private:
     Map *p_map;
-    WGS84 m_wgs;
     Bounds m_bounds;
 
     OSMBoundsEntry m_boundsentry;
