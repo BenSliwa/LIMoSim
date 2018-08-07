@@ -4,3 +4,11 @@
 *.h.*
 build
 build*
+*_m.h
+*_m.cc
+*_sm.h
+*_sm.cc
+omnet/example/results/
+omnet/example/cache/
+.qtenv.ini
+.qtenvrc
