@@ -25,13 +25,13 @@ using namespace omnetpp;
 namespace inet
 {
 
-class EventScheduler : public cSimpleModule, public LIMoSim::EventScheduler
+class LIMoSimController : public cSimpleModule, public LIMoSim::EventScheduler
 {
 public:
-    EventScheduler();
-    ~EventScheduler();
+    LIMoSimController();
+    ~LIMoSimController();
 
-    static EventScheduler* getInstance();
+    static LIMoSimController* getInstance();
     void handleStart();
 
     void scheduleEvent(LIMoSim::Event *_event);

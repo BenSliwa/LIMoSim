@@ -13,20 +13,20 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "EventScheduler.h"
+#include "LIMoSimController.h"
 
 namespace inet {
 
-EventScheduler *eventSchedulerInstance = 0;
+LIMoSimController *eventSchedulerInstance = 0;
 
-Define_Module(EventScheduler);
+Define_Module(LIMoSimController);
 
-EventScheduler::EventScheduler()
+LIMoSimController::LIMoSimController()
 {
 
 }
 
-EventScheduler::~EventScheduler()
+LIMoSimController::~LIMoSimController()
 {
     std::map<cMessage*, LIMoSim::Event*>::iterator it;
     for(it=m_events.begin(); it!=m_events.end(); it++)
@@ -35,26 +35,26 @@ EventScheduler::~EventScheduler()
     }
 }
 
-EventScheduler* EventScheduler::getInstance()
+LIMoSimController* LIMoSimController::getInstance()
 {
     if(!eventSchedulerInstance)
     {
         cModule *network = cSimulation::getActiveSimulation()->getSystemModule();
-        cModuleType* nodeType = cModuleType::get("inet.LIMoSim.omnet.sim.EventScheduler");
+        cModuleType* nodeType = cModuleType::get("inet.LIMoSim.omnet.sim.LIMoSimController");
 
-        cModule *module = nodeType->create("EventScheduler", network, 0, 0);
+        cModule *module = nodeType->create("LIMoSimController", network, 0, 0);
         module->finalizeParameters();
         //mod->getDisplayString().parse(displayString.c_str());
         module->buildInside();
 
-        eventSchedulerInstance = dynamic_cast<EventScheduler*>(module);
+        eventSchedulerInstance = dynamic_cast<LIMoSimController*>(module);
         eventSchedulerInstance->handleStart();
     }
 
     return eventSchedulerInstance;
 }
 
-void EventScheduler::handleStart()
+void LIMoSimController::handleStart()
 {
     Enter_Method("handleStart");
 
@@ -62,7 +62,7 @@ void EventScheduler::handleStart()
     scheduleAt(simTime(), timer);
 }
 
-void EventScheduler::scheduleEvent(LIMoSim::Event *_event)
+void LIMoSimController::scheduleEvent(LIMoSim::Event *_event)
 {
     Enter_Method("scheduleEvent");
 
@@ -72,7 +72,7 @@ void EventScheduler::scheduleEvent(LIMoSim::Event *_event)
     scheduleAt(_event->getTimestamp(), event);
 }
 
-void EventScheduler::cancelEvent(LIMoSim::Event *_event)
+void LIMoSimController::cancelEvent(LIMoSim::Event *_event)
 {
     cMessage *message = getMessageForEvent(_event);
     if(message)
@@ -85,12 +85,12 @@ void EventScheduler::cancelEvent(LIMoSim::Event *_event)
 
 }
 
-void EventScheduler::deleteEvent(LIMoSim::Event *_event)
+void LIMoSimController::deleteEvent(LIMoSim::Event *_event)
 {
     cancelEvent(_event);
 }
 
-cMessage* EventScheduler::getMessageForEvent(LIMoSim::Event *_event)
+cMessage* LIMoSimController::getMessageForEvent(LIMoSim::Event *_event)
 {
     cMessage *message = 0;
     std::map<cMessage*, LIMoSim::Event*>::iterator it;
@@ -103,7 +103,7 @@ cMessage* EventScheduler::getMessageForEvent(LIMoSim::Event *_event)
     return message;
 }
 
-void EventScheduler::handleMessage(cMessage *_message)
+void LIMoSimController::handleMessage(cMessage *_message)
 {
     if(_message->isSelfMessage())
     {

@@ -21,7 +21,7 @@
 #include "strategicModel/StrategicModel.h"
 
 #include "LIMoSim/sim/simulation.h"
-#include "omnet/sim/EventScheduler.h"
+#include "omnet/sim/LIMoSimController.h"
 
 #include "LIMoSim/settings/xmlparser.h"
 #include "LIMoSim/map/osm/vehicleentry.h"
@@ -55,7 +55,7 @@ void LIMoSimCar::setInitialPosition()
 
     if(!LIMoSim::Simulation::hasInstance())
     {
-        EventScheduler* scheduler = EventScheduler::getInstance();
+        LIMoSimController* scheduler = LIMoSimController::getInstance();
         LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(scheduler);
         sim->load(mapFile, "");
     }

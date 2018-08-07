@@ -18,6 +18,6 @@ package inet.LIMoSim.omnet.sim;
 //
 // TODO auto-generated module
 //
-simple EventScheduler
+simple LIMoSimController
 {
 }
