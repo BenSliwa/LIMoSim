@@ -12,9 +12,12 @@ class WGS84
 public:
     WGS84();
 
-    double getDistance(const Position &_from, const Position &_to);
+    double getDistance(const Position &_from, const Position &_to) const;
 
-    Vector3d getOffset(const Position &_node, const Position &_origin);
+    void setOrigin(const Position &_origin) { m_origin = _origin; }
+    Vector3d getOffset(const Position &_node) const;
+private:
+    Position m_origin;
 };
 
 }

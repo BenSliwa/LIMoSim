@@ -126,7 +126,8 @@ void OSMDocument::adjustNodePositions()
 
     Position bottomLeft(m_bounds.minLon, m_bounds.minLat);
     Position topRight(m_bounds.maxLon, m_bounds.maxLat);
-    Vector3d offset = m_wgs.getOffset(topRight, bottomLeft);
+    m_wgs.setOrigin(m_bounds.getOrigin());
+    Vector3d offset = m_wgs.getOffset(topRight);
     Vector3d s = (topRight-bottomLeft);
 
     std::cout << "wgs: " << offset.toString() << "\tcartesian: " << s.toString() << std::endl;
@@ -140,7 +141,7 @@ void OSMDocument::adjustNodePositions()
         OSMNodeEntry &_entry = it->second;
         if(useWgs)
         {
-            Vector3d offset = m_wgs.getOffset(Position(_entry.lon, _entry.lat), m_bounds.getOrigin());
+            Vector3d offset = m_wgs.getOffset(Position(_entry.lon, _entry.lat));
             _entry.position = offset;
         }
         else

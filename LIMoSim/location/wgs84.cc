@@ -10,7 +10,7 @@ WGS84::WGS84()
 
 }
 
-double WGS84::getDistance(const Position &_from, const Position &_to)
+double WGS84::getDistance(const Position &_from, const Position &_to) const
 {
     double n = (_to-_from).norm();
 
@@ -48,10 +48,10 @@ double WGS84::getDistance(const Position &_from, const Position &_to)
     */
 }
 
-Vector3d WGS84::getOffset(const Position &_node, const Position &_origin)
+Vector3d WGS84::getOffset(const Position &_node) const
 {
-    double dX = getDistance(_origin, Position(_node.x, _origin.y));
-    double dY = getDistance(_origin, Position(_origin.x, _node.y));
+    double dX = getDistance(m_origin, Position(_node.x, m_origin.y));
+    double dY = getDistance(m_origin, Position(m_origin.x, _node.y));
     double dZ = 0;
 
     return Vector3d(dX, dY, dZ);
