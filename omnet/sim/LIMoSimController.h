@@ -37,9 +37,9 @@ public:
 
     virtual void initialize() override;
 
-    void scheduleEvent(LIMoSim::Event *_event);
-    void cancelEvent(LIMoSim::Event *_event);
-    void deleteEvent(LIMoSim::Event *_event);
+    void scheduleEvent(LIMoSim::Event *_event) override;
+    void cancelEvent(LIMoSim::Event *_event) override;
+    void deleteEvent(LIMoSim::Event *_event) override;
 
     cMessage* getMessageForEvent(LIMoSim::Event *_event);
 
@@ -48,7 +48,7 @@ public:
     virtual LIMoSim::Vector3d getOffset(const LIMoSim::Position &_node) const override;
 
 protected:
-    virtual void handleMessage(cMessage *_message);
+    virtual void handleMessage(cMessage *_message) override;
 
 private:
     std::map<cMessage*, LIMoSim::Event*> m_events;
