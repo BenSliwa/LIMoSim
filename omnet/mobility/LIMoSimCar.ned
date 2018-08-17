@@ -26,8 +26,6 @@ module LIMoSimCar extends MovingMobilityBase
         volatile double speed @unit(mps) = default(mps); // use uniform(minSpeed, maxSpeed) or another distribution       
     	@class(LIMoSimCar);
     	
-    	string map;
-
     	string strategicModelType = default("Trip");
     	string followerModelType = default("IDM");
     

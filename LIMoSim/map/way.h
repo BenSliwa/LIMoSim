@@ -29,6 +29,7 @@ public:
     // segments
     void removeSegment(Segment *_segment);
     int getSegmentIndex(Segment *_segment);
+    int getNumSegments() const { return m_segments.size(); }
     Segment* getSegment(int _index);
     Segment* getSegment(Node *_start, Node *_end);
     void linkSegments();

@@ -66,7 +66,7 @@ void Simulation::deregisterEventHandler(EventHandler *_eventHandler)
     }
 }
 
-void Simulation::load(const std::string &_map, const std::string &_vehicles)
+void Simulation::load(const std::string &_map, const std::string &_vehicles, IGeoCoordConverter &geoCoordConverter)
 {
     std::cout << "Simulation::load " << _map << "\t" << _vehicles << std::endl;
 
@@ -77,11 +77,11 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles)
     XMLParser xml;
     if(FileHandler::exists(optPath))
     {
-        OSMDocument document = OSMDocument::fromXML(xml.parse(optPath));
+        OSMDocument document = OSMDocument::fromXML(xml.parse(optPath), geoCoordConverter);
     }
     else if(FileHandler::exists(_map))
     {
-        OSMDocument document = OSMDocument::fromXML(xml.parse(_map));
+        OSMDocument document = OSMDocument::fromXML(xml.parse(_map), geoCoordConverter);
         FileHandler::write(document.toXML()->toString(), optPath);
     }
 

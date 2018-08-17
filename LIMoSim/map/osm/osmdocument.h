@@ -1,6 +1,7 @@
 #ifndef LIMOSIM_OSMDOCUMENT_H
 #define LIMOSIM_OSMDOCUMENT_H
 
+#include "osmboundsentry.h"
 #include "osmnodeentry.h"
 #include "osmwayentry.h"
 #include "osmrelationentry.h"
@@ -31,9 +32,9 @@ class OSMDocument
 public:
     OSMDocument();
 
-    static OSMDocument fromXML(DOMElement *_entry);
+    static OSMDocument fromXML(DOMElement *_entry, IGeoCoordConverter &geoCoordConverter);
     void createOSMEntries(DOMElement *_entry);
-    void adjustNodePositions();
+    void adjustNodePositions(IGeoCoordConverter &geoCoordConverter);
     void adjustBounds(const OSMNodeEntry &_node);
     void createRelations();
     void createWays();
@@ -48,9 +49,9 @@ public:
 
 private:
     Map *p_map;
-    WGS84 m_wgs;
     Bounds m_bounds;
 
+    OSMBoundsEntry m_boundsentry;
     std::map<std::string, OSMNodeEntry> m_nodes;
     std::map<std::string, OSMWayEntry> m_ways;
     std::vector<OSMRelationEntry> m_relations;

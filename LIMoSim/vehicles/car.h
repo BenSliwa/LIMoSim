@@ -47,11 +47,11 @@ public:
     virtual ~Car();
 
     virtual void initialize() override;
-    virtual void finish();
+    virtual void finish() override;
 
 
 
-    void handleEvent(Event *_event);
+    void handleEvent(Event *_event) override;
     double move(double _timeDelta_s);
     void checkCollisions();
 

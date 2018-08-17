@@ -13,20 +13,26 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "EventScheduler.h"
+#include "LIMoSimController.h"
+
+#include "inet/common/ModuleAccess.h"
+#include "inet/common/geometry/common/GeographicCoordinateSystem.h"
+
+#include "LIMoSim/sim/simulation.h"
+
 
 namespace inet {
 
-EventScheduler *eventSchedulerInstance = 0;
+LIMoSimController *eventSchedulerInstance = 0;
 
-Define_Module(EventScheduler);
+Define_Module(LIMoSimController);
 
-EventScheduler::EventScheduler()
+LIMoSimController::LIMoSimController()
 {
 
 }
 
-EventScheduler::~EventScheduler()
+LIMoSimController::~LIMoSimController()
 {
     std::map<cMessage*, LIMoSim::Event*>::iterator it;
     for(it=m_events.begin(); it!=m_events.end(); it++)
@@ -35,34 +41,18 @@ EventScheduler::~EventScheduler()
     }
 }
 
-EventScheduler* EventScheduler::getInstance()
+void LIMoSimController::initialize()
 {
-    if(!eventSchedulerInstance)
-    {
-        cModule *network = cSimulation::getActiveSimulation()->getSystemModule();
-        cModuleType* nodeType = cModuleType::get("inet.LIMoSim.omnet.sim.EventScheduler");
-
-        cModule *module = nodeType->create("EventScheduler", network, 0, 0);
-        module->finalizeParameters();
-        //mod->getDisplayString().parse(displayString.c_str());
-        module->buildInside();
-
-        eventSchedulerInstance = dynamic_cast<EventScheduler*>(module);
-        eventSchedulerInstance->handleStart();
-    }
-
-    return eventSchedulerInstance;
-}
-
-void EventScheduler::handleStart()
-{
-    Enter_Method("handleStart");
+    std::string mapFile = par("map").stringValue();
+    m_geographicCoordinateSystemModule = getModuleFromPar<IGeographicCoordinateSystem>(par("geographicCoordinateSystemModule"), this);
+    LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(this);
+    sim->load(mapFile, "", *this);
 
     cMessage *timer = new cMessage();
     scheduleAt(simTime(), timer);
 }
 
-void EventScheduler::scheduleEvent(LIMoSim::Event *_event)
+void LIMoSimController::scheduleEvent(LIMoSim::Event *_event)
 {
     Enter_Method("scheduleEvent");
 
@@ -72,7 +62,7 @@ void EventScheduler::scheduleEvent(LIMoSim::Event *_event)
     scheduleAt(_event->getTimestamp(), event);
 }
 
-void EventScheduler::cancelEvent(LIMoSim::Event *_event)
+void LIMoSimController::cancelEvent(LIMoSim::Event *_event)
 {
     cMessage *message = getMessageForEvent(_event);
     if(message)
@@ -85,12 +75,12 @@ void EventScheduler::cancelEvent(LIMoSim::Event *_event)
 
 }
 
-void EventScheduler::deleteEvent(LIMoSim::Event *_event)
+void LIMoSimController::deleteEvent(LIMoSim::Event *_event)
 {
     cancelEvent(_event);
 }
 
-cMessage* EventScheduler::getMessageForEvent(LIMoSim::Event *_event)
+cMessage* LIMoSimController::getMessageForEvent(LIMoSim::Event *_event)
 {
     cMessage *message = 0;
     std::map<cMessage*, LIMoSim::Event*>::iterator it;
@@ -103,7 +93,7 @@ cMessage* EventScheduler::getMessageForEvent(LIMoSim::Event *_event)
     return message;
 }
 
-void EventScheduler::handleMessage(cMessage *_message)
+void LIMoSimController::handleMessage(cMessage *_message)
 {
     if(_message->isSelfMessage())
     {
@@ -118,6 +108,20 @@ void EventScheduler::handleMessage(cMessage *_message)
             delete _message;
         }
     }
+}
+
+void LIMoSimController::setOrigin(const LIMoSim::Position &_origin)
+{
+    auto inetOrigin = m_geographicCoordinateSystemModule->getPlaygroundPosition();
+    if ((inetOrigin.longitude != deg(_origin.x)) || (inetOrigin.latitude != deg(_origin.y)))
+        throw cRuntimeError("LIMoSIM origin (%g,%g) and INET origin (%g,%g) are differ", _origin.y, _origin.x, inetOrigin.latitude.get(), inetOrigin.longitude.get());
+}
+
+LIMoSim::Vector3d LIMoSimController::getOffset(const LIMoSim::Position &_node) const
+{
+    GeoCoord gc(deg(_node.y), deg(_node.x), m(0));
+    auto offs = m_geographicCoordinateSystemModule->computePlaygroundCoordinate(gc);
+    return LIMoSim::Vector3d(offs.x, offs.y, offs.z);
 }
 
 } //namespace

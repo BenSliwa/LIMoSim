@@ -259,17 +259,17 @@ Way* Map::getRandomWay()
 
 Segment* Map::getRandomSegment(Way *_way)
 {
-    std::vector<Segment*> &segments = _way->getSegments();
-    if(segments.size()>0)
-        return segments.at(RNG::intUniform(0, segments.size()-1));
+    int numSegments = _way->getNumSegments();
+    if(numSegments > 0)
+        return _way->getSegment(RNG::intUniform(0, numSegments-1));
     return 0;
 }
 
 Lane* Map::getRandomLane(Segment *_segment)
 {
-    std::vector<Lane*> &lanes = _segment->getLanes();
-    if(lanes.size()>0)
-        return lanes.at(RNG::intUniform(0, lanes.size()-1));
+    int numLanes = _segment->getNumLanes();
+    if(numLanes > 0)
+        return _segment->getLane(RNG::intUniform(0, numLanes-1));
     return 0;
 }
 

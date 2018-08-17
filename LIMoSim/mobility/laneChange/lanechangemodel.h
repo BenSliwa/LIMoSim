@@ -10,6 +10,7 @@ class LaneChangeModel
 {
 public:
     LaneChangeModel(Car *_car, const std::string &_type);
+    virtual ~LaneChangeModel() {}
 
     virtual double computeLeftLaneIncentive() = 0;
     virtual double computeRightLaneIncentive() = 0;

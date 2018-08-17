@@ -20,8 +20,7 @@
 #include "followerModel/FollowerModel.h"
 #include "strategicModel/StrategicModel.h"
 
-#include "LIMoSim/sim/simulation.h"
-#include "omnet/sim/EventScheduler.h"
+#include "omnet/sim/LIMoSimController.h"
 
 #include "LIMoSim/settings/xmlparser.h"
 #include "LIMoSim/map/osm/vehicleentry.h"
@@ -51,15 +50,6 @@ void LIMoSimCar::initialize(int _stage)
 
 void LIMoSimCar::setInitialPosition()
 {
-    std::string mapFile = par("map").stringValue();
-
-    if(!LIMoSim::Simulation::hasInstance())
-    {
-        EventScheduler* scheduler = EventScheduler::getInstance();
-        LIMoSim::Simulation *sim = LIMoSim::Simulation::getInstance(scheduler);
-        sim->load(mapFile, "");
-    }
-
     LIMoSim::Map *map = LIMoSim::Map::getInstance();
 
     StrategicModel *strategicModel_omnet = dynamic_cast<StrategicModel*>(getSubmodule("strategicModel"));
@@ -93,9 +83,17 @@ void LIMoSimCar::setInitialPosition()
         std::cout << wayId << "\t" << segmentIndex << "\t" << laneIndex << std::endl;
 
 
-        LIMoSim::Way *way = map->getWay(wayId);
-        LIMoSim::Segment *segment = way->getSegment(segmentIndex);
-        info.lane = segment->getLanes().at(laneIndex);
+        LIMoSim::Way *way = nullptr;
+        LIMoSim::Segment *segment = nullptr;
+        do {
+            do {
+                do {
+                    way = (wayId == "-1") ? map->getRandomWay() : map->getWay(wayId);
+                } while (way == nullptr);
+                segment = (segmentIndex == -1) ? map->getRandomSegment(way) : way->getSegment(segmentIndex);
+            } while (segment == nullptr);
+            info.lane = (laneIndex == -1) ? map->getRandomLane(segment) : segment->getLane(laneIndex);
+        } while (info.lane == nullptr);
         info.laneOffset_m = par("offset").doubleValue();
 
         //
@@ -105,11 +103,11 @@ void LIMoSimCar::setInitialPosition()
 
         //
         LIMoSim::FollowerModel *followerModel = followerModel_omnet->createFollowerModel(p_car);
+        p_car->setFollowerModel(followerModel);
+
+
 
         LIMoSim::LaneChangeModel *laneChangeModel = new LIMoSim::MOBIL(p_car);
-
-
-        p_car->setFollowerModel(followerModel);
         p_car->setLaneChangeModel(laneChangeModel);
 
 
@@ -130,14 +128,31 @@ void LIMoSimCar::move()
         updatePosition();
 }
 
+void LIMoSimCar::orient()
+{
+    // we are not moving here, just updating the ui
+    if(p_car)
+        updateOrientation();
+}
+
 void LIMoSimCar::updatePosition()
 {
     if(p_car)
     {
         LIMoSim::Position position = p_car->getPosition();
         Coord coord(position.x, position.y, position.z);
-
         lastPosition = coord;
+    }
+}
+
+void LIMoSimCar::updateOrientation()
+{
+    if(p_car)
+    {
+        LIMoSim::Orientation orientation = p_car->getOrientation();
+        lastOrientation.alpha = deg(orientation.getYaw());
+        lastOrientation.beta = deg(orientation.getPitch());
+        lastOrientation.gamma = deg(orientation.getRoll());
     }
 }
 

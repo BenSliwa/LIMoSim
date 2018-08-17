@@ -4,13 +4,13 @@ namespace LIMoSim
 {
 
 OSMDocument::OSMDocument() :
-    p_map(Map::getInstance()),
-    useWgs(true)
+    useWgs(true),
+    p_map(Map::getInstance())
 {
 
 }
 
-OSMDocument OSMDocument::fromXML(DOMElement *_entry)
+OSMDocument OSMDocument::fromXML(DOMElement *_entry, IGeoCoordConverter &geoCoordConverter)
 {
     OSMDocument document;
 
@@ -19,7 +19,8 @@ OSMDocument OSMDocument::fromXML(DOMElement *_entry)
         document.useWgs = false;
 
     document.createOSMEntries(_entry);
-    document.adjustNodePositions();
+
+    document.adjustNodePositions(geoCoordConverter);
 
     if(document.useWgs)
     {
@@ -65,10 +66,18 @@ void OSMDocument::createOSMEntries(DOMElement *_entry)
         {
            // parseController(element);
         }
+        else if(name=="bounds")
+        {
+            m_boundsentry = OSMBoundsEntry::fromXML(element, this);
+            m_bounds.minLat = m_boundsentry.minlat;
+            m_bounds.minLon = m_boundsentry.minlon;
+            m_bounds.maxLat = m_boundsentry.maxlat;
+            m_bounds.maxLon = m_boundsentry.maxlon;
+        }
     }
 }
 
-void OSMDocument::adjustNodePositions()
+void OSMDocument::adjustNodePositions(IGeoCoordConverter &geoCoordConverter)
 {
     std::cout << "OSMDocument::adjustNodePositions " << useWgs << "\tn: " << m_nodes.size() << std::endl;
 
@@ -117,7 +126,8 @@ void OSMDocument::adjustNodePositions()
 
     Position bottomLeft(m_bounds.minLon, m_bounds.minLat);
     Position topRight(m_bounds.maxLon, m_bounds.maxLat);
-    Vector3d offset = m_wgs.getOffset(topRight, bottomLeft);
+    geoCoordConverter.setOrigin(m_bounds.getOrigin());
+    Vector3d offset = geoCoordConverter.getOffset(topRight);
     Vector3d s = (topRight-bottomLeft);
 
     std::cout << "wgs: " << offset.toString() << "\tcartesian: " << s.toString() << std::endl;
@@ -131,9 +141,8 @@ void OSMDocument::adjustNodePositions()
         OSMNodeEntry &_entry = it->second;
         if(useWgs)
         {
-            Vector3d offset = m_wgs.getOffset(Position(_entry.lon, _entry.lat), m_bounds.getOrigin());
+            Vector3d offset = geoCoordConverter.getOffset(Position(_entry.lon, _entry.lat));
             _entry.position = offset;
-            _entry.position = _entry.position + Vector3d(100, 10);
         }
         else
             _entry.position = Position(_entry.x, _entry.y);
@@ -146,14 +155,6 @@ void OSMDocument::adjustNodePositions()
 
 void OSMDocument::adjustBounds(const OSMNodeEntry &_node)
 {
-    if(_node.lat<m_bounds.minLat)
-        m_bounds.minLat = _node.lat;
-    if(_node.lat>m_bounds.maxLat)
-        m_bounds.maxLat = _node.lat;
-    if(_node.lon<m_bounds.minLon)
-        m_bounds.minLon = _node.lon;
-    if(_node.lon>m_bounds.maxLon)
-        m_bounds.maxLon = _node.lon;
 }
 
 void OSMDocument::createRelations()
@@ -223,6 +224,8 @@ DOMElement* OSMDocument::toXML()
     DOMElement *xml = new DOMElement("osm");
     xml->setAttribute("generator", Variant("LIMoSim"));
 
+    // bounds
+    xml->appendChild(m_boundsentry.toXML());
     // nodes
     std::map<std::string,Node*> nodes = p_map->getNodes();
     std::map<std::string,Node*>::iterator n;

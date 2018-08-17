@@ -252,7 +252,7 @@ int Node::getTurnType(double _angleDelta)
 {
     int type = TURN::NONE;
 
-    double delta = abs(_angleDelta);
+    double delta = std::abs(_angleDelta);
 
     double slight = 25;
     double turn = 50;

@@ -10,6 +10,7 @@ class FollowerModel
 {
 public:
     FollowerModel(Car *_car, const std::string &_type);
+    virtual ~FollowerModel() {}
 
     virtual double computeAcceleration(Car *_car) = 0;
 

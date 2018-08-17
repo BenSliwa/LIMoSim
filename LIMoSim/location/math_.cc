@@ -21,7 +21,7 @@ double Math::computeRotation(const Position &_from, const Position &_to)
 double Math::getAngleDifference(double _from, double _to)
 {
     double d = _to - _from;
-    if(abs(d)>180)
+    if(std::abs(d)>180)
     {
         d = std::min(_from, _to) + 360 - std::max(_from, _to);
         if(_from<_to)

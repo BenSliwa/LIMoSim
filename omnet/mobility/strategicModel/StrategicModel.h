@@ -13,7 +13,7 @@
 
 using namespace omnetpp;
 
-class LIMoSim::Car;
+namespace LIMoSim { class Car; }
 
 class StrategicModel : public cSimpleModule
 {

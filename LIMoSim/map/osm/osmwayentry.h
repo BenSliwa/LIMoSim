@@ -28,10 +28,10 @@ public:
     std::string highway;
     std::string name;
     double maxspeed;
-    bool oneway;
-    int lanes;
-    int forwardLanes;
-    int backwardLanes;
+    bool oneway = false;
+    int lanes = 2;
+    int forwardLanes = 1;
+    int backwardLanes = 1;
 };
 
 }

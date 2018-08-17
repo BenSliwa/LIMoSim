@@ -1,5 +1,7 @@
 #include "variant.h"
 #include <sstream>
+#include <iomanip>
+#include <limits>
 
 namespace LIMoSim
 {
@@ -20,7 +22,7 @@ Variant::Variant(int _data)
 Variant::Variant(double _data)
 {
     std::stringstream stream;
-    stream << _data;
+    stream << std::setprecision(std::numeric_limits<double>::digits10+1) << _data;
 
     m_data = stream.str();
 }
