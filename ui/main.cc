@@ -10,6 +10,7 @@ using namespace LIMoSim;
 
 #include "LIMoSim/settings/filehandler.h"
 #include "LIMoSim/settings/xmlparser.h"
+#include "LIMoSim/location/wgs84.h"
 
 
 #include "LIMoSim/sim/rng.h"
@@ -42,7 +43,8 @@ int main(int argc, char *argv[])
     **************************************************/
     std::string dir = "D:/QtProjects/LIMoSim/resources/";
 
-    sim->load(dir + "TUDO.osm", dir + "Cars.xml");
+    WGS84 converter;
+    sim->load(dir + "TUDO.osm", dir + "Cars.xml", converter);
 
 
 

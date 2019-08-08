@@ -4,6 +4,7 @@ HEADERS += \
     $$PWD/osmnodeentry.h \
     $$PWD/osmwayentry.h \
     $$PWD/osmentry.h \
+    $$PWD/osmboundsentry.h \
     $$PWD/osmdocument.h \
     $$PWD/osmrelationentry.h \
     $$PWD/osmfilter.h \
@@ -15,6 +16,7 @@ SOURCES += \
     $$PWD/osmnodeentry.cc \
     $$PWD/osmwayentry.cc \
     $$PWD/osmentry.cc \
+    $$PWD/osmboundsentry.cc \
     $$PWD/osmdocument.cc \
     $$PWD/osmrelationentry.cc \
     $$PWD/osmfilter.cc \

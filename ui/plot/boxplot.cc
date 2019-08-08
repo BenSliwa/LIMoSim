@@ -1,4 +1,5 @@
 #include "boxplot.h"
+#include <cmath>
 
 namespace LIMoSim
 {
@@ -107,7 +108,7 @@ void BoxPlot::drawBox(Box *_box, int _index)
 
     double mean = _box->getMean();
     double w = 3;
-    double w2 = w/sqrt(2);
+    double w2 = w/std::sqrt(2);
     QPointF meanPoint(getPlotCoordinate(QPointF(x, mean)));
 
     drawLine(meanPoint+QPointF(-w,0), meanPoint+QPointF(w,0), LineStyle("black"));
@@ -197,7 +198,7 @@ QString BoxPlot::exportBoxplot(Box *_box, int _index, const ExportConfig &_expor
     data += m_eps.drawRect(rect, LineStyle("blue"));
 
     // mean
-    double w2 = w/sqrt(2);
+    double w2 = w/std::sqrt(2);
     style = LineStyle();
     QPointF meanPoint = getEpsCanvasCoordinate(x, _box->getMean(), _export);
     data += m_eps.drawLine(meanPoint+QPointF(-w,0), meanPoint+QPointF(w,0), style);

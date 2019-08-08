@@ -5,6 +5,7 @@
 #include "way.h"
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 
 namespace LIMoSim
 {
@@ -608,7 +609,7 @@ double Segment::computeStretchFactor(double _angle0, double _angle1, bool _inver
    //     angle = angle - 180;
 
     double angleDifference = Math::getMinimumAngleDifference(angle, _angle1);
-    double strechFactor = cos(Math::toRad(angleDifference));
+    double strechFactor = std::cos(Math::toRad(angleDifference));
 
     return strechFactor * strechFactor;
 }

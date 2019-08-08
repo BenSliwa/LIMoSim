@@ -20,6 +20,8 @@
 #include "LIMoSim/map/osm/osmdocument.h"
 #include "LIMoSim/settings/xmlparser.h"
 
+#include "LIMoSim/location/wgs84.h"
+
 #include "LIMoSim/map/trafficsignal.h"
 
 
@@ -138,7 +140,8 @@ bool UiManager::loadScenario(const QString &_path)
     if(file.open(QIODevice::ReadOnly))
     {
         XMLParser xml;
-        OSMDocument document = OSMDocument::fromXML(xml.parse(path.toStdString()));
+        WGS84 converter;
+        OSMDocument document = OSMDocument::fromXML(xml.parse(path.toStdString()), converter);
     }
     else
         return false;
