@@ -41,10 +41,24 @@ int main(int argc, char *argv[])
     /*************************************************
      *                   ADJUST THIS !
     **************************************************/
-    std::string dir = "D:/QtProjects/LIMoSim/resources/";
+    std::string dir = "/home/andras/projects/LIMoSim/resources";
+
+    std::string mapFile;
+    std::string vehiclesFile;
+
+    if (argc == 2)
+        dir = argv[1];
+    if (argc == 1 || argc == 2) {
+        mapFile = dir + "/TUDO.osm";
+        vehiclesFile = dir + "/Cars.xml";
+    }
+    else if (argc >= 3) {
+        mapFile = argv[1];
+        vehiclesFile = argv[2];
+    }
 
     WGS84 converter;
-    sim->load(dir + "TUDO.osm", dir + "Cars.xml", converter);
+    sim->load(mapFile, vehiclesFile, converter);
 
 
 
