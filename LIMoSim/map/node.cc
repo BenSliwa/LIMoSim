@@ -13,7 +13,7 @@ namespace LIMoSim
 Node::Node(const Position &_position, const std::string &_id, int _type, const std::string &_name) :
     MapObject(_id, _type, _name),
     m_position(_position),
-    m_signal(0)
+    m_signal(nullptr)
 {
     if(m_name=="")
     {
@@ -110,7 +110,7 @@ int Node::checkSegmentDirection(Segment *_segment)
 
 Segment* Node::getOtherSegment(Segment *_segment)
 {
-    Segment *segment = 0;
+    Segment *segment = nullptr;
 
     if(m_segments.size()==2)
     {
@@ -306,7 +306,7 @@ Lane* Node::getConnectionLane(Lane *_from, Lane *_to)
         LaneEndpoint outEndpoint = *_from->getEndpointForNode(this);
         LaneEndpoint inEndpoint = *_to->getEndpointForNode(this);
 
-        Lane *connectionLane = new Lane(outEndpoint, inEndpoint, 0);
+        Lane *connectionLane = new Lane(outEndpoint, inEndpoint, nullptr);
         connectionLane->setIsConnectionLane(true);
 
         m_connectionLanes[connection] = connectionLane;

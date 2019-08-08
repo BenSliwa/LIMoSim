@@ -14,7 +14,7 @@ UiElement::UiElement(QQuickItem *_parent) :
     QQuickPaintedItem(_parent),
     p_viewPort(ViewPort::getInstance()),
     p_parent(_parent),
-    p_painter(0),
+    p_painter(nullptr),
     p_settings(UiSettings::getInstance())
 {
 
@@ -40,7 +40,7 @@ void UiElement::drawLine(const QPointF &_from, const QPointF &_to, const LineSty
 }
 
 void drawTextF(QPainter & painter, qreal x, qreal y, Qt::Alignment flags,
-              const QString & text, QRectF * boundingRect = 0)
+              const QString & text, QRectF * boundingRect = nullptr)
 {
    const qreal size = 32767.0;
    QPointF corner(x, y - size);

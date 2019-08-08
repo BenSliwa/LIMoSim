@@ -120,7 +120,7 @@ double RoadPerception::getOffsetOnLane(Car *_car, Lane *_lane, int _type)
 
 Lane* RoadPerception::getNextLane(Lane *_lane, int _type)                       // caution: gate selection
 {
-    Lane *lane = 0;
+    Lane *lane = nullptr;
     if(_type==LEADER)
     {
         LaneGate *gate = &_lane->getEndEndpoint()->gate;

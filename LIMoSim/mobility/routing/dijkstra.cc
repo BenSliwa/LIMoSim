@@ -6,7 +6,7 @@ namespace LIMoSim
 {
 
 Dijkstra::Dijkstra() :
-    p_graph(0)
+    p_graph(nullptr)
 {
 
 }
@@ -74,7 +74,7 @@ void Dijkstra::init(RoutingNode *_start)
     {
         RoutingNode *node = m_q.at(i);
         m_distances[node] = std::numeric_limits<double>::infinity();
-        m_predecessors[node] = 0;
+        m_predecessors[node] = nullptr;
     }
 
     m_distances[_start] = 0;
@@ -92,7 +92,7 @@ void Dijkstra::updateDistance(RoutingNode *_u, RoutingNode *_v)
 
 RoutingNode* Dijkstra::getNearestNode()
 {
-    RoutingNode *node = 0;
+    RoutingNode *node = nullptr;
     double minDistance_m = std::numeric_limits<double>::infinity();
 
     for(unsigned int i=0; i<m_q.size(); i++)

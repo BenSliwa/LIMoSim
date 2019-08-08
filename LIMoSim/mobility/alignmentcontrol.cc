@@ -38,7 +38,7 @@ double AlignmentControl::updateLateralPosition(Lane *_lane, double _alignment_m,
             // assign the lane to the new lane
 
 
-            Lane *neighbor = 0;
+            Lane *neighbor = nullptr;
             if(m_state==ALIGN::CHANGE_TO_LEFT)
                 neighbor = _lane->getLeftNeighbor();
             else if(m_state==ALIGN::CHANGE_TO_RIGHT)

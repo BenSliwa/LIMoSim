@@ -14,12 +14,12 @@
 namespace LIMoSim
 {
 
-SelectionHandler *selectionHandlerInstance = 0;
+SelectionHandler *selectionHandlerInstance = nullptr;
 
 SelectionHandler::SelectionHandler(QObject *_parent) :
     QObject(_parent),
-    m_figure(0),
-    m_boxPlot(0)
+    m_figure(nullptr),
+    m_boxPlot(nullptr)
 {
     selectionHandlerInstance = this;
 
@@ -117,13 +117,13 @@ void SelectionHandler::clearSelection()
     if(m_figure)
     {
         m_figure->deleteLater();
-        m_figure = 0;
+        m_figure = nullptr;
     }
 
     if(m_boxPlot)
     {
         m_boxPlot->deleteLater();
-        m_boxPlot = 0;
+        m_boxPlot = nullptr;
     }
 
     // update the ui

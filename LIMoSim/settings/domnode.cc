@@ -32,14 +32,14 @@ DOMNode* DOMNode::firstChild()
 {
     if(childNodes.size())
         return childNodes.at(0);
-    return 0;
+    return nullptr;
 }
 
 DOMNode* DOMNode::lastChild()
 {
     if(childNodes.size())
         return childNodes.at(childNodes.size()-1);
-    return 0;
+    return nullptr;
 }
 
 bool DOMNode::hasAttribute(const std::string &_key)

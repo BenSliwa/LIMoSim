@@ -31,7 +31,7 @@ void GraphPlot::addPoint(const Point &_point, const QString &_graphId)
 {
     QStringList colors = QStringList() << "b" << "g" << "r" << "c" << "m" << "y" << "k" << "w";
 
-    Graph *graph = 0;
+    Graph *graph = nullptr;
     if(m_graphs.contains(_graphId))
         graph = m_graphs.value(_graphId);
     else

@@ -8,11 +8,11 @@ namespace LIMoSim
 
 SegmentMarker::SegmentMarker(QQuickItem *_parent) :
     MapElementUi(_parent),
-    p_segment(0),
-    p_start(0),
-    p_end(0),
-    p_predecessor(0),
-    p_successor(0)
+    p_segment(nullptr),
+    p_start(nullptr),
+    p_end(nullptr),
+    p_predecessor(nullptr),
+    p_successor(nullptr)
 {
     setZ(20);
     setHeight(10);
@@ -161,7 +161,7 @@ void SegmentMarker::hoverEnterEvent(QHoverEvent *_event)
 
 void SegmentMarker::hoverLeaveEvent(QHoverEvent *_event)
 {
-    p_mapUi->getPathLayer()->setHighlightedWay(0);
+    p_mapUi->getPathLayer()->setHighlightedWay(nullptr);
 }
 
 /*************************************

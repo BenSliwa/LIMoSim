@@ -4,7 +4,7 @@
 namespace LIMoSim
 {
 
-ViewPort *viewPortInstance = 0;
+ViewPort *viewPortInstance = nullptr;
 
 ViewPort::ViewPort(QQuickItem *_parent) :
     QQuickPaintedItem(_parent),

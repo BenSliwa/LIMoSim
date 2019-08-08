@@ -7,8 +7,8 @@ namespace LIMoSim
 
 Figure::Figure(QQuickItem *_parent) :
     UiElement(_parent),
-    m_plot(0),
-    m_overlay(0)
+    m_plot(nullptr),
+    m_overlay(nullptr)
 {
     m_margin = {40, 10, 15, 24};
 
@@ -61,7 +61,7 @@ void Figure::hoverLeaveEvent(QHoverEvent *_event)
     if(m_overlay)
     {
         m_overlay->deleteLater();
-        m_overlay = 0;
+        m_overlay = nullptr;
     }
 }
 

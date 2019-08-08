@@ -3,7 +3,7 @@
 namespace LIMoSim
 {
 
-StatisticsManager *statisticsMangerInstance = 0;
+StatisticsManager *statisticsMangerInstance = nullptr;
 
 StatisticsManager::StatisticsManager()
 {
@@ -42,7 +42,7 @@ Statistics* StatisticsManager::createStatistics(const std::string &_id)
 
 Statistics* StatisticsManager::getStatistics(const std::string &_id)
 {
-    Statistics *statistics = 0;
+    Statistics *statistics = nullptr;
     if(m_statistics.count(_id)>0)
         statistics = m_statistics[_id];
 

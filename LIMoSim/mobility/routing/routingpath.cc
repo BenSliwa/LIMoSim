@@ -25,7 +25,7 @@ void RoutingPath::prepend(RoutingNode *_node)
 
 RoutingNode* RoutingPath::at(int _index) const
 {
-    RoutingNode *node = 0;
+    RoutingNode *node = nullptr;
     if(_index>-1 && _index<m_nodes.size())
         node = m_nodes.at(_index);
 

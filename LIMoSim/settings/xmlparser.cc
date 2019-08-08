@@ -48,7 +48,7 @@ DOMElement* XMLParser::parseData(const std::string &_data)
 
 DOMElement* XMLParser::parseNode(std::vector<std::string> &_data)
 {
-    DOMElement *element = 0; // here: assuming the first element is a start node
+    DOMElement *element = nullptr; // here: assuming the first element is a start node
     std::string data = _data.at(0);
     _data.erase(_data.begin());
     element = parseAttributes(data);

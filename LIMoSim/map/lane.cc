@@ -46,12 +46,12 @@ LaneGate* Lane::getGateForNode(Node *_node)
     LaneEndpoint *endpoint = getEndpointForNode(_node);
     if(endpoint)
         return &endpoint->gate;
-    return 0;
+    return nullptr;
 }
 
 LaneEndpoint* Lane::getEndpointForNode(Node *_node)
 {
-    LaneEndpoint *endpoint = 0;
+    LaneEndpoint *endpoint = nullptr;
     if(m_start.node==_node)
         endpoint = &m_start;
     else if(m_end.node==_node)
@@ -66,7 +66,7 @@ LaneEndpoint* Lane::getOtherEndpoint(LaneEndpoint *_endpoint)
         return &m_end;
     else if(_endpoint==&m_end)
         return &m_start;
-    return 0;
+    return nullptr;
 }
 
 Node* Lane::getOtherNode(Node *_node)
@@ -75,7 +75,7 @@ Node* Lane::getOtherNode(Node *_node)
         return m_end.node;
     else if(m_end.node==_node)
         return m_start.node;
-    return 0;
+    return nullptr;
 }
 
 void Lane::registerVehicle(Car *_vehicle)
@@ -114,7 +114,7 @@ double Lane::getWidth()
 
 Lane* Lane::getLeftNeighbor()
 {
-    Lane *neighbor = 0;
+    Lane *neighbor = nullptr;
 
     // backward: ++, forward --
     if(m_directionType==WAY_DIRECTION::BACKWARD)
@@ -125,7 +125,7 @@ Lane* Lane::getLeftNeighbor()
     if(neighbor)
     {
         if(neighbor->getDirectionType()!=m_directionType)
-            neighbor = 0;
+            neighbor = nullptr;
     }
 
     return neighbor;
@@ -133,7 +133,7 @@ Lane* Lane::getLeftNeighbor()
 
 Lane* Lane::getRightNeighbor()
 {
-    Lane *neighbor = 0;
+    Lane *neighbor = nullptr;
 
     // backward: --, forward ++
     if(m_directionType==WAY_DIRECTION::BACKWARD)
@@ -144,7 +144,7 @@ Lane* Lane::getRightNeighbor()
     if(neighbor)
     {
         if(neighbor->getDirectionType()!=m_directionType)
-            neighbor = 0;
+            neighbor = nullptr;
     }
 
     return neighbor;

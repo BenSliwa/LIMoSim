@@ -13,12 +13,12 @@ namespace LIMoSim
 
 Car::Car(const std::string &_id, const std::string &_name) :
     Vehicle(_id, _name),
-    m_movementTimer(0),
-    m_laneChangeTimer(0),
-    m_mobility(0),
+    m_movementTimer(nullptr),
+    m_laneChangeTimer(nullptr),
+    m_mobility(nullptr),
     m_perception(new RoadPerception(this)),
-    m_followerModel(0),
-    m_laneChangeModel(0),
+    m_followerModel(nullptr),
+    m_laneChangeModel(nullptr),
     m_intersectionHandling(new IntersectionHandling(this)),
     m_speed_mps(0),
     m_maxSpeed_mps(130/3.6),

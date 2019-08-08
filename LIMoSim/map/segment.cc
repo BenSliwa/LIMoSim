@@ -12,8 +12,8 @@ namespace LIMoSim
 
 Segment::Segment(Node *_start, Node *_end, Way *_way) :
     p_way(_way),
-    p_predecessor(0),
-    p_successor(0)
+    p_predecessor(nullptr),
+    p_successor(nullptr)
 {
     setStart(_start);
     setEnd(_end);
@@ -31,13 +31,13 @@ Segment::~Segment()
     if(p_predecessor)
     {
         if(p_predecessor->getSuccessor()==this)
-            p_predecessor->setSuccessor(0);
+            p_predecessor->setSuccessor(nullptr);
     }
 
     if(p_successor)
     {
         if(p_successor->getPredecessor()==this)
-            p_successor->setPredecessor(0);
+            p_successor->setPredecessor(nullptr);
     }
 }
 
@@ -160,7 +160,7 @@ void Segment::updateConnectionLane(Lane *_from, Lane *_to, Node *_node, int _tur
 
 SegmentGate* Segment::getGateForNode(Node *_node)
 {
-    SegmentGate *gate = 0;
+    SegmentGate *gate = nullptr;
     if(_node==m_startGate.node)
         gate = getStartGate();
     else if(_node==m_endGate.node)
@@ -291,7 +291,7 @@ void Segment::updateLanePositions(int _index)
 
 
     //
-    Lane *lane = 0;
+    Lane *lane = nullptr;
     if(_index>=m_lanes.size())
     {
         lane = new Lane(startEndpoint, endEndpoint, this);
@@ -429,7 +429,7 @@ double Segment::getRotation()
 
 Node* Segment::getOtherNode(Node *_node)
 {
-    Node *node = 0;
+    Node *node = nullptr;
     if(_node==m_startGate.node)
         node = m_endGate.node;
     else if(_node==m_endGate.node)
@@ -460,7 +460,7 @@ Lane* Segment::getLane(int _index)
 {
     if(_index<m_lanes.size())
         return m_lanes.at(_index);
-    return 0;
+    return nullptr;
 }
 
 std::vector<Lane*> Segment::getBackwardLanes()

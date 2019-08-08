@@ -11,7 +11,7 @@
 namespace LIMoSim
 {
 
-Map *mapInstance = 0;
+Map *mapInstance = nullptr;
 
 Map::Map() :
     m_nodeId(0),
@@ -230,7 +230,7 @@ void Map::setRandomPosition(Car *_car)
 {
     PositionInfo info;
     Way *way = getRandomWay();
-    Segment *segment = 0;
+    Segment *segment = nullptr;
     while(!segment)
     {
         way = getRandomWay();
@@ -262,7 +262,7 @@ Segment* Map::getRandomSegment(Way *_way)
     int numSegments = _way->getNumSegments();
     if(numSegments > 0)
         return _way->getSegment(RNG::intUniform(0, numSegments-1));
-    return 0;
+    return nullptr;
 }
 
 Lane* Map::getRandomLane(Segment *_segment)
@@ -270,7 +270,7 @@ Lane* Map::getRandomLane(Segment *_segment)
     int numLanes = _segment->getNumLanes();
     if(numLanes > 0)
         return _segment->getLane(RNG::intUniform(0, numLanes-1));
-    return 0;
+    return nullptr;
 }
 
 std::vector<Node*> Map::getIntersectionNodes()
@@ -352,14 +352,14 @@ Node* Map::getNode(const std::string &_id)
 {
     if(m_nodes.count(_id)>0)
         return m_nodes[_id];
-    return 0;
+    return nullptr;
 }
 
 Way* Map::getWay(const std::string &_id)
 {
     if(m_ways.count(_id)>0)
         return m_ways[_id];
-    return 0;
+    return nullptr;
 }
 
 Car* Map::getCar(const std::string &_id)

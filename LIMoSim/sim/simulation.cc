@@ -16,7 +16,7 @@
 namespace LIMoSim
 {
 
-Simulation *simulationInstance = 0;
+Simulation *simulationInstance = nullptr;
 
 Simulation::Simulation(EventScheduler *_scheduler)
 {
@@ -45,7 +45,7 @@ Simulation* Simulation::getInstance(EventScheduler *_scheduler)
 
 bool Simulation::hasInstance()
 {
-    return (simulationInstance!=0);
+    return (simulationInstance!=nullptr);
 }
 
 void Simulation::registerEventHandler(EventHandler *_eventHandler)

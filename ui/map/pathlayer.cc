@@ -19,8 +19,8 @@ namespace LIMoSim
 PathLayer::PathLayer(QQuickItem *_parent) :
     MapElementUi(_parent),
     p_map(Map::getInstance()),
-    p_highlightedWay(0),
-    p_highlightedCar(0)
+    p_highlightedWay(nullptr),
+    p_highlightedCar(nullptr)
 {
     setZ(10);
 
@@ -247,7 +247,7 @@ QString PathLayer::exportLanes(Segment *_segment)
     QString data;
     std::vector<Lane*> lanes = _segment->getLanes();
 
-    Lane *previous = 0;
+    Lane *previous = nullptr;
     for(unsigned int i=0; i<lanes.size(); i++)
     {
         Lane *lane = lanes.at(i);
@@ -500,7 +500,7 @@ void PathLayer::drawSegment(Segment *_segment, int _zoomLevel)
 
 
         std::vector<Lane*> lanes = _segment->getLanes();
-        Lane *previous = 0;
+        Lane *previous = nullptr;
         for(unsigned int l=0; l<lanes.size(); l++)
         {
             Lane *lane = lanes.at(l);

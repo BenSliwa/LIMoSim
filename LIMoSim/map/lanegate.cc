@@ -5,14 +5,14 @@ namespace LIMoSim
 {
 
 LaneGate::LaneGate() :
-    lane(0)
+    lane(nullptr)
 {
 
 }
 
 Lane* LaneGate::getNextLane()
 {
-    Lane *lane = 0;
+    Lane *lane = nullptr;
     int type = TURN::THROUGH;
     while(out.count(type)==0 && type<TURN::REVERSE)
         type++;

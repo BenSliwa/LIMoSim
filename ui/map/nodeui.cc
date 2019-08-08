@@ -8,7 +8,7 @@ namespace LIMoSim
 
 NodeUi::NodeUi(QQuickItem *_parent) :
     MapElementUi(_parent),
-    p_node(0)
+    p_node(nullptr)
 {
     setZ(20);
 

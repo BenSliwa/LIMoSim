@@ -31,7 +31,7 @@ Variant DOMElement::getAttribute(const std::string &_key)
 
 DOMElement* DOMElement::getFirstChildWithTag(const std::string &_tagName)
 {
-    DOMElement *element = 0;
+    DOMElement *element = nullptr;
 
     for(unsigned int i=0; i<childNodes.size(); i++)
     {

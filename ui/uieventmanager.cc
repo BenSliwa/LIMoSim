@@ -14,12 +14,12 @@
 namespace LIMoSim
 {
 
-UiEventManager *uiEventManagerInstance = 0;
+UiEventManager *uiEventManagerInstance = nullptr;
 
 UiEventManager::UiEventManager(QObject *_parent) :
     QObject(_parent),
-    p_start(0),
-    p_destination(0)
+    p_start(nullptr),
+    p_destination(nullptr)
 {
     uiEventManagerInstance = this;
 }
@@ -39,7 +39,7 @@ UiEventManager* UiEventManager::getInstance()
 void UiEventManager::route(NodeUi *_from, NodeUi *_to)
 {
     Map *map = Map::getInstance();
-    Node *avoid = 0;
+    Node *avoid = nullptr;
 
 
     RoutingGraph graph = map->createGraph(_from->getNode(), _to->getNode(), avoid);

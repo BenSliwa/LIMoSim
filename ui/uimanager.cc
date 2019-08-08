@@ -35,12 +35,12 @@
 namespace LIMoSim
 {
 
-UiManager *uiManagerInstance = 0;
+UiManager *uiManagerInstance = nullptr;
 
 UiManager::UiManager(QObject *_parent) :
     QObject(_parent),
     EventHandler(),
-    p_map(0)
+    p_map(nullptr)
 {
     uiManagerInstance = this;
 

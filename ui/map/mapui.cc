@@ -6,7 +6,7 @@
 namespace LIMoSim
 {
 
-MapUi *mapUiInstance = 0;
+MapUi *mapUiInstance = nullptr;
 
 MapUi::MapUi(QQuickItem *_parent) :
     UiElement(_parent),

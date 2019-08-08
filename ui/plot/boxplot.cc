@@ -27,7 +27,7 @@ BoxPlot::~BoxPlot()
 
 void BoxPlot::addValue(double _value, const QString &_boxId)
 {
-    Box *box = 0;
+    Box *box = nullptr;
     if(m_data.contains(_boxId))
         box = m_data.value(_boxId);
     else
