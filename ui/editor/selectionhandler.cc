@@ -104,10 +104,9 @@ void SelectionHandler::selectCar(CarUi *_car)
 void SelectionHandler::clearSelection()
 {
     // deselect all objbts
-    for(int i=0; i<m_selectedCars.size(); i++)
+    for(auto car : m_selectedCars)
     {
-        CarUi *car = m_selectedCars.at(i);
-      //  car->softSelection();
+        //  car->softSelection();
     }
 
 
@@ -164,9 +163,8 @@ void SelectionHandler::onFigureUpdateTimeout()
     {
         BoxPlot *boxPlot = qobject_cast<BoxPlot*>(m_boxPlot->getPlot());
 
-        for(int i=0; i<m_selectedCars.size(); i++)
+        for(auto ui : m_selectedCars)
         {
-            CarUi *ui = m_selectedCars.at(i);
             Car *car = ui->getCar();
 
 
@@ -191,9 +189,8 @@ void SelectionHandler::onFigureUpdateTimeout()
         QtEventScheduler *scheduler = dynamic_cast<QtEventScheduler*>(Simulation::getInstance()->getEventScheduler());
 
         double time_s = scheduler->getSimTime();
-        for(int i=0; i<m_selectedCars.size(); i++)
+        for(auto ui : m_selectedCars)
         {
-            CarUi *ui = m_selectedCars.at(i);
             Car *car = ui->getCar();
 
 

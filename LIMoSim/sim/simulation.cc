@@ -100,8 +100,8 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles, IGe
 
         // TODO: why is this needed to display the nodes with offset after the initial setup?
         std::vector<Segment*> segments = node->getSegments();
-        for(unsigned int i=0; i<segments.size(); i++)
-            segments.at(i)->linkLanes();
+        for(auto & segment : segments)
+            segment->linkLanes();
     }
 
     map->linkSegments();
@@ -112,9 +112,9 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles, IGe
     if(FileHandler::exists(_vehicles))
     {
         DOMElement *element = xml.parse(_vehicles);
-        for(unsigned int i=0; i<element->childNodes.size(); i++)
+        for(auto & childNode : element->childNodes)
         {
-            DOMElement *child = element->childNodes.at(i)->toElement();
+            DOMElement *child = childNode->toElement();
 
             int num = 1;
             if(child->hasAttribute("num"))
@@ -136,9 +136,8 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles, IGe
     }
 
     // TODO: do this at the right point
-    for(unsigned int i=0; i<m_eventHandler.size(); i++)
+    for(auto handler : m_eventHandler)
     {
-        EventHandler *handler = m_eventHandler.at(i);
         handler->initialize();
     }
 }

@@ -23,9 +23,8 @@ Way::Way(const std::string &_id, int _type, const std::string &_name) :
 
 Way::~Way()
 {
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         delete segment;
     }
 
@@ -258,9 +257,8 @@ Segment* Way::getSegment(int _index)
 Segment* Way::getSegment(Node *_start, Node *_end)
 {
     Segment *segment = nullptr;
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto currentSegment : m_segments)
     {
-        Segment *currentSegment = m_segments.at(i);
         if(currentSegment->getStartGate()->node==_start && currentSegment->getEndGate()->node==_end)
         {
             segment = currentSegment;
@@ -294,9 +292,8 @@ void Way::linkSegments()
 
 void Way::linkLanes()
 {
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         segment->linkLanes();
     }
 

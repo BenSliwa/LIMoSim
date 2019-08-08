@@ -18,9 +18,9 @@ VehicleParser::VehicleParser() :
 
 void VehicleParser::loadScenario(DOMElement *_dom)
 {
-    for(unsigned int i=0; i<_dom->childNodes.size(); i++)
+    for(auto & childNode : _dom->childNodes)
     {
-        DOMElement *element = _dom->childNodes.at(i)->toElement();
+        DOMElement *element = childNode->toElement();
         std::string name = element->tagName;
 
         if(name=="Car")
@@ -50,9 +50,9 @@ void VehicleParser::parseCar(DOMElement *_dom)
     if(_dom->hasAttribute("offset"))
         info.laneOffset_m = _dom->getAttribute("offset").toDouble();
 
-    for(unsigned int i=0; i<_dom->childNodes.size(); i++)
+    for(auto & childNode : _dom->childNodes)
     {
-        DOMElement *child = _dom->childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string name = child->tagName;
 
         if(name=="tag")
@@ -94,9 +94,9 @@ std::vector<Node*> VehicleParser::parsePath(DOMElement *_dom)
 {
     std::vector<Node*> path;
 
-    for(unsigned int i=0; i<_dom->childNodes.size(); i++)
+    for(auto & childNode : _dom->childNodes)
     {
-        DOMElement *child = _dom->childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string name = child->tagName;
 
         if(name=="nd")

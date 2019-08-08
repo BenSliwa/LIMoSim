@@ -78,8 +78,8 @@ std::vector<std::string> FileHandler::read(const std::string &_path)
 std::string FileHandler::listToString(const std::vector<std::string> &_data)
 {
     std::string data;
-    for(unsigned int i=0; i<_data.size(); i++)
-        data += _data.at(i);
+    for(const auto & i : _data)
+        data += i;
     return data;
 }
 

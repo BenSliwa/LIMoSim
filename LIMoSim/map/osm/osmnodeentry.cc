@@ -26,9 +26,9 @@ OSMNodeEntry OSMNodeEntry::fromXML(DOMElement *_entry, OSMDocument *_parent)
     entry.y = _entry->getAttribute("y").toDouble();
 
     entry.type = NODE_TYPE::NODE;
-    for(unsigned int i=0; i<_entry->childNodes.size(); i++)
+    for(auto & childNode : _entry->childNodes)
     {
-        DOMElement *child = _entry->childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string name = child->tagName;
 
         if(name=="tag")

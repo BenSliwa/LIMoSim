@@ -78,10 +78,8 @@ PerceptionEntry RoadPerception::findNearestVehicleOnLane(Lane *_lane,  double _o
     PerceptionEntry entry;
 
     std::vector<Car*> cars =  _lane->getVehicles();
-    for(unsigned int i=0; i<cars.size(); i++)
+    for(auto car : cars)
     {
-        Car *car = cars.at(i);
-
         double offset_m = getOffsetOnLane(car, _lane, _type);
         if(car!=p_car && offset_m>=_offsetOnlane_m)
         {

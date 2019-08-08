@@ -103,9 +103,8 @@ void GraphPlot::handlePaintEvent()
         QPainterPath painterPath;
         QPolygonF polygon;
 
-        for(int i=0; i<points.size(); i++)
+        for(auto to : points)
         {
-            Point to = points.at(i);
             to.x -= minX;
             to.x = map(to.x, m_xLim.x, m_xLim.y, 0, width());
             to.y = map(to.y, m_yLim.x, m_yLim.y, 0, height());
@@ -168,9 +167,8 @@ QString GraphPlot::toEps(const ExportConfig &_export)
         QPainterPath painterPath;
         QPolygonF polygon;
 
-        for(int i=0; i<points.size(); i++)
+        for(auto to : points)
         {
-            Point to = points.at(i);
             to.x -= minX;
             polygon << getEpsCanvasCoordinate(to.x, to.y, _export);
         }

@@ -19,8 +19,8 @@ StatisticsEntry::StatisticsEntry(const std::string _key, double _value, int _typ
 double StatisticsEntry::sum()
 {
     double sum = 0;
-    for(unsigned int i=0; i<data.size(); i++)
-        sum += data.at(i);
+    for(double i : data)
+        sum += i;
 
     return sum;
 }

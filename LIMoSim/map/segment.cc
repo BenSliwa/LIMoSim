@@ -47,9 +47,8 @@ Segment::~Segment()
 
 void Segment::clear()
 {
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         delete lane;
     }
 }
@@ -83,9 +82,8 @@ void Segment::linkLanes(Lane *_out, LaneGate *_outGate, Lane *_in, LaneGate *_in
 
 void Segment::clearLaneLinks(Node *_node)
 {
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         LaneGate *gate = lane->getGateForNode(_node);
         if(gate)
             gate->clearOut();
@@ -481,9 +479,8 @@ std::vector<Lane*> Segment::getFowardLanes()
 {
     std::vector<Lane*> lanes;
 
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         if(lane->getDirectionType()!=WAY_DIRECTION::BACKWARD)
             lanes.push_back(lane);
     }

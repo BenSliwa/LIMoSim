@@ -70,9 +70,8 @@ void QtEventScheduler::reset()
     stop();
 
     std::cout << "QtEventScheduler::reset - remaining events" << std::endl;
-    for(unsigned int i=0; i<m_eventQueue.size(); i++)
+    for(auto event : m_eventQueue)
     {
-        Event *event = m_eventQueue.at(i);
         std::cout << "Event:\t" << event->getTimestamp() << "\t" << event->getInfo() << std::endl;
     }
 }

@@ -196,9 +196,8 @@ void UiManager::generateUiElements()
     {
         Way *way = w->second;
         std::vector<Segment*> &segments = way->getSegments();
-        for(unsigned int i=0; i<segments.size(); i++)
+        for(auto segment : segments)
         {
-            Segment *segment = segments.at(i);
             if(!m_segments.value(segment))
                 addSegment(segment);
         }

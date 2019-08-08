@@ -14,9 +14,9 @@ OSMRelationEntry OSMRelationEntry::fromXML(DOMElement *_entry, OSMDocument *_par
     OSMRelationEntry entry(_parent);
 
     entry.id = _entry->getAttribute("id").toInt();
-    for(unsigned int i=0; i<_entry->childNodes.size(); i++)
+    for(auto & childNode : _entry->childNodes)
     {
-        DOMElement *child = _entry->childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string name = child->tagName;
 
         if(name=="tag")

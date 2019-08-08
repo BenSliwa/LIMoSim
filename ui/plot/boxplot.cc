@@ -93,8 +93,8 @@ void BoxPlot::drawBox(Box *_box, int _index)
 
 
     std::vector<double> outliers = _box->getOutliers(lowerWhisker, upperWhisker);
-    for(unsigned int i=0; i<outliers.size(); i++)
-        drawOutlier(x, outliers.at(i));
+    for(double outlier : outliers)
+        drawOutlier(x, outlier);
 
     drawLine(getPlotCoordinate(QPointF(x, lowerWhisker)), getPlotCoordinate(QPointF(x, lowerQuartile)), LineStyle("black", 1, false, false, Qt::DashLine));
     drawLine(getPlotCoordinate(QPointF(x, upperWhisker)), getPlotCoordinate(QPointF(x, upperQuartile)), LineStyle("black", 1, false, false, Qt::DashLine));
@@ -175,10 +175,10 @@ QString BoxPlot::exportBoxplot(Box *_box, int _index, const ExportConfig &_expor
 
     // outlier
     std::vector<double> outliers = _box->getOutliers(lowerWhisker, upperWhisker);
-    for(unsigned int i=0; i<outliers.size(); i++)
+    for(double i : outliers)
     {
         LineStyle style("red");
-        QPointF outlier = getEpsCanvasCoordinate(x, outliers.at(i), _export);
+        QPointF outlier = getEpsCanvasCoordinate(x, i, _export);
         data += m_eps.drawLine(outlier+QPointF(-w,0), outlier+QPointF(w,0), style);
         data += m_eps.drawLine(outlier+QPointF(0,-w), outlier+QPointF(0,w), style);
     }

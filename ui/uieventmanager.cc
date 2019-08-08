@@ -126,16 +126,16 @@ void UiEventManager::onNodeHovered()
 {
     NodeUi *node = qobject_cast<NodeUi*>(QObject::sender());
     QList<NodeUi*> destinations = node->updateDestinations();
-    for(int i=0; i<destinations.size(); i++)
-        destinations.at(i)->softSelection();
+    for(auto destination : destinations)
+        destination->softSelection();
 }
 
 void UiEventManager::onNodeUnhovered()
 {
     NodeUi *node = qobject_cast<NodeUi*>(QObject::sender());
     QList<NodeUi*> destinations = node->updateDestinations();
-    for(int i=0; i<destinations.size(); i++)
-        destinations.at(i)->softDeselection();
+    for(auto destination : destinations)
+        destination->softDeselection();
 }
 
 }

@@ -170,9 +170,8 @@ QString Figure::exportTicks(const ExportConfig &_export)
     TextStyle style = p_settings->tickStyle;
 
     QList<Tick>& xTicks = m_plot->getXTicks();
-    for(int i=0; i<xTicks.size(); i++)
+    for(auto tick : xTicks)
     {
-        Tick tick = xTicks.at(i);
         double x = tick.canvas ;
         QPointF point(map(x, m_plot->width(), _export.width), 0);
         QPointF offset(m_margin.left, m_margin.bottom*3/4);
@@ -181,9 +180,8 @@ QString Figure::exportTicks(const ExportConfig &_export)
     }
 
     QList<Tick>& yTicks = m_plot->getYTicks();
-    for(int i=0; i<yTicks.size(); i++)
+    for(auto tick : yTicks)
     {
-        Tick tick = yTicks.at(i);
         double y = tick.canvas;
         QPointF point(0, map(y, m_plot->height(), _export.height));
         QPointF offset(m_margin.left*3/4, m_margin.bottom);
@@ -231,18 +229,16 @@ void Figure::drawTicks()
 {
     TextStyle style = p_settings->tickStyle;
     QList<Tick>& xTicks = m_plot->getXTicks();
-    for(int i=0; i<xTicks.size(); i++)
+    for(auto tick : xTicks)
     {
-        Tick tick = xTicks.at(i);
         double x = tick.canvas + m_margin.left;
 
         drawText(tick.label, QPointF(x, height() - (m_margin.bottom*3/4)), style);
     }
 
     QList<Tick>& yTicks = m_plot->getYTicks();
-    for(int i=0; i<yTicks.size(); i++)
+    for(auto tick : yTicks)
     {
-        Tick tick = yTicks.at(i);
         double y = tick.canvas + m_margin.bottom;
 
         drawText(tick.label, QPointF(m_margin.left*3/4, height() - y), style);

@@ -40,8 +40,8 @@ void Box::update()
 double Box::getSum()
 {
     double sum = 0;
-    for(unsigned int i=0; i<m_data.size(); i++)
-        sum += m_data.at(i);
+    for(double i : m_data)
+        sum += i;
 
     return sum;
 }
@@ -78,9 +78,8 @@ double Box::getStdDev()
     double stdDev = 0;
     double mean = getMean();
 
-    for(unsigned int i=0; i<m_data.size(); i++)
+    for(double x : m_data)
     {
-        double x = m_data.at(i);
         stdDev += (x-mean) * (x-mean);
     }
 
@@ -125,9 +124,8 @@ double Box::getLowerWhisker(double _lowerQuartile, double _iqr)
 {
     double whisker = 0;
     double allowedOffset = 1.5 * _iqr;
-    for(unsigned int i=0; i<m_data.size(); i++)
+    for(double x : m_data)
     {
-        double x = m_data.at(i);
         double offset = _lowerQuartile - x;
 
         if(offset<allowedOffset)

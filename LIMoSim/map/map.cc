@@ -123,9 +123,8 @@ void Map::removeNode(Node *_node)
 {
     // remove the node from all its ways
     std::vector<Segment*> segments = _node->getSegments();
-    for(unsigned int i=0; i<segments.size(); i++)
+    for(auto segment : segments)
     {
-        Segment *segment = segments.at(i);
         Way *way = segment->getWay();
         Node *neighbor = segment->getOtherNode(_node);
 
@@ -147,9 +146,8 @@ void Map::removeNode(Node *_node)
     updateAllNodesWithDestination(_node);
 
     // update all nodes that had the same destinations
-    for(unsigned int i=0; i<destinations.size(); i++)
+    for(auto entry : destinations)
     {
-        DestinationEntry entry = destinations.at(i);
         updateAllNodesWithDestination(entry.destination);
     }
 }
@@ -306,14 +304,11 @@ RoutingGraph Map::createGraph(Node *_from, Node *_to, Node *_previous)
 {
     RoutingGraph graph;
     std::vector<Node*> nodes = getNodesList();
-    for(unsigned int i=0; i<nodes.size(); i++)
+    for(auto node : nodes)
     {
-        Node *node = nodes.at(i);
-
         std::vector<Segment*> segments = node->getOutgoingSegments();
-        for(unsigned int s=0; s<segments.size(); s++)
+        for(auto segment : segments)
         {
-            Segment *segment = segments.at(s);
             Node *neighbor = segment->getOtherNode(node);
 
             if(!(node==_from && neighbor==_previous))

@@ -20,9 +20,8 @@ DOMElement* XMLParser::parseData(const std::string &_data)
 {
     //
     std::vector<std::string> nodes;
-    for(unsigned int i=0; i<_data.size(); i++)
+    for(char c : _data)
     {
-        char c = _data.at(i);
         if(c=='<')
         {
             if(m_buffer!="")

@@ -121,8 +121,8 @@ void RoadBuilder::deleteNode(NodeUi *_node)
 {
     // unhighlight all highlighted destinates
     QList<NodeUi*> destinations = p_selectedNode->updateDestinations();
-    for(int i=0; i<destinations.size(); i++)
-        destinations.at(i)->softDeselection();
+    for(auto destination : destinations)
+        destination->softDeselection();
 
     // delete the ui part
     p_uiManager->removeNode(_node);

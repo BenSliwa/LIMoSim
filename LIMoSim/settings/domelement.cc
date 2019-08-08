@@ -33,9 +33,9 @@ DOMElement* DOMElement::getFirstChildWithTag(const std::string &_tagName)
 {
     DOMElement *element = nullptr;
 
-    for(unsigned int i=0; i<childNodes.size(); i++)
+    for(auto & childNode : childNodes)
     {
-        DOMElement *child = childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         if(child->tagName==_tagName)
         {
             element = child;
@@ -67,9 +67,9 @@ std::string DOMElement::toString(int _level)
         stream << ">";
 
         // TODO: children
-        for(unsigned int i=0; i<childNodes.size(); i++)
+        for(auto & childNode : childNodes)
         {
-            DOMElement *currentChild = childNodes.at(i)->toElement();
+            DOMElement *currentChild = childNode->toElement();
             stream << "\n" << currentChild->toString(_level+1);
         }
 

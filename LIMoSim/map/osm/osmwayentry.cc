@@ -16,9 +16,9 @@ OSMWayEntry OSMWayEntry::fromXML(DOMElement *_dom, OSMDocument *_parent)
 
     entry.id = _dom->getAttribute("id").toString();
 
-    for(unsigned int i=0; i<_dom->childNodes.size(); i++)
+    for(auto & childNode : _dom->childNodes)
     {
-        DOMElement *child = _dom->childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string name = child->tagName;
         if(name=="nd")
         {
@@ -55,8 +55,8 @@ OSMWayEntry OSMWayEntry::fromWay(Way *_way, OSMDocument *_parent)
         entry.highway = "residential";
 
     std::vector<Node*> &nodes = _way->getNodes();
-    for(unsigned int i=0; i<nodes.size(); i++)
-        entry.nodes.push_back(nodes.at(i)->getId());
+    for(auto & node : nodes)
+        entry.nodes.push_back(node->getId());
 
     return entry;
 }
@@ -107,9 +107,8 @@ Way* OSMWayEntry::toWay(std::map<std::string,OSMNodeEntry> &_nodes)
     way->setForwardLanes(forwardLanes);
     way->setBackwardLanes(backwardLanes);
 
-    for(unsigned int i=0; i<nodes.size(); i++)
+    for(auto id : nodes)
     {
-        std::string id = nodes.at(i);
         OSMNodeEntry entry = _nodes[id];
 
         Node *node = map->getNode(id);
@@ -130,10 +129,10 @@ DOMElement* OSMWayEntry::toXML() const
 
     xml->setAttribute("id", id);
 
-    for(unsigned int i=0; i<nodes.size(); i++)
+    for(const auto & i : nodes)
     {
         DOMElement *node = new DOMElement("nd");
-        node->setAttribute("ref", Variant(nodes.at(i)));
+        node->setAttribute("ref", Variant(i));
         xml->appendChild(node);
     }
 

@@ -45,9 +45,8 @@ void Statistics::handleEvent(Event *_event)
 
         //
 
-        for(unsigned int i=0; i<m_keys.size(); i++)
+        for(auto key : m_keys)
         {
-            std::string key = m_keys.at(i);
             StatisticsEntry entry = m_data[key];
 
             switch(entry.type)

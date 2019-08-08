@@ -171,9 +171,8 @@ void Car::checkCollisions()
             positions.push_back(box.frontLeft);
             positions.push_back(box.frontRight);
 
-            for(unsigned int i=0; i<positions.size(); i++)
+            for(auto p : positions)
             {
-                Position p = positions.at(i);
                 double x = p.x - m_position.x;
                 double y = p.y - m_position.y;
 

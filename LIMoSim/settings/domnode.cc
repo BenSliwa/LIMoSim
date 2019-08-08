@@ -14,8 +14,8 @@ DOMNode::DOMNode(const std::string _nodeName, int _nodeType, DOMNode *_parent) :
 
 DOMNode::~DOMNode()
 {
-    for(unsigned int i=0; i<childNodes.size(); i++)
-        delete childNodes.at(i);
+    for(auto & childNode : childNodes)
+        delete childNode;
 }
 
 

@@ -59,10 +59,8 @@ double IDM::computeAcceleration(Car *_car, Car *_leader, double _distance_m, Lan
     if(node->getType()!=NODE_TYPE::TRAFFIC_SIGNAL)
     {
         Node *lastNode = info.currentNode;
-        for(unsigned int i=0; i<info.path.size(); i++)
+        for(auto currentNode : info.path)
         {
-            Node *currentNode = info.path.at(i);
-
             currentDistance_m += (currentNode->getPosition() - lastNode->getPosition()).norm();
             if(currentNode->getType()==NODE_TYPE::TRAFFIC_SIGNAL)
             {
