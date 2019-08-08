@@ -1,5 +1,5 @@
 #include "idm.h"
-#include <math.h>
+#include <cmath>
 #include <limits>
 #include "LIMoSim/map/trafficsignal.h"
 

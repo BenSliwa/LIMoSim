@@ -1,5 +1,5 @@
 #include "LIMoSim/location/math_.h"
-#include <math.h>
+#include <cmath>
 #include "car.h"
 #include "LIMoSim/sim/rng.h"
 #include "LIMoSim/mobility/mobilitymodels.h"

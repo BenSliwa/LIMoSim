@@ -1,6 +1,6 @@
 #include "alignmentcontrol.h"
 #include <algorithm>
-#include <math.h>
+#include <cmath>
 #include "LIMoSim/vehicles/car.h"
 
 namespace LIMoSim

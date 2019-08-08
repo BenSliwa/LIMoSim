@@ -1,6 +1,6 @@
 #include "trafficsignal.h"
 #include "LIMoSim/location/math_.h"
-#include <math.h>
+#include <cmath>
 
 namespace LIMoSim
 {

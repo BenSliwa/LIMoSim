@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <sstream>
-#include <math.h>
+#include <cmath>
 
 namespace LIMoSim
 {
