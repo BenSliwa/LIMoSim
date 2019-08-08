@@ -84,7 +84,9 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles, IGe
         OSMDocument document = OSMDocument::fromXML(xml.parse(_map), geoCoordConverter);
         FileHandler::write(document.toXML()->toString(), optPath);
     }
-
+    else {
+        std::cerr << "ERROR: Simulation::load: cannot open map file " << _map << std::endl;
+    }
 
 
     //
@@ -128,6 +130,9 @@ void Simulation::load(const std::string &_map, const std::string &_vehicles, IGe
                     delete entry;
             }
         }
+    }
+    else {
+        std::cerr << "ERROR: Simulation::load: cannot open vehicles file " << _vehicles << std::endl;
     }
 
     // TODO: do this at the right point
