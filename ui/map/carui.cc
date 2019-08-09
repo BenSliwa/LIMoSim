@@ -7,7 +7,7 @@ namespace LIMoSim
 
 CarUi::CarUi(QQuickItem *_parent) :
     MapElementUi(_parent),
-    p_car(0),
+    p_car(nullptr),
     m_color("yellow")
 {
     setZ(100);

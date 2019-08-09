@@ -11,7 +11,7 @@
 namespace LIMoSim
 {
 
-Map *mapInstance = 0;
+Map *mapInstance = nullptr;
 
 Map::Map() :
     m_nodeId(0),
@@ -123,9 +123,8 @@ void Map::removeNode(Node *_node)
 {
     // remove the node from all its ways
     std::vector<Segment*> segments = _node->getSegments();
-    for(unsigned int i=0; i<segments.size(); i++)
+    for(auto segment : segments)
     {
-        Segment *segment = segments.at(i);
         Way *way = segment->getWay();
         Node *neighbor = segment->getOtherNode(_node);
 
@@ -147,9 +146,8 @@ void Map::removeNode(Node *_node)
     updateAllNodesWithDestination(_node);
 
     // update all nodes that had the same destinations
-    for(unsigned int i=0; i<destinations.size(); i++)
+    for(auto entry : destinations)
     {
-        DestinationEntry entry = destinations.at(i);
         updateAllNodesWithDestination(entry.destination);
     }
 }
@@ -230,7 +228,7 @@ void Map::setRandomPosition(Car *_car)
 {
     PositionInfo info;
     Way *way = getRandomWay();
-    Segment *segment = 0;
+    Segment *segment = nullptr;
     while(!segment)
     {
         way = getRandomWay();
@@ -262,7 +260,7 @@ Segment* Map::getRandomSegment(Way *_way)
     int numSegments = _way->getNumSegments();
     if(numSegments > 0)
         return _way->getSegment(RNG::intUniform(0, numSegments-1));
-    return 0;
+    return nullptr;
 }
 
 Lane* Map::getRandomLane(Segment *_segment)
@@ -270,7 +268,7 @@ Lane* Map::getRandomLane(Segment *_segment)
     int numLanes = _segment->getNumLanes();
     if(numLanes > 0)
         return _segment->getLane(RNG::intUniform(0, numLanes-1));
-    return 0;
+    return nullptr;
 }
 
 std::vector<Node*> Map::getIntersectionNodes()
@@ -306,14 +304,11 @@ RoutingGraph Map::createGraph(Node *_from, Node *_to, Node *_previous)
 {
     RoutingGraph graph;
     std::vector<Node*> nodes = getNodesList();
-    for(unsigned int i=0; i<nodes.size(); i++)
+    for(auto node : nodes)
     {
-        Node *node = nodes.at(i);
-
         std::vector<Segment*> segments = node->getOutgoingSegments();
-        for(unsigned int s=0; s<segments.size(); s++)
+        for(auto segment : segments)
         {
-            Segment *segment = segments.at(s);
             Node *neighbor = segment->getOtherNode(node);
 
             if(!(node==_from && neighbor==_previous))
@@ -352,14 +347,14 @@ Node* Map::getNode(const std::string &_id)
 {
     if(m_nodes.count(_id)>0)
         return m_nodes[_id];
-    return 0;
+    return nullptr;
 }
 
 Way* Map::getWay(const std::string &_id)
 {
     if(m_ways.count(_id)>0)
         return m_ways[_id];
-    return 0;
+    return nullptr;
 }
 
 Car* Map::getCar(const std::string &_id)

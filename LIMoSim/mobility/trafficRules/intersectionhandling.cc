@@ -26,9 +26,8 @@ PerceptionEntry IntersectionHandling::getNearestVehicle(const std::vector<Lane*>
 
     PerceptionEntry nearest;
 
-    for(unsigned int i=0; i<_lanes.size(); i++)
+    for(auto lane : _lanes)
     {
-        Lane *lane = _lanes.at(i);
         PerceptionEntry entry = perception->findNearestVehicle(lane, FOLLOWER);
 
         if(entry.headway_s<nearest.headway_s)

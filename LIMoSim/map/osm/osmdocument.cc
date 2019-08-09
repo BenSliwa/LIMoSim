@@ -36,9 +36,9 @@ OSMDocument OSMDocument::fromXML(DOMElement *_entry, IGeoCoordConverter &geoCoor
 
 void OSMDocument::createOSMEntries(DOMElement *_entry)
 {
-    for(unsigned int i=0; i<_entry->childNodes.size(); i++)
+    for(auto & childNode : _entry->childNodes)
     {
-        DOMElement *element = _entry->childNodes.at(i)->toElement();
+        DOMElement *element = childNode->toElement();
         std::string name = element->tagName;
 
         if(name=="node")
@@ -83,19 +83,15 @@ void OSMDocument::adjustNodePositions(IGeoCoordConverter &geoCoordConverter)
 
     if(useWgs) // TODO: rel getNodeEntries
     {
-        for(unsigned int i=0; i<m_relations.size(); i++)
+        for(auto & relation : m_relations)
         {
-            OSMRelationEntry &relation = m_relations.at(i);
-            for(unsigned int w=0; w<relation.streets.size(); w++)
+            for(auto wayId : relation.streets)
             {
-                std::string wayId = relation.streets.at(w);
-
                 if(hasWay(wayId))
                 {
                     OSMWayEntry way = m_ways[wayId];
-                    for(unsigned int n=0; n<way.nodes.size(); n++)
+                    for(auto nodeId : way.nodes)
                     {
-                        std::string nodeId = way.nodes.at(n);
                         if(hasNode(nodeId))
                         {
                             OSMNodeEntry node = m_nodes[nodeId];
@@ -161,15 +157,12 @@ void OSMDocument::createRelations()
 {
     std::cout << "OSMDocument::createRelations" << std::endl;
 
-    for(unsigned int i=0; i<m_relations.size(); i++)
+    for(auto entry : m_relations)
     {
-        OSMRelationEntry entry = m_relations.at(i);
-       // std::cout << "relation: " << entry.name << std::endl;
+        // std::cout << "relation: " << entry.name << std::endl;
 
-        for(unsigned int w=0; w<entry.streets.size(); w++)
+        for(auto wayId : entry.streets)
         {
-            std::string wayId = entry.streets.at(w);
-
             if(hasWay(wayId))
             {
                 OSMWayEntry wayEntry = m_ways[wayId];

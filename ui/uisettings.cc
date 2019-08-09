@@ -7,7 +7,7 @@
 namespace LIMoSim
 {
 
-UiSettings *uiSettingsInstance = 0;
+UiSettings *uiSettingsInstance = nullptr;
 
 UiSettings::UiSettings(QObject *_parent) :
     QObject(_parent),
@@ -95,7 +95,7 @@ DOMElement* UiSettings::getElement(const QString &_group, const QString &_key)
         return node;
     }
 
-    return 0;
+    return nullptr;
 }
 
 TextStyle UiSettings::getTextStyle(DOMElement *_dom)

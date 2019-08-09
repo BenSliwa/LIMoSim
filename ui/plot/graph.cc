@@ -38,9 +38,9 @@ Point Graph::getXRange()
 {
     Point range{std::numeric_limits<double>::max(), std::numeric_limits<double>::min()};
 
-    for(int i=0; i<m_points.size(); i++)
+    for(auto m_point : m_points)
     {
-        double x = m_points.at(i).x;
+        double x = m_point.x;
         if(x<range.x)
             range.x = x;
         if(x>range.y)

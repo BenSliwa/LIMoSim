@@ -5,14 +5,15 @@
 #include "way.h"
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 
 namespace LIMoSim
 {
 
 Segment::Segment(Node *_start, Node *_end, Way *_way) :
     p_way(_way),
-    p_predecessor(0),
-    p_successor(0)
+    p_predecessor(nullptr),
+    p_successor(nullptr)
 {
     setStart(_start);
     setEnd(_end);
@@ -30,13 +31,13 @@ Segment::~Segment()
     if(p_predecessor)
     {
         if(p_predecessor->getSuccessor()==this)
-            p_predecessor->setSuccessor(0);
+            p_predecessor->setSuccessor(nullptr);
     }
 
     if(p_successor)
     {
         if(p_successor->getPredecessor()==this)
-            p_successor->setPredecessor(0);
+            p_successor->setPredecessor(nullptr);
     }
 }
 
@@ -46,9 +47,8 @@ Segment::~Segment()
 
 void Segment::clear()
 {
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         delete lane;
     }
 }
@@ -82,9 +82,8 @@ void Segment::linkLanes(Lane *_out, LaneGate *_outGate, Lane *_in, LaneGate *_in
 
 void Segment::clearLaneLinks(Node *_node)
 {
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         LaneGate *gate = lane->getGateForNode(_node);
         if(gate)
             gate->clearOut();
@@ -159,7 +158,7 @@ void Segment::updateConnectionLane(Lane *_from, Lane *_to, Node *_node, int _tur
 
 SegmentGate* Segment::getGateForNode(Node *_node)
 {
-    SegmentGate *gate = 0;
+    SegmentGate *gate = nullptr;
     if(_node==m_startGate.node)
         gate = getStartGate();
     else if(_node==m_endGate.node)
@@ -290,7 +289,7 @@ void Segment::updateLanePositions(int _index)
 
 
     //
-    Lane *lane = 0;
+    Lane *lane = nullptr;
     if(_index>=m_lanes.size())
     {
         lane = new Lane(startEndpoint, endEndpoint, this);
@@ -428,7 +427,7 @@ double Segment::getRotation()
 
 Node* Segment::getOtherNode(Node *_node)
 {
-    Node *node = 0;
+    Node *node = nullptr;
     if(_node==m_startGate.node)
         node = m_endGate.node;
     else if(_node==m_endGate.node)
@@ -459,7 +458,7 @@ Lane* Segment::getLane(int _index)
 {
     if(_index<m_lanes.size())
         return m_lanes.at(_index);
-    return 0;
+    return nullptr;
 }
 
 std::vector<Lane*> Segment::getBackwardLanes()
@@ -480,9 +479,8 @@ std::vector<Lane*> Segment::getFowardLanes()
 {
     std::vector<Lane*> lanes;
 
-    for(unsigned int i=0; i<m_lanes.size(); i++)
+    for(auto lane : m_lanes)
     {
-        Lane *lane = m_lanes.at(i);
         if(lane->getDirectionType()!=WAY_DIRECTION::BACKWARD)
             lanes.push_back(lane);
     }
@@ -608,7 +606,7 @@ double Segment::computeStretchFactor(double _angle0, double _angle1, bool _inver
    //     angle = angle - 180;
 
     double angleDifference = Math::getMinimumAngleDifference(angle, _angle1);
-    double strechFactor = cos(Math::toRad(angleDifference));
+    double strechFactor = std::cos(Math::toRad(angleDifference));
 
     return strechFactor * strechFactor;
 }

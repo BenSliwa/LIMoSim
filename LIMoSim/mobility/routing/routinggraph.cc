@@ -35,7 +35,7 @@ void RoutingGraph::addConnection(Node *_from, Node *_to, double _cost)
 
 RoutingNode* RoutingGraph::getNode(Node *_node)
 {
-    RoutingNode *node = 0;
+    RoutingNode *node = nullptr;
     if(!m_nodes.count(_node))
     {
         node = new RoutingNode(_node);

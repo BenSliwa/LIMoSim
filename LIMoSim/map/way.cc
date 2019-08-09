@@ -23,9 +23,8 @@ Way::Way(const std::string &_id, int _type, const std::string &_name) :
 
 Way::~Way()
 {
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         delete segment;
     }
 
@@ -55,7 +54,7 @@ int Way::getPathDirection(Node *_from, Node *_direction)
 
 Segment* Way::addNode(Node *_node)
 {
-    Segment *segment = 0;
+    Segment *segment = nullptr;
     if(m_nodes.size())
     {
         // create a node
@@ -149,7 +148,7 @@ int Way::getNodeIndex(Node *_node)
 
 Node* Way::getNode(int _index)
 {
-    Node *node = 0;
+    Node *node = nullptr;
     if(_index>-1 && _index<m_nodes.size())
         node = m_nodes.at(_index);
 
@@ -214,9 +213,9 @@ void Way::removeSegment(Segment *_segment)
 
         //
         if(predecessor)
-            predecessor->setSuccessor(0);
+            predecessor->setSuccessor(nullptr);
         if(successor)
-            successor->setPredecessor(0);
+            successor->setPredecessor(nullptr);
 
         //
         delete _segment;
@@ -248,7 +247,7 @@ int Way::getSegmentIndex(Segment *_segment)
 
 Segment* Way::getSegment(int _index)
 {
-    Segment *segment = 0;
+    Segment *segment = nullptr;
     if(_index>-1 && _index<m_segments.size())
         segment = m_segments.at(_index);
 
@@ -257,10 +256,9 @@ Segment* Way::getSegment(int _index)
 
 Segment* Way::getSegment(Node *_start, Node *_end)
 {
-    Segment *segment = 0;
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    Segment *segment = nullptr;
+    for(auto currentSegment : m_segments)
     {
-        Segment *currentSegment = m_segments.at(i);
         if(currentSegment->getStartGate()->node==_start && currentSegment->getEndGate()->node==_end)
         {
             segment = currentSegment;
@@ -294,9 +292,8 @@ void Way::linkSegments()
 
 void Way::linkLanes()
 {
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         segment->linkLanes();
     }
 

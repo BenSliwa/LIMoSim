@@ -1,4 +1,5 @@
 #include "boxplot.h"
+#include <cmath>
 
 namespace LIMoSim
 {
@@ -26,7 +27,7 @@ BoxPlot::~BoxPlot()
 
 void BoxPlot::addValue(double _value, const QString &_boxId)
 {
-    Box *box = 0;
+    Box *box = nullptr;
     if(m_data.contains(_boxId))
         box = m_data.value(_boxId);
     else
@@ -92,8 +93,8 @@ void BoxPlot::drawBox(Box *_box, int _index)
 
 
     std::vector<double> outliers = _box->getOutliers(lowerWhisker, upperWhisker);
-    for(unsigned int i=0; i<outliers.size(); i++)
-        drawOutlier(x, outliers.at(i));
+    for(double outlier : outliers)
+        drawOutlier(x, outlier);
 
     drawLine(getPlotCoordinate(QPointF(x, lowerWhisker)), getPlotCoordinate(QPointF(x, lowerQuartile)), LineStyle("black", 1, false, false, Qt::DashLine));
     drawLine(getPlotCoordinate(QPointF(x, upperWhisker)), getPlotCoordinate(QPointF(x, upperQuartile)), LineStyle("black", 1, false, false, Qt::DashLine));
@@ -107,7 +108,7 @@ void BoxPlot::drawBox(Box *_box, int _index)
 
     double mean = _box->getMean();
     double w = 3;
-    double w2 = w/sqrt(2);
+    double w2 = w/std::sqrt(2);
     QPointF meanPoint(getPlotCoordinate(QPointF(x, mean)));
 
     drawLine(meanPoint+QPointF(-w,0), meanPoint+QPointF(w,0), LineStyle("black"));
@@ -174,10 +175,10 @@ QString BoxPlot::exportBoxplot(Box *_box, int _index, const ExportConfig &_expor
 
     // outlier
     std::vector<double> outliers = _box->getOutliers(lowerWhisker, upperWhisker);
-    for(unsigned int i=0; i<outliers.size(); i++)
+    for(double i : outliers)
     {
         LineStyle style("red");
-        QPointF outlier = getEpsCanvasCoordinate(x, outliers.at(i), _export);
+        QPointF outlier = getEpsCanvasCoordinate(x, i, _export);
         data += m_eps.drawLine(outlier+QPointF(-w,0), outlier+QPointF(w,0), style);
         data += m_eps.drawLine(outlier+QPointF(0,-w), outlier+QPointF(0,w), style);
     }
@@ -197,7 +198,7 @@ QString BoxPlot::exportBoxplot(Box *_box, int _index, const ExportConfig &_expor
     data += m_eps.drawRect(rect, LineStyle("blue"));
 
     // mean
-    double w2 = w/sqrt(2);
+    double w2 = w/std::sqrt(2);
     style = LineStyle();
     QPointF meanPoint = getEpsCanvasCoordinate(x, _box->getMean(), _export);
     data += m_eps.drawLine(meanPoint+QPointF(-w,0), meanPoint+QPointF(w,0), style);

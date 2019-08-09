@@ -14,8 +14,8 @@ DOMNode::DOMNode(const std::string _nodeName, int _nodeType, DOMNode *_parent) :
 
 DOMNode::~DOMNode()
 {
-    for(unsigned int i=0; i<childNodes.size(); i++)
-        delete childNodes.at(i);
+    for(auto & childNode : childNodes)
+        delete childNode;
 }
 
 
@@ -32,14 +32,14 @@ DOMNode* DOMNode::firstChild()
 {
     if(childNodes.size())
         return childNodes.at(0);
-    return 0;
+    return nullptr;
 }
 
 DOMNode* DOMNode::lastChild()
 {
     if(childNodes.size())
         return childNodes.at(childNodes.size()-1);
-    return 0;
+    return nullptr;
 }
 
 bool DOMNode::hasAttribute(const std::string &_key)

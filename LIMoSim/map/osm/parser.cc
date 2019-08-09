@@ -33,9 +33,9 @@ std::vector<std::string> Parser::split(const std::string &_data, const std::stri
 
 void Parser::info(const std::vector<std::string> &_data)
 {
-    for(unsigned int i=0; i<_data.size(); i++)
+    for(const auto & i : _data)
     {
-        std::cout << _data.at(i) << std::endl;
+        std::cout << i << std::endl;
     }
 }
 

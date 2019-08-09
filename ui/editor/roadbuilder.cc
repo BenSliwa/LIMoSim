@@ -14,16 +14,16 @@
 namespace LIMoSim
 {
 
-RoadBuilder *roadBuilderInstance = 0;
+RoadBuilder *roadBuilderInstance = nullptr;
 
 RoadBuilder::RoadBuilder(QObject *_parent) :
     QObject(_parent),
     p_map(Map::getInstance()),
     p_uiManager(UiManager::getInstance()),
-    p_pathLayer(0),
-    p_selectedNode(0),
-    p_selectedSegment(0),
-    p_currentWay(0)
+    p_pathLayer(nullptr),
+    p_selectedNode(nullptr),
+    p_selectedSegment(nullptr),
+    p_currentWay(nullptr)
 {
     roadBuilderInstance = this;
 }
@@ -43,9 +43,9 @@ RoadBuilder* RoadBuilder::getInstance()
 
 void RoadBuilder::clear()
 {
-    p_selectedNode = 0;
-    p_selectedSegment = 0;
-    p_currentWay = 0;
+    p_selectedNode = nullptr;
+    p_selectedSegment = nullptr;
+    p_currentWay = nullptr;
 }
 
 void RoadBuilder::handleKey(int _key)
@@ -109,7 +109,7 @@ void RoadBuilder::selectNode(NodeUi *_node)
     if(p_selectedSegment)
     {
         p_selectedSegment->setSelection(SELECTION::NO_SELECTION);
-        p_selectedSegment = 0;
+        p_selectedSegment = nullptr;
     }
 
     // select the new node
@@ -121,13 +121,13 @@ void RoadBuilder::deleteNode(NodeUi *_node)
 {
     // unhighlight all highlighted destinates
     QList<NodeUi*> destinations = p_selectedNode->updateDestinations();
-    for(int i=0; i<destinations.size(); i++)
-        destinations.at(i)->softDeselection();
+    for(auto destination : destinations)
+        destination->softDeselection();
 
     // delete the ui part
     p_uiManager->removeNode(_node);
 
-    p_selectedNode = 0;
+    p_selectedNode = nullptr;
 }
 
 void RoadBuilder::registerSegment(SegmentMarker *_segment)
@@ -143,7 +143,7 @@ void RoadBuilder::selectSegment(SegmentMarker *_segment)
     if(p_selectedNode)
     {
         p_selectedNode->setSelection(SELECTION::NO_SELECTION);
-        p_selectedNode = 0;
+        p_selectedNode = nullptr;
     }
 
     // select the new node
@@ -163,7 +163,7 @@ void RoadBuilder::deleteSegment(SegmentMarker *_segment)
 
     p_pathLayer->update();
 
-    p_selectedSegment = 0;
+    p_selectedSegment = nullptr;
 }
 
 void RoadBuilder::deselectAll()
@@ -171,14 +171,14 @@ void RoadBuilder::deselectAll()
     if(p_selectedNode)
     {
         p_selectedNode->setSelection(SELECTION::NO_SELECTION);
-        p_selectedNode = 0;
+        p_selectedNode = nullptr;
     }
     if(p_selectedSegment)
     {
         p_selectedSegment->setSelection(SELECTION::NO_SELECTION);
-        p_selectedSegment = 0;
+        p_selectedSegment = nullptr;
     }
-    p_currentWay = 0;
+    p_currentWay = nullptr;
 }
 
 void RoadBuilder::registerPathLayer(PathLayer *_pathLayer)
@@ -271,7 +271,7 @@ void RoadBuilder::onNodeLeftClicked()
         // select the node
         selectNode(nodeUi);
 
-        p_currentWay = 0;
+        p_currentWay = nullptr;
     }
 }
 

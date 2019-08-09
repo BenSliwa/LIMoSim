@@ -24,7 +24,7 @@ std::map<int,Node*> MobilityModel::getOpportunities(Segment *_segment, Node *_no
     {
         int turnType = it->first;
         Segment* nextSegment = it->second;
-        Node* node = 0;
+        Node* node = nullptr;
 
         node = nextSegment->getOtherNode(_node);
 
@@ -37,7 +37,7 @@ std::map<int,Node*> MobilityModel::getOpportunities(Segment *_segment, Node *_no
 
 Lane* MobilityModel::getLaneForNode(Lane *_lane, Node *_currentNode, Node *_nextNode)
 {
-    Lane *lane = 0;
+    Lane *lane = nullptr;
     LaneGate *gate = _lane->getGateForNode(_currentNode);
 
     std::map<int,Lane*>::iterator out;

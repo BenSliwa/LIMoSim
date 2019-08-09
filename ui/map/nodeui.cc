@@ -8,7 +8,7 @@ namespace LIMoSim
 
 NodeUi::NodeUi(QQuickItem *_parent) :
     MapElementUi(_parent),
-    p_node(0)
+    p_node(nullptr)
 {
     setZ(20);
 
@@ -31,8 +31,8 @@ QList<NodeUi*> NodeUi::updateDestinations()
     UiManager *uiManager = UiManager::getInstance();
     QList<NodeUi*> destinationNodes;
     std::vector<DestinationEntry> destinations = p_node->getOutgoingConnections();
-    for(unsigned int i=0; i<destinations.size(); i++)
-        destinationNodes << uiManager->getNodeUi(destinations.at(i).destination);
+    for(auto & destination : destinations)
+        destinationNodes << uiManager->getNodeUi(destination.destination);
 
     return destinationNodes;
 }

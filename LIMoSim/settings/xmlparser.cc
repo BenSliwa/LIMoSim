@@ -20,9 +20,8 @@ DOMElement* XMLParser::parseData(const std::string &_data)
 {
     //
     std::vector<std::string> nodes;
-    for(unsigned int i=0; i<_data.size(); i++)
+    for(char c : _data)
     {
-        char c = _data.at(i);
         if(c=='<')
         {
             if(m_buffer!="")
@@ -48,7 +47,7 @@ DOMElement* XMLParser::parseData(const std::string &_data)
 
 DOMElement* XMLParser::parseNode(std::vector<std::string> &_data)
 {
-    DOMElement *element = 0; // here: assuming the first element is a start node
+    DOMElement *element = nullptr; // here: assuming the first element is a start node
     std::string data = _data.at(0);
     _data.erase(_data.begin());
     element = parseAttributes(data);

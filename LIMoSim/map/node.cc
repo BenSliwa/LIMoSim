@@ -13,7 +13,7 @@ namespace LIMoSim
 Node::Node(const Position &_position, const std::string &_id, int _type, const std::string &_name) :
     MapObject(_id, _type, _name),
     m_position(_position),
-    m_signal(0)
+    m_signal(nullptr)
 {
     if(m_name=="")
     {
@@ -72,9 +72,8 @@ bool Node::isReachableNeighbor(Node *_node)
 {
     bool reachable = false;
 
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         if(segment->getOtherNode(this)==_node)
         {
             int type = checkSegmentDirection(segment);
@@ -110,7 +109,7 @@ int Node::checkSegmentDirection(Segment *_segment)
 
 Segment* Node::getOtherSegment(Segment *_segment)
 {
-    Segment *segment = 0;
+    Segment *segment = nullptr;
 
     if(m_segments.size()==2)
     {
@@ -155,9 +154,8 @@ void Node::linkSegments(bool _loopback)
 {
     std::vector<Segment*> incoming = getIncomingSegments();
     std::vector<Segment*> outgoing = getOutgoingSegments();
-    for(unsigned int i=0; i<incoming.size(); i++)
+    for(auto from : incoming)
     {
-        Segment *from = incoming.at(i);
         Node *previous = from->getOtherNode(this);
 
         // angle
@@ -168,9 +166,8 @@ void Node::linkSegments(bool _loopback)
         SegmentGate *segmentGate = from->getGateForNode(this);
         segmentGate->segments.clear();
 
-        for(unsigned int j=0; j<outgoing.size(); j++)
+        for(auto to : outgoing)
         {
-            Segment *to = outgoing.at(j);
             if(from!=to)
             {
                 Node *next = to->getOtherNode(this);
@@ -306,7 +303,7 @@ Lane* Node::getConnectionLane(Lane *_from, Lane *_to)
         LaneEndpoint outEndpoint = *_from->getEndpointForNode(this);
         LaneEndpoint inEndpoint = *_to->getEndpointForNode(this);
 
-        Lane *connectionLane = new Lane(outEndpoint, inEndpoint, 0);
+        Lane *connectionLane = new Lane(outEndpoint, inEndpoint, nullptr);
         connectionLane->setIsConnectionLane(true);
 
         m_connectionLanes[connection] = connectionLane;
@@ -322,9 +319,9 @@ void Node::updateDestinations()
     computeDestinations();
 
     // update the neighbors
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto & m_segment : m_segments)
     {
-        Node *neighbor = m_segments.at(i)->getOtherNode(this);
+        Node *neighbor = m_segment->getOtherNode(this);
         if(neighbor)
         {
             neighbor->computeDestinations();
@@ -338,10 +335,8 @@ void Node::computeDestinations()
     m_outgoing.clear();
     m_incoming.clear();
 
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
-
         int type = checkSegmentDirection(segment);
 
         /*
@@ -399,9 +394,8 @@ void Node::computeDestinations()
 
 bool Node::knowsDestination(Node *_node)
 {
-    for(unsigned int i=0; i<m_outgoing.size(); i++)
+    for(auto entry : m_outgoing)
     {
-        DestinationEntry entry = m_outgoing.at(i);
         if(entry.destination==_node)
             return true;
     }
@@ -422,9 +416,8 @@ DestinationEntry Node::getBestDestinationEntry(Node *_node, Node *_avoid, bool _
     else
         entries = m_outgoing;
 
-    for(unsigned int i=0; i<entries.size(); i++)
+    for(auto currentEntry : entries)
     {
-        DestinationEntry currentEntry = entries.at(i);
         bool avoid = false;
         if(!_incoming && currentEntry.neighbor==_avoid)
             avoid = true;
@@ -444,9 +437,8 @@ DestinationEntry Node::getBestDestinationEntry(Node *_node, Node *_avoid, bool _
 void Node::updateTrafficSignals()
 {
     std::vector<TrafficSignal*> trafficSignals;
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         Node *node = segment->getOtherNode(this);
         TrafficSignal *signal = node->getTrafficSignal();
 
@@ -486,9 +478,8 @@ std::vector<Segment*> Node::getOutgoingSegments()
 {
     std::vector<Segment*> segments;
 
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         int type = checkSegmentDirection(segment);
         if(type==WAY_DIRECTION::FORWARD || type==WAY_DIRECTION::BIDIRECTIONAL)
             segments.push_back(segment);
@@ -501,9 +492,8 @@ std::vector<Segment*> Node::getIncomingSegments()
 {
     std::vector<Segment*> segments;
 
-    for(unsigned int i=0; i<m_segments.size(); i++)
+    for(auto segment : m_segments)
     {
-        Segment *segment = m_segments.at(i);
         int type = checkSegmentDirection(segment);
         if(type==WAY_DIRECTION::BACKWARD || type==WAY_DIRECTION::BIDIRECTIONAL)
             segments.push_back(segment);

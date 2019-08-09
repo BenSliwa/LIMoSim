@@ -35,9 +35,9 @@ VehicleEntry* VehicleEntry::fromCar(Car *_car)
     //
     DOMElement *path = new DOMElement("path");
     info.path.insert(info.path.begin(), info.currentNode);
-    for(unsigned int i=0; i<info.path.size(); i++)
+    for(auto & i : info.path)
     {
-        std::string id = info.path.at(i)->getId();
+        std::string id = i->getId();
         DOMElement *node = new DOMElement("nd");
         node->setAttribute("ref", id);
         path->appendChild(node);
@@ -101,9 +101,9 @@ Car* VehicleEntry::toCar()
 
 
 
-    for(unsigned int i=0; i<childNodes.size(); i++)
+    for(auto & childNode : childNodes)
     {
-        DOMElement *child = childNodes.at(i)->toElement();
+        DOMElement *child = childNode->toElement();
         std::string tag = child->tagName;
         if(tag=="tag")
         {
@@ -138,9 +138,9 @@ Car* VehicleEntry::toCar()
             {
                 Trip *trip = new Trip(car);
 
-                for(unsigned int j=0; j<child->childNodes.size(); j++)
+                for(auto & j : child->childNodes)
                 {
-                    DOMElement *ref = child->childNodes.at(j)->toElement();
+                    DOMElement *ref = j->toElement();
                     std::string id = ref->getAttribute("ref").toString();
                     Node *node = map->getNode(id);
 

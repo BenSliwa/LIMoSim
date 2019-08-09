@@ -6,7 +6,7 @@ namespace LIMoSim
 {
 
 Dijkstra::Dijkstra() :
-    p_graph(0)
+    p_graph(nullptr)
 {
 
 }
@@ -31,9 +31,8 @@ RoutingPath Dijkstra::computeShortestPath(RoutingNode *_start, RoutingNode *_des
         removeNode(u);
 
         std::vector<RoutingNode*> neighbors = u->getConnections();
-        for(unsigned int i=0; i<neighbors.size(); i++)
+        for(auto v : neighbors)
         {
-            RoutingNode *v = neighbors.at(i);
             if(getNodeIndex(v)>-1) // v is in Q
                 updateDistance(u, v);
         }
@@ -70,11 +69,10 @@ void Dijkstra::setGraph(RoutingGraph *_graph)
 void Dijkstra::init(RoutingNode *_start)
 {
     m_q = p_graph->getNodes();
-    for(unsigned int i=0; i<m_q.size(); i++)
+    for(auto node : m_q)
     {
-        RoutingNode *node = m_q.at(i);
         m_distances[node] = std::numeric_limits<double>::infinity();
-        m_predecessors[node] = 0;
+        m_predecessors[node] = nullptr;
     }
 
     m_distances[_start] = 0;
@@ -92,12 +90,11 @@ void Dijkstra::updateDistance(RoutingNode *_u, RoutingNode *_v)
 
 RoutingNode* Dijkstra::getNearestNode()
 {
-    RoutingNode *node = 0;
+    RoutingNode *node = nullptr;
     double minDistance_m = std::numeric_limits<double>::infinity();
 
-    for(unsigned int i=0; i<m_q.size(); i++)
+    for(auto currentNode : m_q)
     {
-        RoutingNode *currentNode = m_q.at(i);
         double distance_m = m_distances[currentNode];
 
         if(distance_m<minDistance_m)

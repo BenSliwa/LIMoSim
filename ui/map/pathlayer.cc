@@ -19,8 +19,8 @@ namespace LIMoSim
 PathLayer::PathLayer(QQuickItem *_parent) :
     MapElementUi(_parent),
     p_map(Map::getInstance()),
-    p_highlightedWay(0),
-    p_highlightedCar(0)
+    p_highlightedWay(nullptr),
+    p_highlightedCar(nullptr)
 {
     setZ(10);
 
@@ -79,9 +79,8 @@ QString PathLayer::toEps()
             data += exportWay(way);
 
         std::vector<Segment*> segments = way->getSegments();
-        for(unsigned int i=0; i<segments.size(); i++)
+        for(auto segment : segments)
         {
-            Segment *segment = segments.at(i);
             data += exportSegment(segment, zoomLevel);
 
             if(zoomLevel==ZOOM_LEVEL::DETAIL)
@@ -93,9 +92,8 @@ QString PathLayer::toEps()
     if(zoomLevel==ZOOM_LEVEL::DETAIL)
     {
         std::vector<Node*> nodes = p_map->getNodesList();
-        for(unsigned int i=0; i<nodes.size(); i++)
+        for(auto node : nodes)
         {
-            Node *node = nodes.at(i);
             data += exportConnectionLanes(node);
         }
     }
@@ -171,8 +169,8 @@ QString PathLayer::exportIntersections(int _zoomLevel)
 
             QList<Position> path = getIntersectionPath(node);
             QPolygonF polygon;
-            for(int i=0; i<path.size(); i++)
-                polygon << getCanvasPoint(path.at(i));
+            for(const auto & i : path)
+                polygon << getCanvasPoint(i);
             QPainterPath painterPath;
             painterPath.addPolygon(polygon);
 
@@ -202,9 +200,8 @@ QString PathLayer::exportWay(Way *_way)
     QPolygonF polygon;
 
     std::vector<Node*>& nodes = _way->getNodes();
-    for(unsigned int i=0; i<nodes.size(); i++)
+    for(auto currentNode : nodes)
     {
-        Node *currentNode = nodes.at(i);
         polygon << getCanvasPoint(currentNode->getPosition()).toPoint();
     }
 
@@ -247,10 +244,9 @@ QString PathLayer::exportLanes(Segment *_segment)
     QString data;
     std::vector<Lane*> lanes = _segment->getLanes();
 
-    Lane *previous = 0;
-    for(unsigned int i=0; i<lanes.size(); i++)
+    Lane *previous = nullptr;
+    for(auto lane : lanes)
     {
-        Lane *lane = lanes.at(i);
         data += exportLane(lane, LineStyle("gray"));
 
         if(previous)
@@ -322,9 +318,8 @@ void PathLayer::handlePaintEvent()
 
 
     QList<CarUi*> cars = SelectionHandler::getInstance()->getSelectedCars();
-    for(int c=0; c<cars.size(); c++)
+    for(auto ui : cars)
     {
-        CarUi *ui = cars.at(c);
         Car *car = ui->getCar();
 
         std::vector<Position> positions;
@@ -333,18 +328,17 @@ void PathLayer::handlePaintEvent()
 
 
         PositionInfo info = car->getPositionInfo();
-        for(unsigned int i=0; i<info.path.size(); i++)
+        for(auto & i : info.path)
         {
-            positions.push_back(info.path.at(i)->getPosition());
+            positions.push_back(i->getPosition());
         }
 
         //
         if(positions.size()>1)
         {
             Position lastPosition = positions.at(0);
-            for(unsigned int i=0; i<positions.size(); i++)
+            for(auto position : positions)
             {
-                Position position = positions.at(i);
                 drawLine(lastPosition, position, LineStyle("yellow"));
 
                 lastPosition = position;
@@ -382,8 +376,8 @@ void PathLayer::drawIntersections(int _zoomLevel)
         {
             QList<Position> path = getIntersectionPath(node);
             QPolygonF polygon;
-            for(int i=0; i<path.size(); i++)
-                polygon << getUiPosition(path.at(i));
+            for(const auto & i : path)
+                polygon << getUiPosition(i);
             QPainterPath painterPath;
             painterPath.addPolygon(polygon);
 
@@ -442,8 +436,8 @@ void PathLayer::drawWays(int _zoomLevel)
 
         // segments
         std::vector<Segment*> segments = way->getSegments();
-        for(unsigned int i=0; i<segments.size(); i++)
-            drawSegment(segments.at(i), _zoomLevel);
+        for(auto & segment : segments)
+            drawSegment(segment, _zoomLevel);
     }
 
 
@@ -451,10 +445,8 @@ void PathLayer::drawWays(int _zoomLevel)
     if(_zoomLevel==ZOOM_LEVEL::DETAIL)
     {
         std::vector<Node*> nodes = p_map->getNodesList();
-        for(unsigned int i=0; i<nodes.size(); i++)
+        for(auto node : nodes)
         {
-            Node *node = nodes.at(i);
-
             std::map<std::pair<Lane*,Lane*>,Lane*> connectionLanes = node->getConnectionLanes();
             std::map<std::pair<Lane*,Lane*>,Lane*>::iterator lanes;
             for(lanes=connectionLanes.begin(); lanes!=connectionLanes.end(); lanes++)
@@ -500,10 +492,9 @@ void PathLayer::drawSegment(Segment *_segment, int _zoomLevel)
 
 
         std::vector<Lane*> lanes = _segment->getLanes();
-        Lane *previous = 0;
-        for(unsigned int l=0; l<lanes.size(); l++)
+        Lane *previous = nullptr;
+        for(auto lane : lanes)
         {
-            Lane *lane = lanes.at(l);
             QString color = p_settings->wayColors.value(lane->getDirectionType());
             if(_segment->getWay()==p_highlightedWay)
                 color = "red";
@@ -584,9 +575,8 @@ QList<Position> PathLayer::getIntersectionPath(Node *_node)
 {
     std::vector<std::pair<double,Segment*>> sortedSegments;
     std::vector<Segment*> &segments = _node->getSegments();
-    for(unsigned int i=0; i<segments.size(); i++)
+    for(auto segment : segments)
     {
-        Segment *segment = segments.at(i);
         Node *destination = segment->getOtherNode(_node);
 
         double angle = Math::computeRotation(_node->getPosition(), destination->getPosition());
@@ -598,9 +588,9 @@ QList<Position> PathLayer::getIntersectionPath(Node *_node)
 
 
     QList<Position> path;
-    for(unsigned int i=0; i<sortedSegments.size(); i++)
+    for(auto & sortedSegment : sortedSegments)
     {
-        Segment *segment = sortedSegments.at(i).second;
+        Segment *segment = sortedSegment.second;
 
         Rect rect = segment->getRect();
         if(_node==segment->getStartGate()->node)

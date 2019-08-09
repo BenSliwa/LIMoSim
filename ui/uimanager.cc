@@ -20,6 +20,8 @@
 #include "LIMoSim/map/osm/osmdocument.h"
 #include "LIMoSim/settings/xmlparser.h"
 
+#include "LIMoSim/location/wgs84.h"
+
 #include "LIMoSim/map/trafficsignal.h"
 
 
@@ -33,12 +35,12 @@
 namespace LIMoSim
 {
 
-UiManager *uiManagerInstance = 0;
+UiManager *uiManagerInstance = nullptr;
 
 UiManager::UiManager(QObject *_parent) :
     QObject(_parent),
     EventHandler(),
-    p_map(0)
+    p_map(nullptr)
 {
     uiManagerInstance = this;
 
@@ -138,7 +140,8 @@ bool UiManager::loadScenario(const QString &_path)
     if(file.open(QIODevice::ReadOnly))
     {
         XMLParser xml;
-        OSMDocument document = OSMDocument::fromXML(xml.parse(path.toStdString()));
+        WGS84 converter;
+        OSMDocument document = OSMDocument::fromXML(xml.parse(path.toStdString()), converter);
     }
     else
         return false;
@@ -193,9 +196,8 @@ void UiManager::generateUiElements()
     {
         Way *way = w->second;
         std::vector<Segment*> &segments = way->getSegments();
-        for(unsigned int i=0; i<segments.size(); i++)
+        for(auto segment : segments)
         {
-            Segment *segment = segments.at(i);
             if(!m_segments.value(segment))
                 addSegment(segment);
         }

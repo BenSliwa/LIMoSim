@@ -1,7 +1,7 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.0
-import QtQuick.Dialogs 1.0
+import QtQuick 2.8
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.3
+import QtQuick.Dialogs 1.2
 
 import com.LIMOSIM 1.0
 import "JS.js" as JS
